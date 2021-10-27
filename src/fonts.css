@@ -1,0 +1,25 @@
+/* You need to import this file at the top of each css file in the project if you plan to use any of this colors or fonts:
+@import './fonts.css';
+
+Ex:
+background-color: var(--lazy-white);
+font-family: var(--main-font-family;
+
+To use Google material icons, put this link in the head of index.html:
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Gluten&display=swap');
+
+:root {
+  --main-font-family: 'Gluten', sans-serif;
+  --second-font-family: 'Helvetica', sans-serif;
+  --lazy-white: #fbfffe;
+  --lazy-black: #001514;
+  --lazy-ketchup: #d90b08;
+  --lazy-mayo: #e6af2e;
+  --lazy-barbecue: #a3320b;
+}

@@ -1,0 +1,53 @@
+@import './fonts.css';
+
+footer {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  height: 6%;
+  justify-content: space-evenly;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  box-shadow: 0px -8px 10px -5px var(--lazy-barbecue, 0.9);
+}
+
+.material-icons {
+  color: var(--lazy-white);
+  display: inline-block;
+  direction: ltr;
+  font-family: 'Material Icons';
+  font-feature-settings: 'liga';
+  font-style: normal;
+  font-size: 35px;
+  font-weight: normal;
+  height: 4vh;
+  letter-spacing: normal;
+  line-height: 1;
+  margin: 1vw 5vw;
+  padding: 0.5vh 4vw;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.link {
+  color: var(--lazy-white);
+  text-decoration: none;
+}
+
+.active {
+  color: var(--lazy-ketchup);
+  filter: drop-shadow(2px 2px 0.2rem var(--lazy-white));
+  text-decoration: none;
+}
+
+@media screen and (min-width: 600px) {
+  footer {
+    display: none;
+  }
+}
