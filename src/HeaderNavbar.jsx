@@ -14,19 +14,19 @@ function HeaderNavbar() {
         </li>
 
         <li>
-          <NavLink className="link" activeClassName="active" to="/Favoris">
-            Favoris
+          <NavLink className="link" activeClassName="active" to="/Favorites">
+            Favorites
           </NavLink>
         </li>
 
         <li>
-          <NavLink className="link" activeClassName="active" to="/Catalogue">
-            Catalogue
+          <NavLink className="link" activeClassName="active" to="/Catalog">
+            Catalog
           </NavLink>
         </li>
 
         <li>
-          <NavLink className="link" activeClassName="active" to="/Apropos">
+          <NavLink className="link" activeClassName="active" to="/AboutUs">
             About Us
           </NavLink>
         </li>

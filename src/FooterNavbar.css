@@ -41,7 +41,7 @@ footer {
 }
 
 .active {
-  color: var(--lazy-white);
+  color: var(--lazy-ketchup);
   filter: drop-shadow(2px 2px 0.2rem var(--lazy-white));
   text-decoration: none;
 }

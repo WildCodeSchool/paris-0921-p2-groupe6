@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Apropos() {
+function AboutUs() {
   return (
     <main>
       <h1>A Propos</h1>
@@ -8,4 +8,4 @@ function Apropos() {
   );
 }
 
-export default Apropos;
+export default AboutUs;

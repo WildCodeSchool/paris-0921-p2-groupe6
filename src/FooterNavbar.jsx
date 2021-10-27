@@ -13,17 +13,17 @@ function FooterNavbar() {
           </NavLink>
         </span>
         <span className="material-icons">
-          <NavLink className="link" activeClassName="active" to="Favoris">
+          <NavLink className="link" activeClassName="active" to="Favorites">
             bookmark_border
           </NavLink>
         </span>
         <span className="material-icons">
-          <NavLink className="link" activeClassName="active" to="Catalogue">
+          <NavLink className="link" activeClassName="active" to="Catalog">
             menu_book
           </NavLink>
         </span>
         <span className="material-icons">
-          <NavLink className="link" activeClassName="active" to="Apropos">
+          <NavLink className="link" activeClassName="active" to="AboutUs">
             email
           </NavLink>
         </span>

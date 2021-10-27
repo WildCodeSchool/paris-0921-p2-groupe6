@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Favoris() {
+function Catalog() {
   return (
     <main>
-      <h1>Favoris</h1>
+      <h1>Catalogue</h1>
     </main>
   );
 }
 
-export default Favoris;
+export default Catalog;

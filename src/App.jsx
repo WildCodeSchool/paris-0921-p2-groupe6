@@ -3,9 +3,9 @@ import { Route, Switch } from 'react-router';
 
 import FooterNavbar from './FooterNavbar';
 import HeaderNavbar from './HeaderNavbar';
-import Apropos from './Apropos';
-import Catalogue from './Catalogue';
-import Favoris from './Favoris';
+import AboutUs from './AboutUs';
+import Catalog from './Catalog';
+import Favorites from './Favorites';
 import HomePage from './Homepage';
 
 import './App.css';
@@ -18,14 +18,14 @@ function App() {
         <Route exact path="/HomePage">
           <HomePage />
         </Route>
-        <Route exact path="/Catalogue">
-          <Catalogue />
+        <Route exact path="/Catalog">
+          <Catalog />
         </Route>
-        <Route exact path="/Favoris">
-          <Favoris />
+        <Route exact path="/Favorites">
+          <Favorites />
         </Route>
-        <Route exact path="/Apropos">
-          <Apropos />
+        <Route exact path="/AboutUs">
+          <AboutUs />
         </Route>
       </Switch>
       <FooterNavbar />
