@@ -1,34 +1,33 @@
 @import './fonts.css';
 
 nav {
+  align-items: center;
   box-shadow: inset 1px 1px 60px 10px var(--lazy-mayo, 0.3), 3px 3px 5px -1px var(--lazy-barbecue, 0.5);
   display: none;
-  height: 8%;
-  left: 0;
+  height: 10vh;
   list-style-type: none;
-  position: fixed;
-  top: 0;
+  margin-top: 0;
   width: 100%;
 }
 
 ul {
   align-items: center;
   display: flex;
-  justify-content: end;
-  margin-left: 0;
+  justify-content: space-around;
   margin-top: 3vh;
+  position: fixed;
+  right: 0;
 }
 
 li {
   color: var(--lazy-white);
   display: flex;
   font-size: 2em;
-  margin-right: 4%;
+  margin-right: 2vw;
 }
 
 li:hover {
   cursor: pointer;
-  text-decoration: underline;
 }
 
 li:nth-child(1) {
@@ -37,8 +36,18 @@ li:nth-child(1) {
   position: fixed;
 }
 
+.link {
+  color: var(--lazy-white);
+  text-decoration: none;
+}
+
+.active {
+  color: var(--lazy-ketchup);
+  text-decoration: none;
+}
+
 @media screen and (min-width: 600px) {
   nav {
-    display: block;
+    display: flex;
   }
 }

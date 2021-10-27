@@ -1,51 +1,37 @@
 import React from 'react';
-import { BrowserRouter as Router, NavLink, Route, Switch } from 'react-router-dom';
-
-import Apropos from './Apropos';
-import Catalogue from './Catalogue';
-import Favoris from './Favoris';
-import HomePage from './Homepage';
+import { NavLink } from 'react-router-dom';
 
 import './HeaderNavbar.css';
 
 function HeaderNavbar() {
   return (
-    <Router>
-      <nav>
-        <ul>
-          <li>
-            <NavLink to="/HomePage">HomePage</NavLink>
-          </li>
+    <nav>
+      <ul>
+        <li>
+          <NavLink className="link" activeClassName="active" to="/HomePage">
+            HomePage
+          </NavLink>
+        </li>
 
-          <li>
-            <NavLink to="/Favoris">Favoris</NavLink>
-          </li>
+        <li>
+          <NavLink className="link" activeClassName="active" to="/Favoris">
+            Favoris
+          </NavLink>
+        </li>
 
-          <li>
-            <NavLink to="/Catalogue">Catalogue</NavLink>
-          </li>
+        <li>
+          <NavLink className="link" activeClassName="active" to="/Catalogue">
+            Catalogue
+          </NavLink>
+        </li>
 
-          <li>
-            <NavLink to="/Apropos">About Us</NavLink>
-          </li>
-        </ul>
-      </nav>
-
-      <Switch>
-        <Route exact path="/HomePage">
-          <HomePage />
-        </Route>
-        <Route exact path="/Catalogue">
-          <Catalogue />
-        </Route>
-        <Route exact path="/Favoris">
-          <Favoris />
-        </Route>
-        <Route exact path="/Apropos">
-          <Apropos />
-        </Route>
-      </Switch>
-    </Router>
+        <li>
+          <NavLink className="link" activeClassName="active" to="/Apropos">
+            About Us
+          </NavLink>
+        </li>
+      </ul>
+    </nav>
   );
 }
 

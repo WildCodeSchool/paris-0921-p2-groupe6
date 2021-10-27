@@ -16,7 +16,6 @@ footer {
   color: var(--lazy-white);
   display: inline-block;
   direction: ltr;
-
   font-family: 'Material Icons';
   font-feature-settings: 'liga';
   font-style: normal;
@@ -36,9 +35,15 @@ footer {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.pushed {
-  color: var(--lazy-ketchup);
+.link {
+  color: var(--lazy-white);
+  text-decoration: none;
+}
+
+.active {
+  color: var(--lazy-white);
   filter: drop-shadow(2px 2px 0.2rem var(--lazy-white));
+  text-decoration: none;
 }
 
 @media screen and (min-width: 600px) {
