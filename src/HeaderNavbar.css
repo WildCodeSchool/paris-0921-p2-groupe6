@@ -5,7 +5,7 @@ nav {
   box-shadow: inset 1px 1px 60px 10px var(--lazy-mayo, 0.3), 3px 3px 5px -1px var(--lazy-barbecue, 0.5);
   display: none;
   height: 10vh;
-  list-style-type: none;
+  justify-content: end;
   margin-top: 0;
   width: 100%;
 }
@@ -13,15 +13,16 @@ nav {
 ul {
   align-items: center;
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: end;
+  list-style-type: none;
   margin-top: 3vh;
-  position: fixed;
-  right: 0;
+  position: relative;
+  width: 100%;
 }
 
 li {
   color: var(--lazy-white);
-  display: flex;
   font-size: 2em;
   margin-right: 2vw;
 }
@@ -33,7 +34,7 @@ li:hover {
 li:nth-child(1) {
   left: 0;
   margin-left: 1vw;
-  position: fixed;
+  position: absolute;
 }
 
 .link {

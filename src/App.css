@@ -1,15 +1,15 @@
 @import './fonts.css';
 
 body {
-  margin: 0;
-  font-family: var(--main-font-family);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  height: 100vh;
+  animation: gradient-animation 30s ease infinite;
   background: linear-gradient(142deg, #d90b08, #e6af2e, #a3320b);
   background-size: 180% 180%;
-  animation: gradient-animation 30s ease infinite;
+  font-family: var(--main-font-family);
+  height: 100vh;
+  margin: 0;
+  padding-bottom: 5vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @keyframes gradient-animation {
