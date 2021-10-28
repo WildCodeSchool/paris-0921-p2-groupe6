@@ -7,7 +7,7 @@ import AboutUs from './AboutUs';
 import Catalog from './Catalog';
 import Favorites from './Favorites';
 import HomePage from './Homepage';
-
+import Under18 from './Under18';
 import './App.css';
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
     <div className="app">
       <HeaderNavbar />
       <Switch>
-        <Route exact path="/HomePage">
+        <Route exact path="/">
           <HomePage />
         </Route>
         <Route exact path="/Catalog">
@@ -26,6 +26,9 @@ function App() {
         </Route>
         <Route exact path="/AboutUs">
           <AboutUs />
+        </Route>
+        <Route exact path="/Under18">
+          <Under18 />
         </Route>
       </Switch>
       <FooterNavbar />

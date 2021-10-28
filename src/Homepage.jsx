@@ -1,9 +1,10 @@
 import React from 'react';
+import Age from './Components/Age';
 
 function HomePage() {
   return (
     <main>
-      <h1>Homepage</h1>
+      <Age />
     </main>
   );
 }

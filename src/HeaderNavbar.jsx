@@ -8,7 +8,7 @@ function HeaderNavbar() {
     <nav>
       <ul>
         <li>
-          <NavLink className="link" activeClassName="active" to="/HomePage">
+          <NavLink className="link" activeClassName="active" to="/">
             HomePage
           </NavLink>
         </li>
