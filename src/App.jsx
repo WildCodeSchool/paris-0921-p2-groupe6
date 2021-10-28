@@ -9,6 +9,7 @@ import Favorites from './Favorites';
 import HomePage from './Homepage';
 
 import './App.css';
+import Age from './Components/Age';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <AboutUs />
         </Route>
       </Switch>
+      <Age />
       <FooterNavbar />
     </div>
   );
