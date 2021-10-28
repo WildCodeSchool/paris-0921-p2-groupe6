@@ -1,5 +1,18 @@
+.Age {
+  display: none;
+}
+
 .Under18 {
   color: black;
+  display: block;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.smallLogo {
+  height: 15vh;
+  display: flex;
+  justify-content: center;
 }
 
 h1 {

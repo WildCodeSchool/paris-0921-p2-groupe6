@@ -25,7 +25,7 @@ function Age() {
         fat food, fat drinks and fat movies !
       </h2>
       <p className="BirthDateCheckText">Leave your brain aside and follow us !</p>
-      <div className="Age">
+      <div className="AgeBox">
         <p className="BirthDateCheckBox">Sorry, but we have to ask : </p>
         <h3>Are you 18 years old ?</h3>
         <p className="BirthDateCheckBox">
