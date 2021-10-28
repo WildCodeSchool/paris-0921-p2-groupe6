@@ -1,8 +1,13 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 import './Card.css';
 
 function Card() {
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  function handleClickFavorite() {
+    setIsFavorite(!isFavorite);
+  }
+
   return (
     <div className="Card">
       <div className="img-container">
@@ -11,6 +16,12 @@ function Card() {
         <button id="btn-more" className="btn-more">
           More...
         </button>
+        <button className="material-icons-outlined" id={isFavorite ? 'isFavorite' : 'notFavorite'} onClick={handleClickFavorite}>
+          star
+        </button>
+        <span className="material-icons-outlined" id="add">
+          bookmark_add
+        </span>
       </div>
     </div>
   );

@@ -1,3 +1,14 @@
+@import '../fonts.css';
+
+.btn-more {
+  background: var(--lazy-mayo);
+  bottom: 0px;
+  color: var(--lazy-ketchup);
+  font-family: var(--main-font-family);
+  font-size: 16px;
+  position: absolute;
+}
+
 .Card {
   margin: 0 1vw;
 }
@@ -7,6 +18,31 @@
   height: 100%;
   position: relative;
   width: 100%;
+}
+
+.material-icons-outlined {
+  background: none;
+  border: none;
+  color: var(--lazy-white);
+  display: inline-block;
+  direction: ltr;
+  font-family: 'Material Icons';
+  font-feature-settings: 'liga';
+  font-style: normal;
+  font-size: 30px;
+  font-weight: normal;
+  height: 4vh;
+  letter-spacing: normal;
+  line-height: 1;
+  padding: 0.5vh 1vw;
+  position: absolute;
+  right: 0%;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 img {
@@ -19,9 +55,17 @@ h3 {
   color: white;
   left: 25%;
   position: absolute;
+  font-size: 21px;
 }
 
-button {
-  bottom: 0px;
-  position: absolute;
+#isFavorite {
+  bottom: 0%;
+  color: var(--lazy-mayo);
+  height: 4.5vh;
+}
+
+#notFavorite {
+  bottom: 0%;
+  color: var(--lazy-white);
+  height: 4.5vh;
 }
