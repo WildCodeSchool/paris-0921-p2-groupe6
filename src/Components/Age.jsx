@@ -7,10 +7,6 @@ import './Age.css';
 function Age() {
   const history = useHistory();
 
-  // function HandleClick() {
-  //   history.replace('/Under18');
-  // }
-
   return (
     <div className="BirthDateCheckContainer">
       <img src={logo} alt="lazy Nights logo" />
