@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Gluten&display=swap');
 
 .BirthDateCheckContainer {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .BirthDateCheckTitle {
   color: white;
-  text-align: center;
   font-size: 3em;
+  text-align: center;
 }
 
 .BirthDateCheckText {
@@ -27,9 +27,9 @@ h3 {
   text-align: center;
 }
 h2 {
-  text-align: center;
   color: #d90b08;
   font-size: 1.8em;
+  text-align: center;
 }
 
 .AgeBox {

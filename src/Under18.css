@@ -6,8 +6,8 @@
 }
 
 .smallLogo {
-  height: 15vh;
   display: flex;
+  height: 15vh;
   justify-content: center;
 }
 

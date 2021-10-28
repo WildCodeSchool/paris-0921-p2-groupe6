@@ -3,7 +3,7 @@ import Age from './Components/Age';
 
 function HomePage() {
   return (
-    <main>
+    <main className="Homepage">
       <Age />
     </main>
   );
