@@ -8,7 +8,7 @@ function FooterNavbar() {
     <div>
       <footer>
         <span className="material-icons">
-          <NavLink className="link" activeClassName="active" to="/">
+          <NavLink className="link" activeClassName="active" exact to="/">
             home
           </NavLink>
         </span>
