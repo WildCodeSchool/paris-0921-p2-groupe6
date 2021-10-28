@@ -7,7 +7,6 @@ body {
   font-family: var(--main-font-family);
   height: 100vh;
   margin: 0;
-  padding-bottom: 5vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -23,3 +22,8 @@ body {
     background-position: 0% 50%;
   }
 }
+
+main {
+  margin-bottom: 10vh;
+}
+
