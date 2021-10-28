@@ -10,6 +10,21 @@ footer {
   position: fixed;
   width: 100%;
   box-shadow: 0px -8px 10px -5px var(--lazy-barbecue, 0.9);
+  animation: gradient-animation 30s linear infinite;
+  background: linear-gradient(142deg, #e6af2e, #a3320b);
+  background-size: 100%;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .material-icons {
