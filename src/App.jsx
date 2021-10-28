@@ -10,14 +10,13 @@ import HomePage from './Homepage';
 import Under18 from './Under18';
 
 import './App.css';
-import Age from './Components/Age';
 
 function App() {
   return (
     <div className="app">
       <HeaderNavbar />
       <Switch>
-        <Route exact path="/HomePage">
+        <Route exact path="/">
           <HomePage />
         </Route>
         <Route exact path="/Catalog">
@@ -33,7 +32,6 @@ function App() {
           <Under18 />
         </Route>
       </Switch>
-      <Age />
       <FooterNavbar />
     </div>
   );

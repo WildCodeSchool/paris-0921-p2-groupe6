@@ -7,9 +7,9 @@ import './Age.css';
 function Age() {
   const history = useHistory();
 
-  function HandleClick() {
-    history.push('/Under18');
-  }
+  // function HandleClick() {
+  //   history.replace('/Under18');
+  // }
 
   return (
     <div className="BirthDateCheckContainer">
@@ -31,7 +31,7 @@ function Age() {
         <p className="BirthDateCheckBox">
           <button className="AgeButton">Yes</button>
           <Link to="../Under18">
-            <button className="AgeButton" onClick={HandleClick}>
+            <button className="AgeButton" onClick={() => history.push('/Under18')}>
               No
             </button>
           </Link>
