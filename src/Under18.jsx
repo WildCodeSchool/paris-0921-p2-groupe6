@@ -7,7 +7,7 @@ import SmallLogo from './SmallLogo.png';
 
 function Under18() {
   return (
-    <div className="Under18">
+    <main className="Under18">
       <img src={SmallLogo} alt="small logo" className="smallLogo" />
       <h1>
         Oh no, <br />
@@ -20,7 +20,7 @@ function Under18() {
       <img src={milkGlass} alt="glass of milk" className="foodImages" />
       <h2>What to see : </h2>
       <img src={myLittlePony} alt="poster of little pony movie" className="foodImages" />
-    </div>
+    </main>
   );
 }
 
