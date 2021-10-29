@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Gluten&display=swap');
+
+.BirthDateCheckContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.BirthDateCheckTitle {
+  color: white;
+  font-size: 3em;
+  text-align: center;
+}
+
+.BirthDateCheckText {
+  color: white;
+  display: flex;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 1.3em;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+h3 {
+  color: #d90b08;
+  font-family: 'Gluten', cursive;
+  text-align: center;
+}
+h2 {
+  color: #d90b08;
+  font-size: 1.8em;
+  text-align: center;
+}
+
+.AgeBox {
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.BirthDateCheckBox {
+  color: black;
+  display: flex;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 0.8em;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.AgeButton {
+  background-color: #a3320b;
+  color: white;
+  font-family: 'Gluten', cursive;
+  font-weight: bold;
+}
+
+img {
+  max-width: 100%;
+}

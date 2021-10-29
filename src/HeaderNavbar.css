@@ -1,0 +1,54 @@
+@import './fonts.css';
+
+nav {
+  align-items: center;
+  box-shadow: inset 1px 1px 60px 10px var(--lazy-mayo, 0.3), 3px 3px 5px -1px var(--lazy-barbecue, 0.5);
+  display: none;
+  height: 10vh;
+  justify-content: end;
+  margin-top: 0;
+  width: 100%;
+}
+
+ul {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  list-style-type: none;
+  margin-top: 3vh;
+  position: relative;
+  width: 100%;
+}
+
+li {
+  color: var(--lazy-white);
+  font-size: 2em;
+  margin-right: 2vw;
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+li:nth-child(1) {
+  left: 0;
+  margin-left: 1vw;
+  position: absolute;
+}
+
+.link {
+  color: var(--lazy-white);
+  text-decoration: none;
+}
+
+.active {
+  color: var(--lazy-ketchup);
+  text-decoration: none;
+}
+
+@media screen and (min-width: 600px) {
+  nav {
+    display: flex;
+  }
+}

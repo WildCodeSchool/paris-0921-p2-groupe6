@@ -1,27 +1,38 @@
 import React from 'react';
+import { Route, Switch } from 'react-router';
 
-import logo from './logo.png';
+import FooterNavbar from './FooterNavbar';
+import HeaderNavbar from './HeaderNavbar';
+import AboutUs from './AboutUs';
+import Catalog from './Catalog';
+import Favorites from './Favorites';
+import HomePage from './Homepage';
+import Under18 from './Under18';
 import './App.css';
 
 function App() {
   return (
-    <main className="rsw-container">
-      <div
-        className="rsw-item"
-        style={{
-          paddingBottom: '2rem',
-        }}>
-        <img src={logo} width="20%" alt="WCS logo" />
-      </div>
-      <div className="rsw-item">
-        <p>Welcome to your fresh, lightweight, React App ! &#127752;</p>
-      </div>
-      <div className="rsw-item">
-        <p>
-          Start in the <code>App.jsx</code> component !
-        </p>
-      </div>
-    </main>
+    <div className="app">
+      <HeaderNavbar />
+      <Switch>
+        <Route exact path="/">
+          <HomePage />
+        </Route>
+        <Route exact path="/Catalog">
+          <Catalog />
+        </Route>
+        <Route exact path="/Favorites">
+          <Favorites />
+        </Route>
+        <Route exact path="/AboutUs">
+          <AboutUs />
+        </Route>
+        <Route exact path="/Under18">
+          <Under18 />
+        </Route>
+      </Switch>
+      <FooterNavbar />
+    </div>
   );
 }
 

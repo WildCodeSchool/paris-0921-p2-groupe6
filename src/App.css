@@ -1,40 +1,30 @@
+@import './fonts.css';
+
 body {
-  background-color: #1d0900;
-  color: #ed6c6d;
+  animation: gradient-animation 30s ease infinite;
+  background: linear-gradient(142deg, #d90b08, #e6af2e, #a3320b);
+  background-size: 180% 180%;
+  font-family: var(--main-font-family);
+  height: 100vh;
+  padding-bottom: 5vh;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  color: #1d0900;
-  font-weight: bold;
-  background-color: #ed6c6d;
-  padding: 0.3rem;
-  border-radius: 3px;
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-.rsw-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+main {
+  margin-bottom: 10vh;
 }
 
-.rsw-item {
-  text-align: center;
-  padding: 1rem;
-}
-
-.rsw-item > img {
-  max-width: 80vw;
-  margin: 0 auto;
-}
-
-.rsw-container::after {
-  content: '';
-  height: 15vh;
-}
