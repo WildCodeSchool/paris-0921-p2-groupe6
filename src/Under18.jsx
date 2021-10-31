@@ -8,7 +8,7 @@ import SmallLogo from './SmallLogo.png';
 function Under18() {
   return (
     <main className="Under18">
-      <img src={SmallLogo} alt="small logo" className="smallLogo" />
+      <img src={SmallLogo} alt="Lazy Night Small Logo" className="under18Logo" />
       <h1>
         Oh no, <br />
         you are not old enough to enter our service !{' '}
