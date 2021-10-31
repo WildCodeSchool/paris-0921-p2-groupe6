@@ -7,13 +7,13 @@
 }
 
 .BirthDateCheckTitle {
-  color: white;
+  color: var(--lazy-white);
   text-align: center;
   font-size: 3em;
 }
 
 .BirthDateCheckText {
-  color: white;
+  color: var(--lazy-white);
   display: flex;
   font-family: 'Helvetica Neue', sans-serif;
   font-size: 1.3em;
@@ -22,18 +22,18 @@
 }
 
 h3 {
-  color: #d90b08;
+  color: var(--lazy-ketchup);
   font-family: 'Gluten', cursive;
   text-align: center;
 }
 h2 {
-  text-align: center;
-  color: #d90b08;
+  color: var(--lazy-ketchup);
   font-size: 1.8em;
+  text-align: center;
 }
 
 .AgeBox {
-  background-color: white;
+  background-color: var(--lazy-white);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -41,7 +41,7 @@ h2 {
 }
 
 .BirthDateCheckBox {
-  color: black;
+  color: var(--lazy-black);
   display: flex;
   font-family: 'Helvetica Neue', sans-serif;
   font-size: 0.8em;
@@ -50,7 +50,7 @@ h2 {
 }
 
 .AgeButton {
-  background-color: #a3320b;
+  background-color: var(--lazy-barbecue);
   color: white;
   font-family: 'Gluten', cursive;
   font-weight: bold;
