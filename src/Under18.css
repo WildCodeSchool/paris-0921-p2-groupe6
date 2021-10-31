@@ -1,17 +1,25 @@
 .Under18 {
-  color: black;
+  color: var(--lazy-black);
   display: block;
   flex-direction: row;
   justify-content: center;
 }
 
-h1 {
-  color: white;
+.under18Title {
+  color: var(--lazy-white);
   text-align: center;
+  margin: 2vh 2vh 0 2vh;
 }
 
-p {
-  color: white;
+.under18text {
+  color: var(--lazy-white);
+  text-align: center;
+  font-size: 1em;
+}
+
+.under18ImageTitle {
+  color: var(--lazy-ketchup);
+  margin: 2vh;
 }
 
 .foodImages {
