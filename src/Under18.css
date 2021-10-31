@@ -22,16 +22,16 @@
   margin: 2vh;
 }
 
-.foodImages {
+.under18FoodImages {
   margin-left: 15%;
   width: 70%;
 }
 
 .under18Logo {
   display: flex;
-  flex-direction: row;
   height: 10vh;
-  justify-content: center;
+  justify-content: space-between;
+  margin: auto;
   padding-top: 1vh;
 }
 

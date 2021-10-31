@@ -1,7 +1,8 @@
 @import './fonts.css';
 
 .smallLogo {
-  height: 8vh;
+  height: 10vh;
+  margin-top: 0.5vh;
 }
 
 nav {

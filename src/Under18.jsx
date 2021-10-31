@@ -16,11 +16,11 @@ function Under18() {
       </h1>
       <p className="under18text">No worries, here is a suggestion for you !</p>
       <h2 className="under18ImageTitle">What to eat : </h2>
-      <img src={happyMeal} alt="happy meal" className="foodImages" />
+      <img src={happyMeal} alt="happy meal" className="under18FoodImages" />
       <h2>What to drink : </h2>
-      <img src={milkGlass} alt="glass of milk" className="foodImages" />
+      <img src={milkGlass} alt="glass of milk" className="under18FoodImages" />
       <h2>What to see : </h2>
-      <img src={myLittlePony} alt="poster of little pony movie" className="foodImages" />
+      <img src={myLittlePony} alt="poster of little pony movie" className="under18FoodImages" />
     </main>
   );
 }
