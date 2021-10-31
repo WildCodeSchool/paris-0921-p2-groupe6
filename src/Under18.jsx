@@ -1,9 +1,10 @@
 import React from 'react';
-import './Under18.css';
 import happyMeal from './Assets/happy-meal.png';
 import milkGlass from './Assets/milk-glass.jpg';
 import myLittlePony from './Assets/my-little-pony-movie.jpg';
 import SmallLogo from './SmallLogo.png';
+
+import './Under18.css';
 
 function Under18() {
   return (

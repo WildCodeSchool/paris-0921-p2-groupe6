@@ -7,14 +7,14 @@
 
 .under18Title {
   color: var(--lazy-white);
-  text-align: center;
   margin: 2vh 2vh 0 2vh;
+  text-align: center;
 }
 
 .under18text {
   color: var(--lazy-white);
-  text-align: center;
   font-size: 1em;
+  text-align: center;
 }
 
 .under18ImageTitle {
@@ -23,8 +23,8 @@
 }
 
 .foodImages {
-  width: 70%;
   margin-left: 15%;
+  width: 70%;
 }
 
 .under18Logo {
