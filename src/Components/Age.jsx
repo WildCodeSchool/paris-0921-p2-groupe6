@@ -8,7 +8,7 @@ function Age() {
   const history = useHistory();
 
   return (
-    <div className="BirthDateCheckContainer">
+    <main className="BirthDateCheckContainer">
       <img src={logo} alt="lazy Nights logo" />
       <p className="BirthDateCheckText">
         Tired of everything ? <br />
@@ -33,7 +33,7 @@ function Age() {
           </Link>
         </p>
       </div>
-    </div>
+    </main>
   );
 }
 

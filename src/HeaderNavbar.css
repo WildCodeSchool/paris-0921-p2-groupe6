@@ -1,5 +1,10 @@
 @import './fonts.css';
 
+.smallLogo {
+  height: 10vh;
+  margin-top: 0.5vh;
+}
+
 nav {
   align-items: center;
   box-shadow: inset 1px 1px 60px 10px var(--lazy-mayo, 0.3), 3px 3px 5px -1px var(--lazy-barbecue, 0.5);
