@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import SmallLogo from './SmallLogo.png';
 
 import './HeaderNavbar.css';
 
@@ -9,7 +10,7 @@ function HeaderNavbar() {
       <ul>
         <li>
           <NavLink className="link" activeClassName="active" to="/">
-            HomePage
+            <img src={SmallLogo} alt="Lazy Nights Small Logo" className="smallLogo" />
           </NavLink>
         </li>
 
