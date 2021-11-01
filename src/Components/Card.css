@@ -1,23 +1,32 @@
 @import '../fonts.css';
 
-.btn-more {
-  background: var(--lazy-mayo);
-  bottom: 0px;
-  color: var(--lazy-ketchup);
-  font-family: var(--main-font-family);
-  font-size: 16px;
-  position: absolute;
-}
-
 .Card {
   margin: 0 1vw;
+  margin-top: 10vh;
+  display: flex;
 }
 
 .img-container {
-  display: flex;
   height: 100%;
   position: relative;
   width: 100%;
+  transform-style: preserve-3d;
+  transition: 2s;
+}
+
+.front,
+.back {
+  backface-visibility: hidden;
+  display: flex;
+  position: relative;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+#more {
+  transform: rotateY(180deg);
 }
 
 .material-icons-outlined {
@@ -53,9 +62,26 @@ img {
 
 h3 {
   color: white;
+  font-size: 21px;
   left: 25%;
   position: absolute;
-  font-size: 21px;
+  top: -17%;
+}
+
+#add {
+  top: -4.5vh;
+}
+
+.btn-more {
+  position: absolute;
+  bottom: 0%;
+  background-color: var(--lazy-mayo);
+}
+
+.btn-close {
+  position: absolute;
+  bottom: 0%;
+  background-color: var(--lazy-mayo);
 }
 
 #isFavorite {
