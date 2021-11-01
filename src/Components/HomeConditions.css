@@ -1,0 +1,47 @@
+.HomeConditionsLogo {
+  display: flex;
+  height: 10vh;
+  justify-content: space-between;
+  margin: auto;
+  padding-top: 1vh;
+}
+
+.HomeConditions {
+  align-items: center;
+  background-color: var(--lazy-white);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5vh;
+  margin-left: 15%;
+  width: 70%;
+  box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07);
+}
+
+.HomeConditionsTitle {
+  color: var(--lazy-ketchup);
+  margin: 2vh;
+  text-align: center;
+}
+
+.HomeConditionsQuestion {
+  color: var(--lazy-barbecue);
+  margin: 2vh;
+}
+
+.HomeConditionsSubmit {
+  background-color: var(--lazy-ketchup);
+  color: var(--lazy-white);
+  font-family: var(--main-font-family);
+  font-size: 1.5em;
+  margin-bottom: 5vh;
+  margin-bottom: 5vh;
+}
+
+@media screen and (min-width: 600px) {
+  .HomeConditionsLogo {
+    display: none;
+  }
+}

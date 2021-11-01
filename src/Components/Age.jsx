@@ -25,7 +25,11 @@ function Age() {
         <p className="BirthDateCheckBox">Sorry, but we have to ask : </p>
         <h3>Are you 18 years old ?</h3>
         <p className="BirthDateCheckBox">
-          <button className="AgeButton">Yes</button>
+          <Link to="./HomeConditions">
+            <button className="AgeButton" onClick={() => history.push('/HomeConditions')}>
+              Yes
+            </button>
+          </Link>
           <Link to="../Under18">
             <button className="AgeButton" onClick={() => history.push('/Under18')}>
               No

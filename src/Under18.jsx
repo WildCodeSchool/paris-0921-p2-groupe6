@@ -12,7 +12,7 @@ function Under18() {
       <img src={SmallLogo} alt="Lazy Night Small Logo" className="under18Logo" />
       <h1 className="under18Title">
         Oh no, <br />
-        you are not old enough to enter our service !{' '}
+        you are not old enough to enter our service !
       </h1>
       <p className="under18text">No worries, here is a suggestion for you !</p>
       <h2 className="under18ImageTitle">What to eat : </h2>
