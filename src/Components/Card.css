@@ -1,9 +1,33 @@
 @import '../fonts.css';
 
+.back {
+  background-color: burlywood;
+  backface-visibility: inherit;
+  border: solid;
+  border-style: ridge;
+  display: flex;
+  height: 35vh;
+  max-height: 100%;
+  position: relative;
+}
+
+.btn-more {
+  position: absolute;
+  bottom: 0%;
+  border: none;
+  background: none;
+}
+
 .Card {
   margin: 0 1vw;
   margin-top: 10vh;
   display: flex;
+}
+
+.front {
+  backface-visibility: inherit;
+  display: flex;
+  position: relative;
 }
 
 .img-container {
@@ -12,21 +36,6 @@
   width: 100%;
   transform-style: preserve-3d;
   transition: 2s;
-}
-
-.front,
-.back {
-  backface-visibility: hidden;
-  display: flex;
-  position: relative;
-}
-
-.back {
-  transform: rotateY(180deg);
-}
-
-#more {
-  transform: rotateY(180deg);
 }
 
 .material-icons-outlined {
@@ -38,7 +47,7 @@
   font-family: 'Material Icons';
   font-feature-settings: 'liga';
   font-style: normal;
-  font-size: 30px;
+  font-size: 32px;
   font-weight: normal;
   height: 4vh;
   letter-spacing: normal;
@@ -54,6 +63,44 @@
   -webkit-font-smoothing: antialiased;
 }
 
+
+#btn-close {
+  position: absolute;
+  bottom: 0%;
+  background-color: var(--lazy-mayo);
+}
+
+#isAdd {
+  color: var(--lazy-ketchup);
+  top: -5vh;
+}
+
+#isFavorite {
+  bottom: 0%;
+  color: var(--lazy-mayo);
+  height: 5vh;
+}
+
+#more {
+  transform: rotateY(180deg);
+}
+
+#notAdd{
+  color: var(--lazy-white);
+  top: -5vh;
+}
+
+#notFavorite {
+  bottom: 0%;
+  color: var(--lazy-white);
+  height: 5vh;
+}
+
+#p-back {
+  display: flex;
+  margin: auto;
+}
+
 img {
   height: 100%;
   object-fit: contain;
@@ -66,32 +113,4 @@ h3 {
   left: 25%;
   position: absolute;
   top: -17%;
-}
-
-#add {
-  top: -4.5vh;
-}
-
-.btn-more {
-  position: absolute;
-  bottom: 0%;
-  background-color: var(--lazy-mayo);
-}
-
-.btn-close {
-  position: absolute;
-  bottom: 0%;
-  background-color: var(--lazy-mayo);
-}
-
-#isFavorite {
-  bottom: 0%;
-  color: var(--lazy-mayo);
-  height: 4.5vh;
-}
-
-#notFavorite {
-  bottom: 0%;
-  color: var(--lazy-white);
-  height: 4.5vh;
 }
