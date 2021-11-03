@@ -1,43 +1,96 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SmallLogo from '../SmallLogo.png';
 
 import './HomeConditions.css';
 
 function HomeConditions() {
+  const [name, setName] = useState('');
+
+  const display = (e) => {
+    e.preventDefault();
+  };
+
   const options = [
-    { mood: ['lazy', 'happy', 'blue', 'so sad because i broke up'] },
-    { guestsNumber: ['alone', 'with a friend', 'with my tribe'] },
-    { amountOfFat: ['a guilty fat pleasure', 'a tons of fat'] },
-    { drinks: ['be totally sober', 'be tipsy', 'feel drunk'] },
+    ['lazy', 'happy', 'blue', 'sad : i broke up'],
+    ['alone', 'with a friend', 'with my tribe'],
+    ['a guilty fat pleasure', 'a tons of fat'],
+    ['be totally sober', 'be tipsy', 'feel drunk'],
   ];
 
   return (
     <main>
       <img src={SmallLogo} alt="Lazy Night Small Logo" className="HomeConditionsLogo" />
       <div className="HomeConditions">
-        <h2 className="HomeConditionsTitle">To access your Lazy Night, we need few more informations : </h2>
+        <h2 className="HomeConditionsTitle">
+          To access your Lazy Night, <br />
+          we need few more informations :{' '}
+        </h2>
         <h3 className="HomeConditionsQuestion"> What is your name ?</h3>
         <form className="HomeConditionsInput">
           <label>
-            <input type="text" name="name" />
+            <input type="text" name="name" id="name" value={name} onChange={(e) => setName(e.target.value)} />
           </label>
           <label>
-            <input type="submit" value="send" />
+            <input type="submit" value="send" onClick={display} className="HomeConditionssendButton" />
           </label>
         </form>
+
         <form className="HomeConditionsMood">
-          <h3 className="HomeConditionsQuestion">Today, I feel </h3>
-          <select>
-            {options.map((option) => (
-              // eslint-disable-next-line react/jsx-key
-              <option mood={option.mood}></option>
-            ))}
+          <label htmlFor="Mood">Today, I feel </label>
+          <select name="mood" id="mood-select">
+            <option value="">Choose an option</option>
+            {options[0].map((option) => {
+              return (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              );
+            })}
           </select>
         </form>
 
-        <h3 className="HomeConditionsQuestion">For this lazy night, I will be {} </h3>
-        <h3 className="HomeConditionsQuestion">I want {} </h3>
-        <h3 className="HomeConditionsQuestion">At the end of this lazy night, I want to {}</h3>
+        <form className="HomeConditionsNumber">
+          <label htmlFor="number">I will be </label>
+          <select name="number" id="number-select">
+            <option value="">1, 2, 3 ?</option>
+            {options[1].map((option) => {
+              return (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              );
+            })}
+          </select>
+        </form>
+
+        <form className="HomeConditionsFat">
+          <label htmlFor="fat">I need </label>
+          <select name="fat" id="fat-select">
+            <option value="">fat or fat ?</option>
+            {options[2].map((option) => {
+              return (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              );
+            })}
+          </select>
+        </form>
+
+        <form className="HomeConditionsDrink">
+          <label htmlFor="drink">I want to </label>
+          <select name="drink" id="drink-select">
+            <option value="">sober or not sober ?</option>
+            {options[3].map((option) => {
+              return (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              );
+            })}
+          </select>
+        </form>
+
         <button className="HomeConditionsSubmit">Give me my lazy night !</button>
       </div>
     </main>

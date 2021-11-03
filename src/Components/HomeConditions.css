@@ -20,6 +20,18 @@
     22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07);
 }
 
+.HomeConditionsInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.HomeConditionssendButton {
+  margin-top: 1vh;
+  margin-bottom: 5vh;
+}
+
 .HomeConditionsTitle {
   color: var(--lazy-ketchup);
   margin: 2vh;
@@ -28,6 +40,7 @@
 
 .HomeConditionsQuestion {
   color: var(--lazy-barbecue);
+  font-size: 1.3em;
   margin: 2vh;
 }
 
@@ -36,8 +49,36 @@
   color: var(--lazy-white);
   font-family: var(--main-font-family);
   font-size: 1.5em;
+  margin-top: 5vh;
   margin-bottom: 5vh;
-  margin-bottom: 5vh;
+}
+
+.HomeConditionsMood {
+  color: var(--lazy-barbecue);
+  font-size: 1.3em;
+  margin: 2vh;
+  margin-bottom: 3vh;
+}
+
+.HomeConditionsNumber {
+  color: var(--lazy-barbecue);
+  font-size: 1.3em;
+  margin: 2vh;
+  margin-bottom: 3vh;
+}
+
+.HomeConditionsFat {
+  color: var(--lazy-barbecue);
+  font-size: 1.3em;
+  margin: 2vh;
+  margin-bottom: 3vh;
+}
+
+.HomeConditionsDrink {
+  color: var(--lazy-barbecue);
+  font-size: 1.3em;
+  margin: 2vh;
+  margin-bottom: 3vh;
 }
 
 @media screen and (min-width: 600px) {
