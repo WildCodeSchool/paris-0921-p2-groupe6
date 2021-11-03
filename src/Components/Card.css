@@ -1,0 +1,116 @@
+@import '../fonts.css';
+
+.back {
+  background-color: burlywood;
+  backface-visibility: inherit;
+  border: solid;
+  border-style: ridge;
+  display: flex;
+  height: 35vh;
+  max-height: 100%;
+  position: relative;
+}
+
+.btn-more {
+  position: absolute;
+  bottom: 0%;
+  border: none;
+  background: none;
+}
+
+.Card {
+  margin: 0 1vw;
+  margin-top: 10vh;
+  display: flex;
+}
+
+.front {
+  backface-visibility: inherit;
+  display: flex;
+  position: relative;
+}
+
+.img-container {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: 2s;
+}
+
+.material-icons-outlined {
+  background: none;
+  border: none;
+  color: var(--lazy-white);
+  display: inline-block;
+  direction: ltr;
+  font-family: 'Material Icons';
+  font-feature-settings: 'liga';
+  font-style: normal;
+  font-size: 32px;
+  font-weight: normal;
+  height: 4vh;
+  letter-spacing: normal;
+  line-height: 1;
+  padding: 0.5vh 1vw;
+  position: absolute;
+  right: 0%;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+#btn-close {
+  position: absolute;
+  bottom: 0%;
+  background-color: var(--lazy-mayo);
+}
+
+#isAdd {
+  color: var(--lazy-ketchup);
+  top: -5vh;
+}
+
+#isFavorite {
+  bottom: 0%;
+  color: var(--lazy-mayo);
+  height: 5vh;
+}
+
+#more {
+  transform: rotateY(180deg);
+}
+
+#notAdd{
+  color: var(--lazy-white);
+  top: -5vh;
+}
+
+#notFavorite {
+  bottom: 0%;
+  color: var(--lazy-white);
+  height: 5vh;
+}
+
+#p-back {
+  display: flex;
+  margin: auto;
+}
+
+img {
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+h3 {
+  color: white;
+  font-size: 21px;
+  left: 25%;
+  position: absolute;
+  top: -17%;
+}
