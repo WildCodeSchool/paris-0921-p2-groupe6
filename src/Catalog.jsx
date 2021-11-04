@@ -1,11 +1,11 @@
 import React from 'react';
-import Card from './Components/Card';
+import Slider from './Components/Slider';
 
 function Catalog() {
   return (
     <main>
       <h1>Catalogue</h1>
-      <Card />
+      <Slider />
     </main>
   );
 }

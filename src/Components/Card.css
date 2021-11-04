@@ -6,9 +6,9 @@
   border: solid;
   border-style: ridge;
   display: flex;
-  height: 35vh;
-  max-height: 100%;
+  height: 31vh;
   position: relative;
+  width: 96vw;
 }
 
 .btn-more {
@@ -63,11 +63,9 @@
   -webkit-font-smoothing: antialiased;
 }
 
-
 #btn-close {
-  position: absolute;
   bottom: 0%;
-  background-color: var(--lazy-mayo);
+  left: 0%;
 }
 
 #isAdd {
@@ -85,7 +83,7 @@
   transform: rotateY(180deg);
 }
 
-#notAdd{
+#notAdd {
   color: var(--lazy-white);
   top: -5vh;
 }
@@ -101,14 +99,13 @@
   margin: auto;
 }
 
-img {
+.card-image {
   height: 100%;
   object-fit: contain;
   width: 100%;
 }
 
-h3 {
-  color: white;
+#card-h3 {
   font-size: 21px;
   left: 25%;
   position: absolute;
