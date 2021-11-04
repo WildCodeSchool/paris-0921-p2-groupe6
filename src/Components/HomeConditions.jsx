@@ -31,7 +31,7 @@ function HomeConditions() {
             <input type="text" name="name" id="name" value={name} onChange={(e) => setName(e.target.value)} />
           </label>
           <label>
-            <input type="submit" value="send" onClick={display} className="HomeConditionssendButton" />
+            <input type="submit" value="Let's go" onClick={display} className="HomeConditionssendButton" />
           </label>
         </form>
 
@@ -63,11 +63,11 @@ function HomeConditions() {
           </select>
         </form>
 
-        <form className="HomeConditionsFat">
-          <label htmlFor="fat">I need </label>
-          <select name="fat" id="fat-select">
-            <option value="">fat or fat ?</option>
-            {options[2].map((option) => {
+        <form className="HomeConditionsDrink">
+          <label htmlFor="drink">I want to </label>
+          <select name="drink" id="drink-select">
+            <option value="">sober or not sober ?</option>
+            {options[3].map((option) => {
               return (
                 <option key={option} value={option}>
                   {option}
@@ -77,11 +77,11 @@ function HomeConditions() {
           </select>
         </form>
 
-        <form className="HomeConditionsDrink">
-          <label htmlFor="drink">I want to </label>
-          <select name="drink" id="drink-select">
-            <option value="">sober or not sober ?</option>
-            {options[3].map((option) => {
+        <form className="HomeConditionsFat">
+          <label htmlFor="fat">I need </label>
+          <select name="fat" id="fat-select">
+            <option value="">fat or fat ?</option>
+            {options[2].map((option) => {
               return (
                 <option key={option} value={option}>
                   {option}
