@@ -11,7 +11,6 @@ function Under18() {
     <main className="Under18">
       <img src={SmallLogo} alt="Lazy Night Small Logo" className="under18Logo" />
       <h1 className="under18Title">
-      <h1>
         Oh no, <br />
         you are not old enough to enter our service !
       </h1>
