@@ -8,6 +8,7 @@ body {
   height: 100vh;
   padding-bottom: 5vh;
   margin: 0;
+  background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -27,4 +28,3 @@ body {
 main {
   margin-bottom: 10vh;
 }
-
