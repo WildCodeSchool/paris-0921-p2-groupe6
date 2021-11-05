@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+
 import More from '../Assets/More.png';
+
 import './RecipeCard.css';
 
 function RecipeCard({ image, title, calories, carbs, fat, protein, sugar }) {

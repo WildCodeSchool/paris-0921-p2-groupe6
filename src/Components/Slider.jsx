@@ -1,22 +1,16 @@
 import React from 'react';
 import Card from './Card';
-
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Pagination, Navigation } from 'swiper';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './Slider.css';
 
-// import Swiper core and required modules
-import SwiperCore, { Pagination, Navigation } from 'swiper';
-
-// install Swiper modules
 SwiperCore.use([Pagination, Navigation]);
 
-export default function App() {
+function Slider() {
   return (
     <>
       <Swiper
@@ -44,3 +38,5 @@ export default function App() {
     </>
   );
 }
+
+export default Slider;
