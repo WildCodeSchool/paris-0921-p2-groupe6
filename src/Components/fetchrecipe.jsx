@@ -1,6 +1,17 @@
-import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import axios from 'axios';
+
 import RecipeCard from './RecipeCard';
+
+import 'swiper/css';
+import './Slider.css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+import SwiperCore, { Pagination, Navigation } from 'swiper';
+
+SwiperCore.use([Pagination, Navigation]);
 
 function FetchRecipe() {
   //find recipe by nutrient: Cholesterol 30, Carbs 30, Calories 400, Fat 30, max sugar 10, random, num 10 during testing, num 300 once in production
@@ -18,7 +29,25 @@ function FetchRecipe() {
 
   return (
     <div>
-      <div>{fetchedRecipe && fetchedRecipe.slice(0, 10).map((info, index) => <RecipeCard key={index} {...info} />)}</div>
+      <div>
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={30}
+          loop={true}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          className="mySwiper"
+        >
+          {fetchedRecipe &&
+            fetchedRecipe.slice(0, 10).map((info, index) => (
+              <SwiperSlide key={index}>
+                <RecipeCard key={index} {...info} />
+              </SwiperSlide>
+            ))}
+        </Swiper>
+      </div>
     </div>
   );
 }

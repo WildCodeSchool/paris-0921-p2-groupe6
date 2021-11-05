@@ -1,21 +1,3 @@
-/*import React from 'react';
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import Card from './Card';
-import './Slider.css';
-
-// import Swiper core and required modules
-import SwiperCore, { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper';
-
-// install Swiper modules
-SwiperCore.use([Navigation, Pagination, Mousewheel, Keyboard]);
-*/
-
 import React from 'react';
 import Card from './Card';
 

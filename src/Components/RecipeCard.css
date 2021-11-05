@@ -27,9 +27,9 @@
 }
 
 .recipe-img-container {
-  height: 100%;
+  height: auto;
   position: relative;
-  width: 100%;
+  width: 95vw;
   transform-style: preserve-3d;
   transition: 2s;
 }
