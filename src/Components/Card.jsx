@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import More from '../Assets/More.png';
+
 import './Card.css';
+
+import More from '../Assets/More.png';
 
 function Card() {
   const [isFavorite, setIsFavorite] = useState(false);
