@@ -81,6 +81,18 @@
   margin-bottom: 3vh;
 }
 
+.HomeConditionsSelect {
+  background-color: var(--lazy-mayo);
+  border: none;
+  border-radius: 5px;
+  color: var(--lazy-barbecue);
+  cursor: inherit;
+  font-family: var(--main-font-family);
+  font-size: 0.8em;
+  line-height: inherit;
+  margin: 0;
+}
+
 @media screen and (min-width: 600px) {
   .HomeConditionsLogo {
     display: none;

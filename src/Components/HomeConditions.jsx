@@ -9,32 +9,70 @@ function HomeConditions() {
   const [number, setNumber] = useState('');
   const [drink, setDrink] = useState('');
   const [fat, setFat] = useState('');
+  const [conditionsSubmitted, setConditionsSubmitted] = useState(false);
 
   const nameDisplay = (e) => {
     e.preventDefault();
   };
 
-  function moodDisplay() {
-    setMood(mood);
-  }
+  const moodOptions = [
+    {
+      label: 'lazy',
+      value: 'lazy',
+    },
+    {
+      label: 'happy',
+      value: 'happy',
+    },
+    {
+      label: 'blue',
+      value: 'blue',
+    },
+    {
+      label: 'sad : i broke up',
+      value: 'sad',
+    },
+  ];
 
-  function numberDisplay() {
-    setNumber(number);
-  }
+  const numberOptions = [
+    {
+      label: 'alone',
+      value: 'alone',
+    },
+    {
+      label: 'with a friend',
+      value: 'friend',
+    },
+    {
+      label: 'with my tribe',
+      value: 'tribe',
+    },
+  ];
 
-  function drinkDisplay() {
-    setDrink(drink);
-  }
+  const fatOptions = [
+    {
+      label: 'a guilty fat pleasure',
+      value: 'guilty',
+    },
+    {
+      label: 'a tons of fat',
+      value: 'tons',
+    },
+  ];
 
-  function fatDisplay() {
-    setFat(fat);
-  }
-
-  const options = [
-    ['lazy', 'happy', 'blue', 'sad : i broke up'],
-    ['alone', 'with a friend', 'with my tribe'],
-    ['a guilty fat pleasure', 'a tons of fat'],
-    ['be totally sober', 'be tipsy', 'feel drunk'],
+  const drinkOptions = [
+    {
+      label: 'be totally sober',
+      value: 'sober',
+    },
+    {
+      label: 'be tipsy',
+      value: 'tipsy',
+    },
+    {
+      label: 'feel drunk',
+      value: 'drunk',
+    },
   ];
 
   return (
@@ -57,12 +95,12 @@ function HomeConditions() {
 
         <form className="HomeConditionsMood">
           <label htmlFor="Mood">Today, I feel </label>
-          <select name="mood" id="mood-select" onBlur={(e) => setMood(e.target.value)}>
-            <option value="">Choose an option</option>
-            {options[0].map((mood) => {
+          <select name="mood" id="mood-select" onBlur={(e) => setMood(e.target.value)} className="HomeConditionsSelect">
+            <option value="">...</option>
+            {moodOptions.map((mood) => {
               return (
-                <option key={mood} value={mood}>
-                  {mood}
+                <option key={mood.value} value={mood.value}>
+                  {mood.label}
                 </option>
               );
             })}
@@ -71,12 +109,12 @@ function HomeConditions() {
 
         <form className="HomeConditionsNumber">
           <label htmlFor="number">I will be </label>
-          <select name="number" id="number-select" onBlur={(e) => setNumber(e.target.value)}>
-            <option value="">1, 2, 3 ?</option>
-            {options[1].map((number) => {
+          <select name="number" id="number-select" onBlur={(e) => setNumber(e.target.value)} className="HomeConditionsSelect">
+            <option value="">...</option>
+            {numberOptions.map((number) => {
               return (
-                <option key={number} value={number}>
-                  {number}
+                <option key={number.value} value={number.value}>
+                  {number.label}
                 </option>
               );
             })}
@@ -85,12 +123,12 @@ function HomeConditions() {
 
         <form className="HomeConditionsDrink">
           <label htmlFor="drink">I want to </label>
-          <select name="drink" id="drink-select" onBlur={(e) => setDrink(e.target.value)}>
-            <option value="">sober or not sober ?</option>
-            {options[3].map((drink) => {
+          <select name="drink" id="drink-select" onBlur={(e) => setDrink(e.target.value)} className="HomeConditionsSelect">
+            <option value="">...</option>
+            {drinkOptions.map((drink) => {
               return (
-                <option key={drink} value={drink}>
-                  {drink}
+                <option key={drink.value} value={drink.value}>
+                  {drink.label}
                 </option>
               );
             })}
@@ -99,12 +137,12 @@ function HomeConditions() {
 
         <form className="HomeConditionsFat">
           <label htmlFor="fat">I need </label>
-          <select name="fat" id="fat-select" onBlur={(e) => setFat(e.target.value)}>
-            <option value="">fat or fat ?</option>
-            {options[2].map((fat) => {
+          <select name="fat" id="fat-select" onBlur={(e) => setFat(e.target.value)} className="HomeConditionsSelect">
+            <option value="">...</option>
+            {fatOptions.map((fat) => {
               return (
-                <option key={fat} value={fat}>
-                  {fat}
+                <option key={fat.value} value={fat.value}>
+                  {fat.label}
                 </option>
               );
             })}
@@ -114,15 +152,16 @@ function HomeConditions() {
         <button
           className="HomeConditionsSubmit"
           onClick={() => {
-            moodDisplay();
-            numberDisplay();
-            drinkDisplay();
-            fatDisplay();
+            setConditionsSubmitted(true);
           }}
         >
           Give me my lazy night !
         </button>
       </div>
+      {mood && conditionsSubmitted === true}
+      {number && conditionsSubmitted === true}
+      {drink && conditionsSubmitted === true}
+      {fat && conditionsSubmitted === true}
     </main>
   );
 }
