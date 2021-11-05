@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SmallLogo from '../SmallLogo.png';
+import FetchRecipe from './fetchrecipe';
 
 import './HomeConditions.css';
 
@@ -161,7 +162,7 @@ function HomeConditions() {
       {mood && conditionsSubmitted === true}
       {number && conditionsSubmitted === true}
       {drink && conditionsSubmitted === true}
-      {fat && conditionsSubmitted === true}
+      {fat && conditionsSubmitted === true && <FetchRecipe />}
     </main>
   );
 }
