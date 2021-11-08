@@ -1,14 +1,10 @@
 @import '../fonts.css';
 
-.back {
-  background-color: burlywood;
-  backface-visibility: inherit;
-  border: solid;
-  border-style: ridge;
-  display: flex;
-  height: 31vh;
-  position: relative;
-  width: 96vw;
+.recipe-desc {
+  font-size: 21px;
+  left: 25%;
+  position: absolute;
+  top: -17%;
 }
 
 .btn-more {
@@ -18,22 +14,22 @@
   background: none;
 }
 
-.Card {
+.recipe-Card {
   margin: 0 1vw;
   margin-top: 10vh;
   display: flex;
 }
 
-.front {
+.recipe-front {
   backface-visibility: inherit;
   display: flex;
   position: relative;
 }
 
-.img-container {
-  height: 100%;
+.recipe-img-container {
+  height: auto;
   position: relative;
-  width: 100%;
+  width: 95vw;
   transform-style: preserve-3d;
   transition: 2s;
 }
@@ -94,20 +90,39 @@
   height: 5vh;
 }
 
-#p-back {
-  display: flex;
-  margin: auto;
-}
-
 .card-image {
   height: 100%;
   object-fit: contain;
   width: 100%;
 }
 
-#card-h3 {
-  font-size: 21px;
-  left: 25%;
-  position: absolute;
-  top: -17%;
+.recipe-back {
+  background-color: burlywood;
+  backface-visibility: inherit;
+  border: solid;
+  border-style: ridge;
+  display: flex;
+  height: 31vh;
+  position: relative;
+  width: 96vw;
+}
+
+.recipe-desc-back {
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+}
+
+.recipe-desc-title {
+  font-size: 20px;
+  margin: 3vw;
+}
+
+.recipe-desc-details {
+  font-size: 15px;
+  flex-direction: column;
+}
+
+.recipe-desc-details-li {
+  margin: 1vh;
 }

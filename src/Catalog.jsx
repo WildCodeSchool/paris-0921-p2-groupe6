@@ -1,11 +1,11 @@
 import React from 'react';
-import Card from './Components/Card';
+import FetchRecipe from './Components/fetchrecipe';
 
 function Catalog() {
   return (
     <main>
       <h1>Catalogue</h1>
-      <Card />
+      <FetchRecipe />
     </main>
   );
 }

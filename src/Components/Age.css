@@ -9,7 +9,6 @@
 .BirthDateCheckTitle {
   color: var(--lazy-white);
   text-align: center;
-
   font-size: 3em;
   text-align: center;
 }
@@ -21,6 +20,7 @@
   font-size: 1.3em;
   justify-content: space-evenly;
   text-align: center;
+  margin-bottom: 1vh;
 }
 
 h3 {
@@ -29,7 +29,6 @@ h3 {
   text-align: center;
 }
 h2 {
-
   color: var(--lazy-ketchup);
   font-size: 1.8em;
   text-align: center;
@@ -41,6 +40,8 @@ h2 {
   display: flex;
   flex-direction: column;
   width: 60%;
+  box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07);
 }
 
 .BirthDateCheckBox {
@@ -50,15 +51,15 @@ h2 {
   font-size: 0.8em;
   justify-content: space-evenly;
   text-align: center;
+  padding: 2vw;
 }
 
 .AgeButton {
   background-color: var(--lazy-barbecue);
-  color: white;
-  font-family: 'Gluten', cursive;
+  color: var(--lazy-white);
+  font-family: var(--main-font-family);
   font-size: 1.5em;
   font-weight: bold;
-  
 }
 
 img {

@@ -9,11 +9,6 @@
   color: var(--lazy-white);
   margin: 2vh 2vh 0 2vh;
   text-align: center;
-
-.smallLogo {
-  display: flex;
-  height: 15vh;
-  justify-content: center;
 }
 
 .under18text {

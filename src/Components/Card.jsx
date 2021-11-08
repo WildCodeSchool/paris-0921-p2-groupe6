@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import More from '../Assets/More.png';
+
 import './Card.css';
+
+import More from '../Assets/More.png';
 
 function Card() {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -24,8 +26,10 @@ function Card() {
       <div className="img-container">
         {more ? (
           <div className="front">
-            <h3 className="desc">Burger with fries</h3>
-            <img src="https://cdn.pixabay.com/photo/2017/08/12/18/59/snack-2635035_960_720.jpg" alt="Burger with fries" />
+            <h3 className="desc" id="card-h3">
+              Burger with fries
+            </h3>
+            <img src="https://cdn.pixabay.com/photo/2017/08/12/18/59/snack-2635035_960_720.jpg" alt="Burger with fries" className="card-image" />
             <button className="material-icons-outlined" id={isFavorite ? 'isFavorite' : 'notFavorite'} onClick={handleClickFavorite}>
               star
             </button>
@@ -41,7 +45,7 @@ function Card() {
             <p className="desc-back" id="p-back">
               here there is the description
             </p>
-            <button className="material-icons-outlined" id="close" onClick={handleClickFlip}>
+            <button className="material-icons-outlined" id="btn-close" onClick={handleClickFlip}>
               cancel
             </button>
           </div>

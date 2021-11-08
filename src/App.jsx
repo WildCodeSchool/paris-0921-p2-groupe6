@@ -6,6 +6,7 @@ import HeaderNavbar from './HeaderNavbar';
 import AboutUs from './AboutUs';
 import Catalog from './Catalog';
 import Favorites from './Favorites';
+import HomeConditions from './Components/HomeConditions';
 import HomePage from './Homepage';
 import Under18 from './Under18';
 import './App.css';
@@ -29,6 +30,9 @@ function App() {
         </Route>
         <Route exact path="/Under18">
           <Under18 />
+        </Route>
+        <Route exact path="/HomeConditions">
+          <HomeConditions />
         </Route>
       </Switch>
       <FooterNavbar />
