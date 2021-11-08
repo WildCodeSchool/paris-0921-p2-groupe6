@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import SmallLogo from '../SmallLogo.png';
 import FetchRecipe from './fetchrecipe';
+
+import SmallLogo from '../SmallLogo.png';
 
 import './HomeConditions.css';
 
