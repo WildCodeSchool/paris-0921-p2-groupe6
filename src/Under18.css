@@ -11,12 +11,6 @@
   text-align: center;
 }
 
-.smallLogo {
-  display: flex;
-  height: 15vh;
-  justify-content: center;
-}
-
 .under18text {
   color: var(--lazy-white);
   font-size: 1em;
