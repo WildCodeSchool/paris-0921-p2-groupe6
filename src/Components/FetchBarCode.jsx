@@ -6,7 +6,7 @@ import './FetchBarCode.css';
 import More from '../Assets/More.png';
 
 function FetchBarcode({ result, setCamera }) {
-  const [fetchedProduct, setFetchedProduct] = useState([]);
+  const [fetchedProduct, setFetchedProduct] = useState();
   const [isFavorite, setIsFavorite] = useState(false);
   const [more, setMore] = useState(true);
   const [isAdded, setIsAdded] = useState(false);
@@ -33,13 +33,18 @@ function FetchBarcode({ result, setCamera }) {
       .get(`https://world.openfoodfacts.org/api/v0/product/${result}.json`)
       .then((response) => response.data)
       .then((data) => {
-        data.status === 1 && setFetchedProduct(data.product);
-        // console.log(data.product);
-      })
-      .then(Camera())
-      // .then(console.log(fetchedProduct))
-      .then(setIsLoading(false));
+        if (data.status === 1) {
+          Camera();
+          // console.log(data);
+          setFetchedProduct(data.product);
+          setIsLoading(false);
+        }
+      });
   }, []);
+
+  useEffect(() => {
+    // console.log(fetchedProduct);
+  }, [isLoading]);
 
   return (
     <div>

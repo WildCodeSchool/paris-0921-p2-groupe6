@@ -6,7 +6,7 @@ function BarcodeScanner({ onDetected }) {
   useEffect(() => {
     Quagga.init(config, (err) => {
       if (err) {
-        // console.error(err, 'error msg');
+        alert.error(err, 'error msg');
       }
       Quagga.start();
     });
