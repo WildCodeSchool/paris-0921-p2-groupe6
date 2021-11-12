@@ -25,9 +25,9 @@
 }
 
 .swiper-slide img {
-  width: 100%;
   height: 100%;
   object-fit: cover;
+  width: 100%;
 }
 
 .swiper {
@@ -43,15 +43,14 @@
 }
 
 .swiper-button-next .swiper-button-prev {
+  align-items: center;
+  color: var(--lazy-mayo);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
   position: absolute;
   top: 75%;
   z-index: 10;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--lazy-mayo);
-  margin-top: 0%;
 }
 
 .swiper-button-next:after,
@@ -63,6 +62,7 @@
   letter-spacing: 0;
   line-height: 1;
   margin-top: 2em;
+
   text-transform: none;
   text-transform: none !important;
   top: 75%;
