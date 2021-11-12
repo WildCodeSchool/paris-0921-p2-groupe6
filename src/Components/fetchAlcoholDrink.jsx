@@ -13,7 +13,7 @@ import SwiperCore, { Pagination, Navigation } from 'swiper';
 
 SwiperCore.use([Pagination, Navigation]);
 
-function FetchDrink() {
+function FetchAlcoholDrinks() {
   const drinksByCalories = 'http://localhost:8000/api/alcohol_drinks/';
 
   const [fetchedDrink, setFetchedDrink] = useState();
@@ -50,4 +50,4 @@ function FetchDrink() {
   );
 }
 
-export default FetchDrink;
+export default FetchAlcoholDrinks;
