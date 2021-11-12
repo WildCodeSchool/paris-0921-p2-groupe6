@@ -57,12 +57,11 @@
 .swiper-button-prev:after {
   color: var(--lazy-mayo);
   font-family: swiper-icons;
-  font-variant: initial;
   font-size: 2em;
+  font-variant: initial;
   letter-spacing: 0;
   line-height: 1;
   margin-top: 2em;
-
   text-transform: none;
   text-transform: none !important;
   top: 75%;
