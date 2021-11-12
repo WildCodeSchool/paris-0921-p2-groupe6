@@ -1,6 +1,6 @@
 @import '../fonts.css';
 
-.TakeAwayDrink-back {
+.TakeAway-back {
   background-color: burlywood;
   backface-visibility: inherit;
   border: solid;
@@ -11,7 +11,7 @@
   width: 96vw;
 }
 
-.TakeAwayDrink-btn-more {
+.TakeAway-btn-more {
   background: none;
   bottom: 0%;
   color: var(--lazy-ketchup);
@@ -20,19 +20,19 @@
   width: 8%;
 }
 
-.TakeAwayDrink-Card {
+.TakeAway-Card {
   display: flex;
   margin: 0 1vw;
   margin-top: 10vh;
 }
 
-.TakeAwayDrink-front {
+.TakeAway-front {
   backface-visibility: inherit;
   display: flex;
   position: relative;
 }
 
-.TakeAwayDrink-img-container {
+.TakeAway-img-container {
   height: 100%;
   position: relative;
   transform-style: preserve-3d;
@@ -40,7 +40,7 @@
   width: 100%;
 }
 
-.TakeAwayDrink-material-icons-outlined {
+.TakeAway-material-icons-outlined {
   background: none;
   border: none;
   color: var(--lazy-white);
