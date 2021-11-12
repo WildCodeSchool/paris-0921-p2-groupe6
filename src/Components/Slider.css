@@ -55,14 +55,14 @@
 
 .swiper-button-next:after,
 .swiper-button-prev:after {
-  font-family: swiper-icons;
-  text-transform: none !important;
-  letter-spacing: 0;
-  text-transform: none;
-  font-variant: initial;
-  line-height: 1;
-  font-size: 2em;
-  top: 75%;
   color: var(--lazy-mayo);
-  margin-top: 2.6em;
+  font-family: swiper-icons;
+  font-size: 2em;
+  font-variant: initial;
+  letter-spacing: 0;
+  line-height: 1;
+  margin-top: 2em;
+  text-transform: none;
+  text-transform: none !important;
+  top: 75%;
 }
