@@ -43,15 +43,14 @@
 }
 
 .swiper-button-next .swiper-button-prev {
+  align-items: center;
+  color: var(--lazy-mayo);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
   position: absolute;
   top: 75%;
   z-index: 10;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--lazy-mayo);
-  margin-top: 0%;
 }
 
 .swiper-button-next:after,
@@ -65,4 +64,5 @@
   font-size: 2em;
   top: 75%;
   color: var(--lazy-mayo);
+  margin-top: 2.6em;
 }
