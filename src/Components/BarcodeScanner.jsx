@@ -11,7 +11,6 @@ function BarcodeScanner({ onDetected }) {
       Quagga.start();
     });
 
-    //detecting boxes on stream
     Quagga.onProcessed((result) => {
       var drawingCtx = Quagga.canvas.ctx.overlay,
         drawingCanvas = Quagga.canvas.dom.overlay;

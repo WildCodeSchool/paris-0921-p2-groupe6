@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import './FetchBarCode.css';
+import './FetchBarcodeProduct.css';
 
 import More from '../Assets/More.png';
 
-function FetchBarcode({ result, setCamera }) {
-  const [fetchedProduct, setFetchedProduct] = useState();
+function FetchBarcodeProduct({ result, setCamera, fetchedProduct, setFetchedProduct }) {
   const [isFavorite, setIsFavorite] = useState(false);
   const [more, setMore] = useState(true);
   const [isAdded, setIsAdded] = useState(false);
@@ -37,7 +36,7 @@ function FetchBarcode({ result, setCamera }) {
           Camera();
           // console.log(data);
           setFetchedProduct(data.product);
-          setIsLoading(false);
+          setIsLoading(!isLoading);
         }
       });
   }, []);
@@ -52,11 +51,11 @@ function FetchBarcode({ result, setCamera }) {
         <div>Loading...</div>
       ) : (
         <div>
-          <div className="recipe-Card">
-            <div className="recipe-img-container">
+          <div className="product-Card">
+            <div className="product-img-container">
               {more ? (
-                <div className="recipe-front">
-                  <h3 className="recipe-desc">{fetchedProduct.product_name}</h3>
+                <div className="product-front">
+                  <h3 className="product-desc">{fetchedProduct.product_name}</h3>
                   <img className="card-image" src={fetchedProduct.selected_images.front.display.fr} alt={fetchedProduct.product_name} />
                   <button className="material-icons-outlined" id={isFavorite ? 'isFavorite' : 'notFavorite'} onClick={handleClickFavorite}>
                     star
@@ -69,27 +68,27 @@ function FetchBarcode({ result, setCamera }) {
                   </button>
                 </div>
               ) : (
-                <div className="recipe-back">
-                  <div className="recipe-desc-back">
-                    <h2 className="recipe-desc-title">{fetchedProduct.product_name}</h2>
-                    <h3 className="recipe-desc-name">{fetchedProduct.generic_name}</h3>
-                    <div className="recipe-desc-details">
-                      <div className="recipe-desc-details-li">
+                <div className="product-back">
+                  <div className="product-desc-back">
+                    <h2 className="product-desc-title">{fetchedProduct.product_name}</h2>
+                    <h3 className="product-desc-name">{fetchedProduct.generic_name}</h3>
+                    <div className="product-desc-details">
+                      <div className="product-desc-details-li">
                         Calories: {fetchedProduct.nutriments.energy_kcal} {fetchedProduct.nutriments.energy.kcal_unit}
                       </div>
-                      <div className="recipe-desc-details-li">
+                      <div className="product-desc-details-li">
                         Carbs: {fetchedProduct.nutriments.carbohydrates} {fetchedProduct.nutriments.carbohydrates_unit}
                       </div>
-                      <div className="recipe-desc-details-li">
+                      <div className="product-desc-details-li">
                         Fat: {fetchedProduct.nutriments.fat} {fetchedProduct.nutriments.fat_unit}
                       </div>
-                      <div className="recipe-desc-details-li">
+                      <div className="product-desc-details-li">
                         Protein: {fetchedProduct.nutriments.proteins} {fetchedProduct.nutriments.proteins_unit}
                       </div>
-                      <div className="recipe-desc-details-li">
+                      <div className="product-desc-details-li">
                         Sugar: {fetchedProduct.nutriments.sugars} {fetchedProduct.nutriments.sugars_unit}
                       </div>
-                      <div className="recipe-desc-details-li">Ingredients: {fetchedProduct.ingredients_text}</div>
+                      <div className="product-desc-details-li">Ingredients: {fetchedProduct.ingredients_text}</div>
                     </div>
                   </div>
                   <button className="material-icons-outlined" id="close" onClick={handleClickFlip}>
@@ -105,4 +104,4 @@ function FetchBarcode({ result, setCamera }) {
   );
 }
 
-export default FetchBarcode;
+export default FetchBarcodeProduct;

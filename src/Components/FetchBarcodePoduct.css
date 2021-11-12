@@ -1,6 +1,6 @@
 @import '../fonts.css';
 
-.recipe-desc {
+.product-desc {
   font-size: 21px;
   left: 25%;
   position: absolute;
@@ -14,19 +14,21 @@
   background: none;
 }
 
-.recipe-Card {
+.product-Card {
   margin: 0 1vw;
   margin-top: 10vh;
   display: flex;
+  height: 20vh;
+  width: 90vw;
 }
 
-.recipe-front {
+.product-front {
   backface-visibility: inherit;
   display: flex;
   position: relative;
 }
 
-.recipe-img-container {
+.product-img-container {
   height: auto;
   position: relative;
   width: 95vw;
@@ -96,7 +98,7 @@
   width: 100%;
 }
 
-.recipe-back {
+.product-back {
   background-color: burlywood;
   backface-visibility: inherit;
   border: solid;
@@ -107,22 +109,22 @@
   width: 96vw;
 }
 
-.recipe-desc-back {
+.product-desc-back {
   display: flex;
   margin: 0;
   flex-direction: column;
 }
 
-.recipe-desc-title {
+.product-desc-title {
   font-size: 20px;
   margin: 3vw;
 }
 
-.recipe-desc-details {
+.product-desc-details {
   font-size: 15px;
   flex-direction: column;
 }
 
-.recipe-desc-details-li {
+.product-desc-details-li {
   margin: 1vh;
 }
