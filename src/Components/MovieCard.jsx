@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import logo from '../logo.png';
 import './MovieCard.css';
 import More from '../Assets/More.png';
 
@@ -39,7 +39,8 @@ function MovieCard({ title, desc, img }) {
         ) : (
           <div className="movie-back">
             <p className="movie-desc-back" id="movie-p-back">
-              {title}
+              <h3 id="movie-card-h3">{title}</h3>
+              <img src={logo} id="logo-fond-desc" alt="fond-desc-logo" />
               {desc}
             </p>
             <button className="material-icons-outlined" id="movie-btn-close" onClick={handleClickFlip}>

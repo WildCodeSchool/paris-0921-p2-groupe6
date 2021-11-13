@@ -12,10 +12,15 @@ import SwiperCore, { Pagination, Navigation } from 'swiper';
 SwiperCore.use([Pagination, Navigation]);
 
 function FetchMovies() {
-  const moviesCat =
-    'https://api.themoviedb.org/3/discover/movie?api_key=d174ca19b8b8536a5dcd5988d5132531&with_genres=35&with_genres=28&vote_average.gte=7&vote_average.lte=10';
-
   const [fetchedMovies, setFetchedMovies] = useState([]);
+
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+
+  const randomPage = getRandomInt(500);
+
+  const moviesCat = `https://api.themoviedb.org/3/discover/movie?api_key=d174ca19b8b8536a5dcd5988d5132531&with_genres=35&with_genres=28&sort_by=vote_count.dsc&page=${randomPage}&with_original_language=en`;
 
   useEffect(() => {
     axios
