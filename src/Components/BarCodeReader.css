@@ -1,0 +1,45 @@
+@import '../fonts.css';
+
+.BarCodeReader {
+  font-family: var(--main-font-family);
+  text-align: center;
+  height: auto;
+  width: 90vw;
+  margin: auto;
+  padding: auto;
+  overflow: hidden;
+}
+
+.BarCodeReaderContainer {
+  position: relative;
+  margin: auto;
+  width: 400px;
+  height: 300px;
+}
+
+.BarCodeReaderContainer,
+#interactive.viewport {
+  width: 400px;
+  height: 300px;
+}
+
+#interactive.viewport canvas,
+video {
+  width: 400px;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#interactive.viewport canvas.drawingBuffer,
+video.drawingBuffer {
+  width: 400px;
+  height: 300px;
+}
+
+.Result {
+  color: var(--lazy-black);
+  /* position:absolute;
+  bottom: 15vh; */
+}
