@@ -1,11 +1,12 @@
 import React from 'react';
-import FetchRecipe from './Components/fetchrecipe';
+
+import BarCodeReader from './Components/BarCodeReader';
 
 function Catalog() {
   return (
     <main>
       <h1>Catalogue</h1>
-      <FetchRecipe />
+      <BarCodeReader />
     </main>
   );
 }

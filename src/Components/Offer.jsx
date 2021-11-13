@@ -1,6 +1,4 @@
 import React from 'react';
-import FetchAlcoholDrink from './fetchAlcoholDrink';
-import FetchSoftDrink from './fetchSoftDrink';
 
 import './Offer.css';
 
@@ -9,11 +7,9 @@ function Offer() {
     <div>
       <h2 className="OfferTitleh2">Welcome to your lazy night !</h2>
       <p className="OfferPresentationText">
-        Choose your meal, drink and movie to validate your choice !<br />
-        And discover the amount of your fat night !
+        Choose your meal, drink <br /> and movie to validate your choice !
       </p>
-      <FetchAlcoholDrink />
-      <FetchSoftDrink />
+      <p className="OfferPresentationText"> You will discover the amount of your fat night !</p>
     </div>
   );
 }
