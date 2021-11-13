@@ -30,10 +30,6 @@ function HomeConditions() {
       label: 'blue',
       value: 'blue',
     },
-    {
-      label: 'sad : i broke up',
-      value: 'sad',
-    },
   ];
 
   const numberOptions = [
@@ -53,12 +49,12 @@ function HomeConditions() {
 
   const fatOptions = [
     {
-      label: 'a guilty fat pleasure',
-      value: 'guilty',
+      label: 'to cook fat',
+      value: 'cook',
     },
     {
-      label: 'a tons of fat',
-      value: 'tons',
+      label: 'fat to takeaway/deliver',
+      value: 'TakewayAndDeliver',
     },
   ];
 
@@ -66,10 +62,6 @@ function HomeConditions() {
     {
       label: 'be totally sober',
       value: 'sober',
-    },
-    {
-      label: 'be tipsy',
-      value: 'tipsy',
     },
     {
       label: 'feel drunk',
@@ -138,7 +130,7 @@ function HomeConditions() {
         </form>
 
         <form className="HomeConditionsFat">
-          <label htmlFor="fat">I need </label>
+          <label htmlFor="fat">I prefer </label>
           <select name="fat" id="fat-select" onBlur={(e) => setFat(e.target.value)} className="HomeConditionsSelect">
             <option value="">...</option>
             {fatOptions.map((fat) => {

@@ -1,0 +1,12 @@
+@import '../fonts.css';
+
+.OfferTitleh2 {
+  color: var(--lazy-ketchup);
+  display: flex;
+  font-size: 2em;
+  justify-content: center;
+}
+
+.OfferPresentationText {
+  color: var(--lazy-black);
+}
