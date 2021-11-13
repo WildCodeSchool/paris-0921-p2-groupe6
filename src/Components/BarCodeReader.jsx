@@ -25,6 +25,7 @@ function BarCodeReader() {
         onClick={() => {
           setCamera(!camera);
           setResult(null);
+          setFetchedProduct(null);
         }}
       >
         {camera ? 'Stop' : 'Scan'}
