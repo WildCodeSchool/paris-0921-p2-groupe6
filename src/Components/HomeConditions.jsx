@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import FetchRecipe from './fetchrecipe';
+import React, { useState, useEffect } from 'react';
+
+import Offer from './Offer.jsx';
 
 import SmallLogo from '../SmallLogo.png';
 
@@ -68,6 +69,8 @@ function HomeConditions() {
       value: 'drunk',
     },
   ];
+
+  useEffect(() => {}, [conditionsSubmitted]);
 
   return (
     <main>
@@ -152,10 +155,7 @@ function HomeConditions() {
           Give me my lazy night !
         </button>
       </div>
-      {mood && conditionsSubmitted === true}
-      {number && conditionsSubmitted === true}
-      {drink && conditionsSubmitted === true}
-      {fat && conditionsSubmitted === true && <FetchRecipe />}
+      {(mood.length, drink.length, fat.length, number.length, conditionsSubmitted === true && <Offer mood={mood} drink={drink} fat={fat} />)}
     </main>
   );
 }
