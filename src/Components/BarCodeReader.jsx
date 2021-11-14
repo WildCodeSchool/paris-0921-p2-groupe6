@@ -26,13 +26,20 @@ function BarCodeReader() {
         onClick={() => {
           setCamera(!camera);
           setResult(null);
+          setFetchedProduct(null);
         }}
       >
         {camera ? 'Stop' : 'Scan'}
       </button>
       <div className="BarCodeProductCard">
         {result && (
-          <FetchBarcodeProduct result={result} setCamera={setCamera} fetchedProduct={fetchedProduct} setFetchedProduct={setFetchedProduct} />
+          <FetchBarcodeProduct
+            setResult={setResult}
+            result={result}
+            setCamera={setCamera}
+            fetchedProduct={fetchedProduct}
+            setFetchedProduct={setFetchedProduct}
+          />
         )}
       </div>
       <div className="BarCodeReaderContainer">{camera && <BarcodeScanner onDetected={onDetected} />}</div>
