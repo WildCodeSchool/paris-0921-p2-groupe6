@@ -1,12 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import FetchRecipe from './fetchrecipe';
+import UserContext from '../Contexts/userContext';
 
 import SmallLogo from '../SmallLogo.png';
 
 import './HomeConditions.css';
 
 function HomeConditions() {
-  const [userName, setUserName] = useState('');
+  const { userName, setUserName } = useContext(UserContext);
   const [mood, setMood] = useState('');
   const [number, setNumber] = useState('');
   const [drink, setDrink] = useState('');
