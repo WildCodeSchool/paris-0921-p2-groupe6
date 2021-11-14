@@ -1,12 +1,9 @@
 import React from 'react';
-import FetchMovies from './Components/fetchMovies.jsx';
-import FetchAlcoholDrinks from './Components/fetchAlcoholDrink';
 
 function AboutUs() {
   return (
     <main>
-      <FetchAlcoholDrinks />
-      <FetchMovies />
+      <h1>About Us</h1>
     </main>
   );
 }
