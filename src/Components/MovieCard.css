@@ -1,0 +1,125 @@
+@import '../fonts.css';
+
+.movie-back {
+  background-color: burlywood;
+  backface-visibility: inherit;
+  border: solid;
+  border-style: ridge;
+  display: flex;
+  height: 68vh;
+  position: relative;
+  width: 96vw;
+}
+
+.movie-btn-more {
+  background: none;
+  border: none;
+  bottom: 0%;
+  filter: drop-shadow(3 px 1 px 3 px grey);
+  position: absolute;
+}
+
+.movie-Card {
+  margin: 0 1vw;
+  margin-top: 10vh;
+  display: flex;
+}
+
+.movie-card-image {
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+.movie-front {
+  backface-visibility: inherit;
+  display: flex;
+  position: relative;
+}
+
+.movie-img-container {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: 2s;
+}
+
+.material-icons-outlined {
+  background: none;
+  border: none;
+  color: var(--lazy-white);
+  display: inline-block;
+  direction: ltr;
+  font-family: 'Material Icons';
+  font-feature-settings: 'liga';
+  font-style: normal;
+  font-size: 32px;
+  font-weight: normal;
+  height: 4vh;
+  letter-spacing: normal;
+  line-height: 1;
+  padding: 0.5vh 1vw;
+  position: absolute;
+  right: 0%;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+#isAdd {
+  color: var(--lazy-ketchup);
+  top: -5vh;
+}
+
+#isFavorite {
+  bottom: 0%;
+  color: var(--lazy-mayo);
+  height: 5vh;
+}
+
+#logo-fond-desc {
+  width: 85%;
+  height: 45%;
+  object-fit: cover;
+  opacity: 20%;
+  position: absolute;
+}
+
+#more {
+  transform: rotateY(180deg);
+}
+
+#movie-btn-close {
+  bottom: 0%;
+  left: 0%;
+}
+
+#movie-card-h3 {
+  font-size: 21px;
+  margin-left: 5%;
+  margin-right: 5%;
+  position: absolute;
+  top: 0%;
+}
+
+#movie-p-back {
+  display: flex;
+  margin: 25% 8%;
+  overflow: scroll;
+}
+
+#notAdd {
+  color: var(--lazy-white);
+  top: -5vh;
+}
+
+#notFavorite {
+  bottom: 0%;
+  color: var(--lazy-white);
+  filter: drop-shadow(0 px 2 px 7 px grey);
+  height: 5vh;
+}

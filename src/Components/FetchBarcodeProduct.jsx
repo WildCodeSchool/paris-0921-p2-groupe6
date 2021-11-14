@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import ProductCard from './ProductCard';
 
-function FetchBarcodeProduct({ result, setCamera, fetchedProduct, setFetchedProduct }) {
+function FetchBarcodeProduct({ setResult, result, setCamera, fetchedProduct, setFetchedProduct }) {
   const [isLoading, setIsLoading] = useState(true);
 
   function Camera() {
@@ -19,6 +19,8 @@ function FetchBarcodeProduct({ result, setCamera, fetchedProduct, setFetchedProd
           Camera();
           setFetchedProduct(data.product);
           setIsLoading(!isLoading);
+        } else {
+          setResult(null);
         }
       });
   }, []);
