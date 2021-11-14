@@ -19,13 +19,18 @@ function FetchRecipe() {
     'https://api.spoonacular.com/recipes/findByNutrients?minCholesterol=30&minCarbs=30&minFat=30&minCalories=400&maxSugar=10&number=10&random=true&apiKey=7706683273f24fdcaf86cbbb8929f962';
 
   const [fetchedRecipe, setFetchedRecipe] = useState();
+  const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
     axios
       .get(recipeByNutrient)
       .then((response) => response.data)
       .then((data) => setFetchedRecipe(data.filter((elt) => elt.calories > 650 || parseInt(elt.fat.slice(0, -1)) > 60)));
-  }, []);
+  }, [refresh]);
+
+  function Refresh() {
+    setRefresh(!refresh);
+  }
 
   return (
     <div>
@@ -47,6 +52,7 @@ function FetchRecipe() {
               </SwiperSlide>
             ))}
         </Swiper>
+        <button onClick={Refresh}>Refresh</button>
       </div>
     </div>
   );
