@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 import More from '../Assets/More.png';
 
 import './RecipeCard.css';
 
-function RecipeCard({ image, title, calories, carbs, fat, protein, sugar }) {
+function RecipeCard({ id, image, title, calories, carbs, fat, protein, sugar }) {
   const [isFavorite, setIsFavorite] = useState(false);
   const [more, setMore] = useState(true);
   const [isAdded, setIsAdded] = useState(false);
+  const [moreInfo, setMoreInfo] = useState();
+
+  const getMoreInfoUrl = `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false&apiKey=7706683273f24fdcaf86cbbb8929f962`;
 
   function handleClickFavorite() {
     setIsFavorite(!isFavorite);
@@ -20,6 +24,13 @@ function RecipeCard({ image, title, calories, carbs, fat, protein, sugar }) {
   function handleClickFlip() {
     setMore(!more);
   }
+
+  useEffect(() => {
+    axios
+      .get(getMoreInfoUrl)
+      .then((response) => response.data)
+      .then((data) => setMoreInfo(data));
+  }, []);
 
   return (
     <div className="recipe-Card">
@@ -49,6 +60,16 @@ function RecipeCard({ image, title, calories, carbs, fat, protein, sugar }) {
                 <div className="recipe-desc-details-li">Protein: {protein}</div>
                 <div className="recipe-desc-details-li">Sugar: {sugar}</div>
               </div>
+              {moreInfo.sourceUrl && (
+                <a href={moreInfo.sourceUrl} target="_blank" rel="noreferrer">
+                  Link
+                </a>
+              )}
+              {moreInfo.spoonacularSourceUrl && (
+                <a href={moreInfo.spoonacularSourceUrl} target="_blank" rel="noreferrer">
+                  Link 2
+                </a>
+              )}
             </div>
             <button className="material-icons-outlined" id="close" onClick={handleClickFlip}>
               cancel
