@@ -19,7 +19,7 @@ function Offer({ mood, drink, fat }) {
         <p className="OfferPresentationText"> You will discover the amount of your fat night !</p>
         {fat === 'TakewayAndDeliver' ? <FetchTakeAway /> : <FetchRecipe />}
         {drink === 'sober' ? <FetchSoftDrink /> : <FetchAlcoholDrinks />}
-        {mood === 'lazy' ? <FetchMovies /> : <FetchMovies />}
+        {<FetchMovies category={mood} />}
       </div>
     </main>
   );
