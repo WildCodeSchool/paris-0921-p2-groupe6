@@ -22,13 +22,13 @@ function ProductCard({ product }) {
   }
 
   return (
-    <div>
+    <main>
       <div className="product-Card">
         <div className="product-img-container">
           {more ? (
             <div className="product-front">
               <h3 className="product-desc">{product.product_name}</h3>
-              <img className="card-image" src={product.selected_images.front.display.fr} alt={product.product_name} />
+              <img className="cardImageProduct" src={product.selected_images.front.display.fr} alt={product.product_name} />
               <button className="material-icons-outlined" id={isFavorite ? 'isFavorite' : 'notFavorite'} onClick={handleClickFavorite}>
                 star
               </button>
@@ -70,7 +70,7 @@ function ProductCard({ product }) {
           )}
         </div>
       </div>
-    </div>
+    </main>
   );
 }
 

@@ -17,9 +17,9 @@ function Under18() {
       <p className="under18text">No worries, here is a suggestion for you !</p>
       <h2 className="under18ImageTitle">What to eat : </h2>
       <img src={happyMeal} alt="happy meal" className="under18FoodImages" />
-      <h2>What to drink : </h2>
+      <h2 className="under18ImageTitle">What to drink : </h2>
       <img src={milkGlass} alt="glass of milk" className="under18FoodImages" />
-      <h2>What to see : </h2>
+      <h2 className="under18ImageTitle">What to see : </h2>
       <img src={myLittlePony} alt="poster of little pony movie" className="under18FoodImages" />
     </main>
   );
