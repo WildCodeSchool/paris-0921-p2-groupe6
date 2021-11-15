@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
-import FetchRecipe from './fetchrecipe';
 import UserContext from '../Contexts/userContext';
+
+import Offer from './Offer.jsx';
+
 
 import SmallLogo from '../SmallLogo.png';
 
@@ -34,10 +36,6 @@ function HomeConditions() {
       label: 'blue',
       value: 'blue',
     },
-    {
-      label: 'sad : i broke up',
-      value: 'sad',
-    },
   ];
 
   const numberOptions = [
@@ -57,12 +55,12 @@ function HomeConditions() {
 
   const fatOptions = [
     {
-      label: 'a guilty fat pleasure',
-      value: 'guilty',
+      label: 'to cook fat',
+      value: 'cook',
     },
     {
-      label: 'a tons of fat',
-      value: 'tons',
+      label: 'fat to takeaway/deliver',
+      value: 'TakewayAndDeliver',
     },
   ];
 
@@ -70,10 +68,6 @@ function HomeConditions() {
     {
       label: 'be totally sober',
       value: 'sober',
-    },
-    {
-      label: 'be tipsy',
-      value: 'tipsy',
     },
     {
       label: 'feel drunk',
@@ -85,6 +79,9 @@ function HomeConditions() {
     const form = nameForm.current;
     setUserName(`${form['name'].value}`);
   }
+  
+  useEffect(() => {}, [conditionsSubmitted]);
+
 
   return (
     <main>
@@ -148,7 +145,7 @@ function HomeConditions() {
         </form>
 
         <form className="HomeConditionsFat">
-          <label htmlFor="fat">I need </label>
+          <label htmlFor="fat">I prefer </label>
           <select name="fat" id="fat-select" onBlur={(e) => setFat(e.target.value)} className="HomeConditionsSelect">
             <option value="">...</option>
             {fatOptions.map((fat) => {
@@ -170,10 +167,7 @@ function HomeConditions() {
           Give me my lazy night !
         </button>
       </div>
-      {mood && conditionsSubmitted === true}
-      {number && conditionsSubmitted === true}
-      {drink && conditionsSubmitted === true}
-      {fat && conditionsSubmitted === true && <FetchRecipe />}
+      {(mood.length, drink.length, fat.length, number.length, conditionsSubmitted === true && <Offer mood={mood} drink={drink} fat={fat} />)}
     </main>
   );
 }

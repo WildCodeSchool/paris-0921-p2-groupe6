@@ -4,7 +4,7 @@ import './TakeAwayCard.css';
 
 import More from '../Assets/more-mayo.png';
 
-function TakeAwayCard({ name, calories, sugar, imgUrl }) {
+function TakeAwayCard({ name, store, portion, calories, fat, carbs, protein, imgUrl }) {
   const [isFavorite, setIsFavorite] = useState(false);
   const [more, setMore] = useState(true);
   const [isAdded, setIsAdded] = useState(false);
@@ -42,8 +42,12 @@ function TakeAwayCard({ name, calories, sugar, imgUrl }) {
             <div className="TakeAway-desc-back">
               <h2 className="TakeAway-desc-title">{name}</h2>
               <div className="TakeAway-desc-details">
+                <div className="TakeAway-desc-details-li">Restaurant : {store}</div>
+                <div className="TakeAway-desc-details-li">Portion: {portion}</div>
                 <div className="TakeAway-desc-details-li">Calories: {calories}Kcal</div>
-                <div className="TakeAway-desc-details-li">Sugar: {sugar}</div>
+                <div className="TakeAway-desc-details-li">Fat: {fat}</div>
+                <div className="TakeAway-desc-details-li">Carbs: {carbs}</div>
+                <div className="TakeAway-desc-details-li">Protein: {protein}</div>
               </div>
             </div>
             <button className="TakeAway-material-icons-outlined" id="btn-close" onClick={handleClickFlip}>

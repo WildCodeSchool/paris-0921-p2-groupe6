@@ -16,9 +16,10 @@ function BarCodeReader() {
 
   return (
     <div className="BarCodeReader">
-      <h2>
+      <h2 className="BarCodeReaderTitle">How fat is it ?</h2>
+      <h2 className="BarCodeReaderh2">
         In search of a product worthy of your Lazy Nights? <br />
-        Try our product scanner:
+        Try our product scanner by clicking the button below:
       </h2>
       <button
         className="Camera-Button"
