@@ -1,22 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
+import UserContext from '../Contexts/userContext';
 
 import Offer from './Offer.jsx';
+
 
 import SmallLogo from '../SmallLogo.png';
 
 import './HomeConditions.css';
 
 function HomeConditions() {
-  const [name, setName] = useState('');
+  const { userName, setUserName } = useContext(UserContext);
   const [mood, setMood] = useState('');
   const [number, setNumber] = useState('');
   const [drink, setDrink] = useState('');
   const [fat, setFat] = useState('');
   const [conditionsSubmitted, setConditionsSubmitted] = useState(false);
+  const nameForm = useRef(null);
 
-  const nameDisplay = (e) => {
-    e.preventDefault();
-  };
+  function ResetUserName() {
+    setUserName('');
+  }
+
+  useEffect(() => {}, [userName]);
 
   const moodOptions = [
     {
@@ -70,7 +75,13 @@ function HomeConditions() {
     },
   ];
 
+  function handleClickName() {
+    const form = nameForm.current;
+    setUserName(`${form['name'].value}`);
+  }
+  
   useEffect(() => {}, [conditionsSubmitted]);
+
 
   return (
     <main>
@@ -80,16 +91,17 @@ function HomeConditions() {
           To access your Lazy Night, <br />
           we need few more informations :{' '}
         </h2>
-        <h3 className="HomeConditionsQuestion"> What is your name ?</h3>
-        <form className="HomeConditionsInput">
-          <label>
-            <input type="text" name="name" id="name" value={name} onChange={(e) => setName(e.target.value)} />
-          </label>
-          <label>
-            <input type="submit" value="Yup that's me" onClick={nameDisplay} className="HomeConditionssendButton" />
-          </label>
-        </form>
-
+        {!userName.length ? <h3 className="HomeConditionsQuestion"> What is your name ?</h3> : <h3>Hello {userName}</h3>}
+        {!userName.length ? (
+          <form className="HomeConditionsInput" ref={nameForm}>
+            <input label={'name'} type="text" name={'name'} id="name" />
+            <label>
+              <input type="submit" value="Yup that's me" onClick={handleClickName} className="HomeConditionssendButton" />
+            </label>
+          </form>
+        ) : (
+          <button onClick={ResetUserName}>Change User</button>
+        )}
         <form className="HomeConditionsMood">
           <label htmlFor="Mood">Today, I feel </label>
           <select name="mood" id="mood-select" onBlur={(e) => setMood(e.target.value)} className="HomeConditionsSelect">
