@@ -25,7 +25,7 @@ function FetchRecipe() {
     axios
       .get(recipeByNutrient)
       .then((response) => response.data)
-      .then((data) => setFetchedRecipe(data.filter((elt) => elt.calories > 650 || parseInt(elt.fat.slice(0, -1)) > 60)));
+      .then((data) => setFetchedRecipe(data.filter((elt) => elt.calories > 700 || parseInt(elt.fat.slice(0, -1)) > 70)));
   }, [refresh]);
 
   function Refresh() {

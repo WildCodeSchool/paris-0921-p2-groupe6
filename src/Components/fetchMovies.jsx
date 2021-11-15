@@ -11,20 +11,30 @@ import SwiperCore, { Pagination, Navigation } from 'swiper';
 
 SwiperCore.use([Pagination, Navigation]);
 
-function FetchMovies() {
+function FetchMovies({ category }) {
   const [fetchedMovies, setFetchedMovies] = useState([]);
 
   function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
 
-  const randomPage = getRandomInt(500);
+  function getParameters(category) {
+    if (category === 'lazy') {
+      return `&with_genres=35&with_genres=28&with_genres=12&with_genres=10749&sort_by=vote_count.dsc&page=${randomPage}`;
+    } else if (category === 'happy') {
+      return `&with_genres=35&with_genres=28&with_genres=12&sort_by=vote_count.dsc&page=${randomPage}`;
+    } else if (category === 'blue') {
+      return `&with_genres=10749&sort_by=popularity.dsc&page=${randomPageBlue}`;
+    }
+  }
 
-  const moviesCat = `https://api.themoviedb.org/3/discover/movie?api_key=d174ca19b8b8536a5dcd5988d5132531&with_genres=35&with_genres=28&sort_by=vote_count.dsc&page=${randomPage}&with_original_language=en`;
+  const randomPage = getRandomInt(500);
+  const randomPageBlue = getRandomInt(10);
+  const callParameters = getParameters(category);
 
   useEffect(() => {
     axios
-      .get(moviesCat)
+      .get(`https://api.themoviedb.org/3/discover/movie?api_key=d174ca19b8b8536a5dcd5988d5132531${callParameters}&with_original_language=en`)
       .then((response) => response.data)
       .then((data) => setFetchedMovies(data.results));
   }, []);
