@@ -20,11 +20,11 @@ function FetchMovies({ category }) {
 
   function getParameters(category) {
     if (category === 'lazy') {
-      return `&with_genres=35&with_genres=28&with_genres=12&with_genres=10749&sort_by=vote_count.dsc&page=${randomPage}`;
+      return `&with_genres=35,28,12,10749&sort_by=vote_count.desc&page=${randomPage}`;
     } else if (category === 'happy') {
-      return `&with_genres=35&with_genres=28&with_genres=12&sort_by=vote_count.dsc&page=${randomPage}`;
+      return `&with_genres=35,28,12&sort_by=vote_count.desc&page=${randomPage}`;
     } else if (category === 'blue') {
-      return `&with_genres=10749&sort_by=popularity.dsc&page=${randomPageBlue}`;
+      return `&with_genres=10749&without_genres=35,28,12,27,10751&sort_by=popularity.desc&page=${randomPageBlue}`;
     }
   }
 
@@ -53,11 +53,14 @@ function FetchMovies({ category }) {
           className="mySwiper"
         >
           {fetchedMovies.length &&
-            fetchedMovies.slice(0, 10).map((movie, index) => (
-              <SwiperSlide key={index}>
-                <MovieCard key={index} title={movie.title} desc={movie.overview} img={movie.poster_path} />
-              </SwiperSlide>
-            ))}
+            fetchedMovies
+              .filter((movie) => movie.poster_path)
+              .slice(0, 10)
+              .map((movie, index) => (
+                <SwiperSlide key={index}>
+                  <MovieCard key={index} title={movie.title} desc={movie.overview} img={movie.poster_path} />
+                </SwiperSlide>
+              ))}
         </Swiper>
       </div>
     </div>
