@@ -2,8 +2,6 @@ import React, { useState, useEffect, useRef, useContext } from 'react';
 import UserContext from '../Contexts/userContext';
 
 import Offer from './Offer.jsx';
-
-
 import SmallLogo from '../SmallLogo.png';
 
 import './HomeConditions.css';
@@ -79,9 +77,8 @@ function HomeConditions() {
     const form = nameForm.current;
     setUserName(`${form['name'].value}`);
   }
-  
-  useEffect(() => {}, [conditionsSubmitted]);
 
+  useEffect(() => {}, [conditionsSubmitted]);
 
   return (
     <main>
