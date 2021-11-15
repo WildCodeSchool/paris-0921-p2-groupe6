@@ -1,46 +1,41 @@
 @import '../fonts.css';
 
-.AlcoholDrink-back {
-  background-color: burlywood;
-  backface-visibility: inherit;
-  border: solid;
-  border-style: ridge;
-  display: flex;
-  height: 33vh;
-  position: relative;
-  width: 96vw;
-}
-
-.AlcoholDrink-btn-more {
-  background: none;
-  bottom: 0%;
-  color: var(--lazy-ketchup);
-  border: none;
+.h3product-desc {
+  font-size: 20px;
+  left: 25%;
   position: absolute;
-  width: 8%;
+  top: -17%;
 }
 
-.AlcoholDrink-Card {
-  display: flex;
+.btn-more {
+  position: absolute;
+  bottom: 0%;
+  border: none;
+  background: none;
+}
+
+.product-Card {
   margin: 0 1vw;
   margin-top: 10vh;
-}
-
-.AlcoholDrink-front {
-  backface-visibility: inherit;
   display: flex;
+  height: 20vh;
+  width: 90vw;
+}
+
+.product-front {
+  backface-visibility: inherit;
   position: relative;
 }
 
-.AlcoholDrink-img-container {
-  height: 100%;
+.product-img-container {
+  height: auto;
   position: relative;
+  width: 95vw;
   transform-style: preserve-3d;
   transition: 2s;
-  width: 100%;
 }
 
-.AlcoholDrink-material-icons-outlined {
+.material-icons-outlined {
   background: none;
   border: none;
   color: var(--lazy-white);
@@ -77,7 +72,7 @@
 
 #isFavorite {
   bottom: 0%;
-  color: var(--lazy-ketchup);
+  color: var(--lazy-mayo);
   height: 5vh;
 }
 
@@ -86,19 +81,14 @@
 }
 
 #notAdd {
-  color: var(--lazy-ketchup);
+  color: var(--lazy-white);
   top: -5vh;
 }
 
 #notFavorite {
   bottom: 0%;
-  color: var(--lazy-mayo);
+  color: var(--lazy-white);
   height: 5vh;
-}
-
-#p-back {
-  display: flex;
-  margin: auto;
 }
 
 .card-image {
@@ -107,9 +97,33 @@
   width: 100%;
 }
 
-#card-h3 {
-  font-size: 21px;
-  left: 25%;
-  position: absolute;
-  top: -17%;
+.product-back {
+  background-color: burlywood;
+  backface-visibility: inherit;
+  border: solid;
+  border-style: ridge;
+  display: flex;
+  height: 31vh;
+  position: relative;
+  width: 96vw;
+}
+
+.product-desc-back {
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+}
+
+.product-desc-title {
+  font-size: 20px;
+  margin: 3vw;
+}
+
+.product-desc-details {
+  font-size: 15px;
+  flex-direction: column;
+}
+
+.product-desc-details-li {
+  margin: 1vh;
 }

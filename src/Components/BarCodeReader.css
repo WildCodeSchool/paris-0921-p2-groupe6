@@ -1,13 +1,13 @@
 @import '../fonts.css';
 
 .BarCodeReader {
-  font-family: var(--main-font-family);
-  text-align: center;
+  display: flex;
+  flex-direction: column;
   height: auto;
-  width: 90vw;
   margin: auto;
   padding: auto;
   overflow: hidden;
+  width: 90vw;
 }
 
 .BarCodeReaderContainer {
@@ -23,6 +23,16 @@
   height: 300px;
 }
 
+.BarCodeReaderTitle {
+  color: var(--lazy-ketchup);
+  font-size: 2.3em;
+  text-align: center;
+}
+
+.BarCodeReaderh2 {
+  text-align: center;
+}
+
 #interactive.viewport canvas,
 video {
   width: 400px;
@@ -30,6 +40,16 @@ video {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.Camera-Button {
+  background-color: var(--lazy-barbecue);
+  color: var(--lazy-white);
+  font-family: var(--main-font-family);
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: auto;
+  width: 15vw;
 }
 
 #interactive.viewport canvas.drawingBuffer,
