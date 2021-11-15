@@ -7,6 +7,10 @@
   top: -17%;
 }
 
+.product-front {
+  display: flex;
+}
+
 .btn-more {
   position: absolute;
   bottom: 0%;
@@ -93,9 +97,11 @@
 }
 
 .card-image {
-  height: 100%;
+  object-fit: cover;
+  display: flex;
+  max-height: auto;
+  height: 250px;
   object-fit: contain;
-  width: 100%;
 }
 
 .product-back {
@@ -105,14 +111,19 @@
   border-style: ridge;
   display: flex;
   height: 31vh;
+  object-fit: cover;
   position: relative;
   width: 96vw;
+  overflow-wrap: break-word;
+  margin: 1px;
 }
 
 .product-desc-back {
   display: flex;
   margin: 0;
   flex-direction: column;
+  object-fit: contain;
+  margin: 1px;
 }
 
 .product-desc-title {
@@ -122,7 +133,11 @@
 
 .product-desc-details {
   font-size: 15px;
+  display: flex;
   flex-direction: column;
+  object-fit: contain;
+  word-wrap: break-word;
+  padding: 10px;
 }
 
 .product-desc-details-li {

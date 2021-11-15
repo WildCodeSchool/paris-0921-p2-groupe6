@@ -22,7 +22,7 @@ function ProductCard({ product }) {
   }
 
   return (
-    <div>
+    <main>
       <div className="product-Card">
         <div className="product-img-container">
           {more ? (
@@ -70,7 +70,7 @@ function ProductCard({ product }) {
           )}
         </div>
       </div>
-    </div>
+    </main>
   );
 }
 
