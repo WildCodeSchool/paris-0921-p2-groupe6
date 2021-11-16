@@ -3,7 +3,7 @@ import axios from 'axios';
 import CurrentUserNameContext from '../Contexts/userContext';
 import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 
-import More from '../Assets/more-mayo.png';
+import More from '../Assets/More.png';
 
 import './Card.css';
 
