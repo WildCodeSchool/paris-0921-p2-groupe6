@@ -3,7 +3,7 @@ import axios from 'axios';
 import CurrentUserNameContext from '../Contexts/userContext';
 import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 
-import './TakeAwayCard.css';
+import './Card.css';
 
 import More from '../Assets/more-mayo.png';
 
@@ -59,12 +59,13 @@ function TakeAwayCard({ name, store, portion, calories, fat, carbs, protein, img
       <div className="TakeAway-img-container">
         {more ? (
           <div className="TakeAway-front">
+            <div className="TakeAway-title">{name}</div>
             <img src={imgUrl} alt={name} className="TakeAway-card-image" />
             <button className="TakeAway-material-icons-outlined" id={isFavorite ? 'isFavorite' : 'notFavorite'} onClick={handleClickFavorite}>
               star
             </button>
             <button className="TakeAway-material-icons-outlined" id={isAdded ? 'isAdd' : 'notAdd'} onClick={handleClickAdded}>
-              bookmark_add
+              add_shopping_cart
             </button>
             <button className="TakeAway-btn-more" onClick={handleClickFlip}>
               <img src={More} alt="more" />
@@ -73,7 +74,7 @@ function TakeAwayCard({ name, store, portion, calories, fat, carbs, protein, img
         ) : (
           <div className="TakeAway-back">
             <div className="TakeAway-desc-back">
-              <h2 className="TakeAway-desc-title">{name}</h2>
+              <div className="TakeAway-desc-title">{name}</div>
               <div className="TakeAway-desc-details">
                 <div className="TakeAway-desc-details-li">Restaurant : {store}</div>
                 <div className="TakeAway-desc-details-li">Portion: {portion}</div>

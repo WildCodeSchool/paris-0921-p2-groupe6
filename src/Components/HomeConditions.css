@@ -45,12 +45,17 @@
 }
 
 .HomeConditionsSubmit {
-  background-color: var(--lazy-ketchup);
+  background-color: var(--lazy-barbecue);
   color: var(--lazy-white);
   font-family: var(--main-font-family);
   font-size: 1.5em;
-  margin-bottom: 5vh;
-  margin-top: 5vh;
+  font-weight: bold;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 65%;
 }
 
 .HomeConditionsMood {

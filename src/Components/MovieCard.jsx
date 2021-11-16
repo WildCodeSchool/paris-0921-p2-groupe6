@@ -57,11 +57,11 @@ function MovieCard({ id, title, desc, img }) {
         {more ? (
           <div className="movie-front">
             <img src={`https://image.tmdb.org/t/p/w500/${img}`} alt="" className="movie-card-image" />
-            <button className="material-icons-outlined" id={isFavorite ? 'isFavorite' : 'notFavorite'} onClick={handleClickFavorite}>
+            <button className="movie-material-icons-outlined" id={isFavorite ? 'isFavorite' : 'notFavorite'} onClick={handleClickFavorite}>
               star
             </button>
-            <button className="material-icons-outlined" id={isAdded ? 'isAdd' : 'notAdd'} onClick={handleClickAdded}>
-              bookmark_add
+            <button className="movie-material-icons-outlined" id={isAdded ? 'isAdd' : 'notAdd'} onClick={handleClickAdded}>
+              add_shopping_cart
             </button>
             <button className="movie-btn-more" onClick={handleClickFlip}>
               <img src={More} alt="more" />
@@ -70,11 +70,11 @@ function MovieCard({ id, title, desc, img }) {
         ) : (
           <div className="movie-back">
             <p className="movie-desc-back" id="movie-p-back">
-              <h3 id="movie-card-h3">{title}</h3>
+              <h3 id="movie-card-title">{title}</h3>
               <img src={logo} id="logo-fond-desc" alt="fond-desc-logo" />
               {desc}
             </p>
-            <button className="material-icons-outlined" id="movie-btn-close" onClick={handleClickFlip}>
+            <button className="movie-material-icons-outlined" id="movie-btn-close" onClick={handleClickFlip}>
               cancel
             </button>
           </div>
