@@ -10,7 +10,7 @@ function Age() {
 
   return (
     <main className="BirthDateCheckContainer">
-      <img src={logo} alt="lazy Nights logo" />
+      <img src={logo} alt="lazy Nights logo" className="imgBanner" />
       <p className="BirthDateTextPresentation">
         Tired of everything ? <br />
         You just broke up ? <br />

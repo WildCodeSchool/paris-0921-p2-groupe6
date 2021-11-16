@@ -1,0 +1,67 @@
+h1 {
+  color: var(--lazy-white);
+  font-size: 2.5em;
+  text-align: center;
+}
+
+.AboutUsTop {
+  background-color: var(--lazy-white);
+  border-radius: 10px;
+  box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-bottom: 20px;
+  width: 70%;
+}
+
+.AboutUsTitle {
+  color: var(--lazy-ketchup);
+  display: flex;
+  justify-content: center;
+  margin-top: 3vh;
+}
+
+.AboutUsConcept {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: auto;
+  padding: 3vh;
+}
+
+.AboutTeam {
+  background-color: var(--lazy-white);
+  border-radius: 10px;
+  box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-bottom: 20px;
+  width: 70%;
+}
+
+.AboutUsTeamTitle {
+  color: var(--lazy-ketchup);
+  display: flex;
+  justify-content: center;
+  margin-top: 3vh;
+}
+
+.AboutUsTeamPresentation {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 30px;
+}
+
+.AboutUsMembers {
+  display: flex;
+  flex-direction: row;
+}
+
+.portraitSophie {
+  display: flex;
+  height: 80px;
+  border-radius: 50%;
+  width: 80px;
+}
