@@ -1,11 +1,10 @@
 import React from 'react';
-
-import NutritionLabel from './Components/nutrition-label';
+import FavoritesSliders from './Components/FavoritesSliders';
 
 function Favorites() {
   return (
     <main>
-      <NutritionLabel />
+      <FavoritesSliders />
     </main>
   );
 }

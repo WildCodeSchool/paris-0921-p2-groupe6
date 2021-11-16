@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
-// import axios from 'axios';
+import React, { useState, useContext, useEffect } from 'react';
+import axios from 'axios';
+import CurrentUserNameContext from '../Contexts/userContext';
+import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 
 import More from '../Assets/More.png';
 
@@ -9,12 +11,31 @@ function RecipeCard({ image, title, calories, carbs, fat, protein, sugar }) {
   const [isFavorite, setIsFavorite] = useState(false);
   const [more, setMore] = useState(true);
   const [isAdded, setIsAdded] = useState(false);
-  // const [moreInfo, setMoreInfo] = useState();
+  const { userName } = useContext(CurrentUserNameContext);
+  const { allFavorites } = useContext(CurrentAllFavoritesContext);
 
-  // const getMoreInfoUrl = `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false&apiKey=7706683273f24fdcaf86cbbb8929f962`;
+  function AddToFavorite() {
+    setIsFavorite(true);
+    axios.post('http://localhost:8000/api/favorites/food/recipe', {
+      username: userName,
+      itemCategory: 'recipe',
+      itemName: title,
+      calories: calories,
+      fat: fat,
+      carbs: carbs,
+      protein: protein,
+      sugar: sugar,
+      imgUrl: image,
+    });
+  }
+
+  function DeleteFromFavorite() {
+    setIsFavorite(false);
+    axios.delete(`http://localhost:8000/api/favorites/food/${userName}/${title}`);
+  }
 
   function handleClickFavorite() {
-    setIsFavorite(!isFavorite);
+    isFavorite ? DeleteFromFavorite() : AddToFavorite();
   }
 
   function handleClickAdded() {
@@ -25,12 +46,13 @@ function RecipeCard({ image, title, calories, carbs, fat, protein, sugar }) {
     setMore(!more);
   }
 
-  // useEffect(() => {
-  //   axios
-  //     .get(getMoreInfoUrl)
-  //     .then((response) => response.data)
-  //     .then((data) => setMoreInfo(data));
-  // }, []);
+  useEffect(() => {
+    if (allFavorites.some((object) => object.username === userName && object.itemName === name && object.itemCategory === 'drinks')) {
+      setIsFavorite(true);
+    }
+  }, []);
+
+  useEffect(() => {}, [isFavorite]);
 
   return (
     <div className="recipe-Card">
@@ -60,16 +82,6 @@ function RecipeCard({ image, title, calories, carbs, fat, protein, sugar }) {
                 <div className="recipe-desc-details-li">Protein: {protein}</div>
                 <div className="recipe-desc-details-li">Sugar: {sugar}</div>
               </div>
-              {/* {moreInfo.sourceUrl && (
-                <a href={moreInfo.sourceUrl} target="_blank" rel="noreferrer">
-                  Link
-                </a>
-              )}
-              {moreInfo.spoonacularSourceUrl && (
-                <a href={moreInfo.spoonacularSourceUrl} target="_blank" rel="noreferrer">
-                  Link 2
-                </a>
-              )} */}
             </div>
             <button className="material-icons-outlined" id="close" onClick={handleClickFlip}>
               cancel

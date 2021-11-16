@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Pagination, Navigation } from 'swiper';
+import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 import axios from 'axios';
 
 import MovieCard from './MovieCard';
@@ -13,8 +14,8 @@ import 'swiper/css/pagination';
 SwiperCore.use([Pagination, Navigation]);
 
 function FetchMovies({ category }) {
+  const { allFavorites, fetchAllFavorites } = useContext(CurrentAllFavoritesContext);
   const [fetchedMovies, setFetchedMovies] = useState([]);
-  const [moviesFavorites, setMoviesFavorites] = useState();
   const [refresh, setRefresh] = useState(false);
   const randomPageLazy = getRandomInt(500);
   const randomPageHappy = getRandomInt(250);
@@ -40,19 +41,16 @@ function FetchMovies({ category }) {
   }
 
   useEffect(() => {
+    fetchAllFavorites();
     axios
       .get(
-        `https://api.themoviedb.org/3/discover/movie?api_key=d174ca19b8b8536a5dcd5988d5132531${callParameters}&primary_release_date.gte=1970-01-01&with_original_language=en`,
+        `https://api.themoviedb.org/3/discover/movie?api_key=d174ca19b8b8536a5dcd5988d5132531&primary_release_date.gte=1970-01-01&with_original_language=en${callParameters}`,
       )
       .then((response) => response.data)
       .then((data) => setFetchedMovies(data.results));
-    axios
-      .get(`http://localhost:8000/api/favorites/movie`)
-      .then((response) => response.data)
-      .then((data) => setMoviesFavorites(data));
   }, [refresh]);
 
-  useEffect(() => {}, [moviesFavorites]);
+  useEffect(() => {}, [allFavorites]);
 
   return (
     <div>
@@ -73,14 +71,7 @@ function FetchMovies({ category }) {
               .slice(0, 10)
               .map((movie, index) => (
                 <SwiperSlide key={index}>
-                  <MovieCard
-                    key={index}
-                    title={movie.title}
-                    desc={movie.overview}
-                    img={movie.poster_path}
-                    id={movie.id}
-                    listFavorites={moviesFavorites}
-                  />
+                  <MovieCard key={index} title={movie.title} desc={movie.overview} img={movie.poster_path} id={movie.id} />
                 </SwiperSlide>
               ))}
         </Swiper>

@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
+import axios from 'axios';
+import CurrentUserNameContext from '../Contexts/userContext';
+import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 
 import './TakeAwayCard.css';
 
@@ -8,9 +11,32 @@ function TakeAwayCard({ name, store, portion, calories, fat, carbs, protein, img
   const [isFavorite, setIsFavorite] = useState(false);
   const [more, setMore] = useState(true);
   const [isAdded, setIsAdded] = useState(false);
+  const { userName } = useContext(CurrentUserNameContext);
+  const { allFavorites } = useContext(CurrentAllFavoritesContext);
+
+  function AddToFavorite() {
+    setIsFavorite(true);
+    axios.post('http://localhost:8000/api/favorites/food/takeaway', {
+      username: userName,
+      itemCategory: 'takeaway',
+      itemName: name,
+      store: store,
+      portion: portion,
+      calories: calories,
+      fat: fat,
+      carbs: carbs,
+      protein: protein,
+      imgUrl: imgUrl,
+    });
+  }
+
+  function DeleteFromFavorite() {
+    setIsFavorite(false);
+    axios.delete(`http://localhost:8000/api/favorites/food/${userName}/${name}`);
+  }
 
   function handleClickFavorite() {
-    setIsFavorite(!isFavorite);
+    isFavorite ? DeleteFromFavorite() : AddToFavorite();
   }
 
   function handleClickAdded() {
@@ -20,6 +46,13 @@ function TakeAwayCard({ name, store, portion, calories, fat, carbs, protein, img
   function handleClickFlip() {
     setMore(!more);
   }
+
+  useEffect(() => {
+    if (allFavorites.some((object) => object.username === userName && object.itemName === name && object.itemCategory === 'drinks')) {
+      setIsFavorite(true);
+    }
+  }, []);
+  useEffect(() => {}, [isFavorite]);
 
   return (
     <div className="TakeAway-Card">

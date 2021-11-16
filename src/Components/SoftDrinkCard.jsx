@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
+import axios from 'axios';
+import CurrentUserNameContext from '../Contexts/userContext';
+import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 
 import './SoftDrinkCard.css';
 
@@ -8,9 +11,28 @@ function SoftDrinkCard({ name, calories, sugar, imgUrl }) {
   const [isFavorite, setIsFavorite] = useState(false);
   const [more, setMore] = useState(true);
   const [isAdded, setIsAdded] = useState(false);
+  const { userName } = useContext(CurrentUserNameContext);
+  const { allFavorites } = useContext(CurrentAllFavoritesContext);
+
+  function AddToFavorite() {
+    setIsFavorite(true);
+    axios.post('http://localhost:8000/api/favorites/drinks', {
+      username: userName,
+      itemCategory: 'drinks',
+      itemName: name,
+      calories: calories,
+      sugar: sugar,
+      imgUrl: imgUrl,
+    });
+  }
+
+  function DeleteFromFavorite() {
+    setIsFavorite(false);
+    axios.delete(`http://localhost:8000/api/favorites/drinks/${userName}/${name}`);
+  }
 
   function handleClickFavorite() {
-    setIsFavorite(!isFavorite);
+    isFavorite ? DeleteFromFavorite() : AddToFavorite();
   }
 
   function handleClickAdded() {
@@ -20,6 +42,13 @@ function SoftDrinkCard({ name, calories, sugar, imgUrl }) {
   function handleClickFlip() {
     setMore(!more);
   }
+
+  useEffect(() => {
+    if (allFavorites.some((object) => object.username === userName && object.itemName === name && object.itemCategory === 'drinks')) {
+      setIsFavorite(true);
+    }
+  }, []);
+  useEffect(() => {}, [isFavorite]);
 
   return (
     <div className="AlcoholDrink-Card">
