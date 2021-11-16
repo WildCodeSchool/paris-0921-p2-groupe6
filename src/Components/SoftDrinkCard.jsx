@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import './SoftDrinkCard.css';
+import './Card.css';
 
 import More from '../Assets/more-mayo.png';
 
@@ -22,31 +22,31 @@ function SoftDrinkCard({ name, calories, sugar, imgUrl }) {
   }
 
   return (
-    <div className="AlcoholDrink-Card">
-      <div className="AlcoholDrink-img-container">
+    <div className="SoftDrink-Card">
+      <div className="SoftDrink-img-container">
         {more ? (
-          <div className="AlcoholDrink-front">
-            <img src={imgUrl} alt={name} className="AlcoholDrink-card-image" />
-            <button className="AlcoholDrink-material-icons-outlined" id={isFavorite ? 'isFavorite' : 'notFavorite'} onClick={handleClickFavorite}>
+          <div className="SoftDrink-front">
+            <img src={imgUrl} alt={name} className="SoftDrink-card-image" />
+            <button className="SoftDrink-material-icons-outlined" id={isFavorite ? 'isFavorite' : 'notFavorite'} onClick={handleClickFavorite}>
               star
             </button>
-            <button className="AlcoholDrink-material-icons-outlined" id={isAdded ? 'isAdd' : 'notAdd'} onClick={handleClickAdded}>
-              bookmark_add
+            <button className="SoftDrink-material-icons-outlined" id={isAdded ? 'isAdd' : 'notAdd'} onClick={handleClickAdded}>
+              add_shopping_cart
             </button>
-            <button className="AlcoholDrink-btn-more" onClick={handleClickFlip}>
+            <button className="SoftDrink-btn-more" onClick={handleClickFlip}>
               <img src={More} alt="more" />
             </button>
           </div>
         ) : (
-          <div className="AlcoholDrink-back">
-            <div className="AlcoholDrink-desc-back">
-              <h2 className="AlcoholDrink-desc-title">{name}</h2>
-              <div className="AlcoholDrink-desc-details">
-                <div className="AlcoholDrink-desc-details-li">Calories: {calories}Kcal</div>
-                <div className="AlcoholDrink-desc-details-li">Sugar: {sugar}</div>
+          <div className="SoftDrink-back">
+            <div className="SoftDrink-desc-back">
+              <h2 className="SoftDrink-desc-title">{name}</h2>
+              <div className="SoftDrink-desc-details">
+                <div className="SoftDrink-desc-details-li">Calories: {calories}Kcal</div>
+                <div className="SoftDrink-desc-details-li">Sugar: {sugar}</div>
               </div>
             </div>
-            <button className="AlcoholDrink-material-icons-outlined" id="btn-close" onClick={handleClickFlip}>
+            <button className="SoftDrink-material-icons-outlined" id="btn-close" onClick={handleClickFlip}>
               cancel
             </button>
           </div>

@@ -13,6 +13,7 @@ footer {
   animation: gradient-animation 30s linear infinite;
   background: linear-gradient(142deg, #e6af2e, #a3320b);
   background-size: 100%;
+  z-index: 10;
 }
 
 @keyframes gradient-animation {

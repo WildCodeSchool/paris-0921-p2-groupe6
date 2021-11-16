@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import './AlcoholDrinkCard.css';
+import './Card.css';
 
 import More from '../Assets/more-mayo.png';
 
@@ -31,7 +31,7 @@ function AlcoholDrinkCard({ name, calories, sugar, imgUrl }) {
               star
             </button>
             <button className="AlcoholDrink-material-icons-outlined" id={isAdded ? 'isAdd' : 'notAdd'} onClick={handleClickAdded}>
-              bookmark_add
+              add_shopping_cart
             </button>
             <button className="AlcoholDrink-btn-more" onClick={handleClickFlip}>
               <img src={More} alt="more" />
