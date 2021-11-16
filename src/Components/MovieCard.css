@@ -76,13 +76,17 @@
 }
 
 #isAdd {
+  bottom: 1.5%;
   color: var(--lazy-ketchup);
-  top: -1vh;
+  display: flex;
+  flex-direction: row;
+  left: 46%;;
 }
 
 #isFavorite {
-  bottom: 0%;
+  bottom: 2.5%;
   color: var(--lazy-mayo);
+  display: row;
   height: 5vh;
 }
 
@@ -119,11 +123,15 @@
 
 #notAdd {
   color: var(--lazy-white);
-  top: -1vh;
+  display: flex;
+  flex-direction: row;
+  bottom: 1.5%;
+  left: 46%;
 }
 
 #notFavorite {
-  bottom: 0%;
-  color: var(--lazy-ketchup);
-  height: 5vh;
+  bottom: 2.5%;
+  color: var(--lazy-white );
+  display: flex;
+  flex-direction: row;
 }
