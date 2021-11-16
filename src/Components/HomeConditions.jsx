@@ -87,7 +87,7 @@ function HomeConditions() {
   return (
     <main>
       <NavLink className="link" activeClassName="active" exact to="/">
-        <img src={SmallLogo} alt="Lazy Night Small Banner" className="HomeConditionsLogo" />
+        <img src={SmallLogo} alt="Lazy Night Small Logo" className="HomeConditionsLogo" />
       </NavLink>
       <div className="HomeConditions">
         <h2 className="HomeConditionsTitle">
