@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Pagination, Navigation } from 'swiper';
+import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 import axios from 'axios';
 
 import AlcoholDrinkCard from './AlcoholDrinkCard.jsx';
@@ -9,21 +11,27 @@ import './Slider.css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import SwiperCore, { Pagination, Navigation } from 'swiper';
-
 SwiperCore.use([Pagination, Navigation]);
 
 function FetchAlcoholDrinks() {
-  const drinksByCalories = 'http://localhost:8000/api/alcohol_drinks/';
-
   const [fetchedDrink, setFetchedDrink] = useState();
+  const drinksByCalories = 'http://localhost:8000/api/alcohol_drinks/';
+  const { allFavorites, fetchAllFavorites } = useContext(CurrentAllFavoritesContext);
+  const [refresh, setRefresh] = useState(false);
+
+  function Refresh() {
+    setRefresh(!refresh);
+  }
 
   useEffect(() => {
+    fetchAllFavorites();
     axios
       .get(drinksByCalories)
       .then((response) => response.data)
       .then((data) => setFetchedDrink(data));
   }, []);
+
+  useEffect(() => {}, [allFavorites]);
 
   return (
     <div>
@@ -45,6 +53,7 @@ function FetchAlcoholDrinks() {
               </SwiperSlide>
             ))}
         </Swiper>
+        <button onClick={Refresh}>Refresh</button>
       </div>
     </div>
   );
