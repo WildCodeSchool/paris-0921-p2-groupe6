@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 // import axios from 'axios';
 
-import More from '../Assets/More.png';
+import More from '../Assets/more-mayo.png';
 
-import './RecipeCard.css';
+import './Card.css';
 
 function RecipeCard({ image, title, calories, carbs, fat, protein, sugar }) {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -37,22 +37,22 @@ function RecipeCard({ image, title, calories, carbs, fat, protein, sugar }) {
       <div className="recipe-img-container">
         {more ? (
           <div className="recipe-front">
-            <h3 className="recipe-desc">{title.length > 15 ? title.slice(0, 15) + '...' : title}</h3>
-            <img className="card-image" src={image} alt={title} />
-            <button className="material-icons-outlined" id={isFavorite ? 'isFavorite' : 'notFavorite'} onClick={handleClickFavorite}>
+            <div className="recipe-title">{title.length > 15 ? title.slice(0, 15) + '...' : title}</div>
+            <img className="recipe-card-image" src={image} alt={title} />
+            <button className="recipe-material-icons-outlined" id={isFavorite ? 'isFavorite' : 'notFavorite'} onClick={handleClickFavorite}>
               star
             </button>
-            <button className="material-icons-outlined" id={isAdded ? 'isAdd' : 'notAdd'} onClick={handleClickAdded}>
-              bookmark_add
+            <button className="recipe-material-icons-outlined" id={isAdded ? 'isAdd' : 'notAdd'} onClick={handleClickAdded}>
+              add_shopping_cart
             </button>
-            <button className="btn-more" onClick={handleClickFlip}>
+            <button className="recipe-btn-more" onClick={handleClickFlip}>
               <img src={More} alt="more" />
             </button>
           </div>
         ) : (
           <div className="recipe-back">
             <div className="recipe-desc-back">
-              <h2 className="recipe-desc-title">{title}</h2>
+              <div className="recipe-desc-title">{title}</div>
               <div className="recipe-desc-details">
                 <div className="recipe-desc-details-li">Calories: {calories}Kcal</div>
                 <div className="recipe-desc-details-li">Carbs: {carbs}</div>
@@ -71,7 +71,7 @@ function RecipeCard({ image, title, calories, carbs, fat, protein, sugar }) {
                 </a>
               )} */}
             </div>
-            <button className="material-icons-outlined" id="close" onClick={handleClickFlip}>
+            <button className="recipe-material-icons-outlined" id="btn-close" onClick={handleClickFlip}>
               cancel
             </button>
           </div>

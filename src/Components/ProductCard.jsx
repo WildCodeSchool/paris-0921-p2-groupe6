@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import './ProductCard.css';
+import './Card.css';
 
 import More from '../Assets/More.png';
 
@@ -27,15 +27,15 @@ function ProductCard({ product }) {
         <div className="product-img-container">
           {more ? (
             <div className="product-front">
-              <h3 className="product-desc">{product.product_name}</h3>
-              <img className="cardImageProduct" src={product.selected_images.front.display.fr} alt={product.product_name} />
-              <button className="material-icons-outlined" id={isFavorite ? 'isFavorite' : 'notFavorite'} onClick={handleClickFavorite}>
+              <h3 className="product-desc-title">{product.product_name}</h3>
+              <img className="product-card-image" src={product.selected_images.front.display.fr} alt={product.product_name} />
+              <button className="product-material-icons-outlined" id={isFavorite ? 'isFavorite' : 'notFavorite'} onClick={handleClickFavorite}>
                 star
               </button>
-              <button className="material-icons-outlined" id={isAdded ? 'isAdd' : 'notAdd'} onClick={handleClickAdded}>
-                bookmark_add
+              <button className="product-material-icons-outlined" id={isAdded ? 'isAdd' : 'notAdd'} onClick={handleClickAdded}>
+                add_shopping_cart
               </button>
-              <button className="btn-more" onClick={handleClickFlip}>
+              <button className="product-btn-more" onClick={handleClickFlip}>
                 <img src={More} alt="more" />
               </button>
             </div>
