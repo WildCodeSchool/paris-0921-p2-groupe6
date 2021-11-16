@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import UserContext from '../Contexts/userContext';
+import { NavLink } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import Offer from './Offer.jsx';
 import SmallLogo from '../SmallLogo.png';
@@ -7,6 +9,8 @@ import SmallLogo from '../SmallLogo.png';
 import './HomeConditions.css';
 
 function HomeConditions() {
+  const history = useHistory();
+
   const { userName, setUserName } = useContext(UserContext);
   const [mood, setMood] = useState('');
   const [number, setNumber] = useState('');
@@ -82,7 +86,9 @@ function HomeConditions() {
 
   return (
     <main>
-      <img src={SmallLogo} alt="Lazy Night Small Logo" className="HomeConditionsLogo" />
+      <NavLink className="link" activeClassName="active" exact to="/">
+        <img src={SmallLogo} alt="Lazy Night Small Banner" className="HomeConditionsLogo" />
+      </NavLink>
       <div className="HomeConditions">
         <h2 className="HomeConditionsTitle">
           To access your Lazy Night, <br />
@@ -159,6 +165,7 @@ function HomeConditions() {
           className="HomeConditionsSubmit"
           onClick={() => {
             setConditionsSubmitted(true);
+            history.push('/Offer');
           }}
         >
           Give me my lazy night !
