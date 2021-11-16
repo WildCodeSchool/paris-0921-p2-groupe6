@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Pagination, Navigation } from 'swiper';
 import axios from 'axios';
+import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 
 import TakeAwayCard from './TakeAwayCard.jsx';
 
@@ -9,21 +11,27 @@ import './Slider.css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import SwiperCore, { Pagination, Navigation } from 'swiper';
-
 SwiperCore.use([Pagination, Navigation]);
 
 function FetchTakeAway() {
   const BurgersByCalories = 'http://localhost:8000/api/takeaway/';
-
   const [fetchedTakeAway, setFetchedTakeAway] = useState();
+  const { allFavorites, fetchAllFavorites } = useContext(CurrentAllFavoritesContext);
+  const [refresh, setRefresh] = useState(false);
+
+  function Refresh() {
+    setRefresh(!refresh);
+  }
 
   useEffect(() => {
+    fetchAllFavorites();
     axios
       .get(BurgersByCalories)
       .then((response) => response.data)
       .then((data) => setFetchedTakeAway(data));
   }, []);
+
+  useEffect(() => {}, [allFavorites]);
 
   return (
     <div>
@@ -45,6 +53,7 @@ function FetchTakeAway() {
               </SwiperSlide>
             ))}
         </Swiper>
+        <button onClick={Refresh}>Refresh</button>
       </div>
     </div>
   );

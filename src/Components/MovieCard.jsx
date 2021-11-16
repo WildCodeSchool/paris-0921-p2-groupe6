@@ -1,15 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
+import axios from 'axios';
+
+import CurrentUserNameContext from '../Contexts/userContext';
+import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 import logo from '../logo.png';
-import './MovieCard.css';
 import More from '../Assets/More.png';
 
-function MovieCard({ title, desc, img }) {
+import './MovieCard.css';
+
+function MovieCard({ id, title, desc, img }) {
+  const { allFavorites } = useContext(CurrentAllFavoritesContext);
   const [isFavorite, setIsFavorite] = useState(false);
   const [more, setMore] = useState(true);
   const [isAdded, setIsAdded] = useState(false);
+  const { userName } = useContext(CurrentUserNameContext);
+
+  function AddToFavorite() {
+    setIsFavorite(true);
+    axios.post('http://localhost:8000/api/favorites/movies', {
+      username: userName,
+      itemCategory: 'movie',
+      itemName: title,
+      description: desc,
+      imgUrl: img,
+      itemId: id,
+    });
+  }
+
+  function DeleteFromFavorite() {
+    setIsFavorite(false);
+    axios.delete(`http://localhost:8000/api/favorites/movies/${userName}/${id}`);
+  }
 
   function handleClickFavorite() {
-    setIsFavorite(!isFavorite);
+    isFavorite ? DeleteFromFavorite() : AddToFavorite();
   }
 
   function handleClickAdded() {
@@ -19,6 +43,13 @@ function MovieCard({ title, desc, img }) {
   function handleClickFlip() {
     setMore(!more);
   }
+
+  useEffect(() => {
+    if (allFavorites.some((object) => object.username === userName && object.itemId === id && object.itemCategory === 'movie')) {
+      setIsFavorite(true);
+    }
+  }, []);
+  useEffect(() => {}, [isFavorite]);
 
   return (
     <div className="movie-Card">
