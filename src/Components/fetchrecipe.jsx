@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Pagination, Navigation } from 'swiper';
 import axios from 'axios';
 
 import RecipeCard from './RecipeCard';
@@ -8,8 +9,6 @@ import 'swiper/css';
 import './Slider.css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
-import SwiperCore, { Pagination, Navigation } from 'swiper';
 
 SwiperCore.use([Pagination, Navigation]);
 
