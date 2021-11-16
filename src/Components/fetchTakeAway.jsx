@@ -47,11 +47,16 @@ function FetchTakeAway() {
           className="mySwiper"
         >
           {fetchedTakeAway &&
-            fetchedTakeAway.slice(0, 10).map((info, index) => (
-              <SwiperSlide key={index}>
-                <TakeAwayCard key={index} {...info} />
-              </SwiperSlide>
-            ))}
+            fetchedTakeAway
+              .map((value) => ({ value, sort: Math.random() }))
+              .sort((a, b) => a.sort - b.sort)
+              .map(({ value }) => value)
+              .slice(0, 10)
+              .map((info, index) => (
+                <SwiperSlide key={index}>
+                  <TakeAwayCard key={index} {...info} />
+                </SwiperSlide>
+              ))}
         </Swiper>
         <button onClick={Refresh}>Refresh</button>
       </div>
