@@ -5,7 +5,7 @@ import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 
 import './Card.css';
 
-import More from '../Assets/more-mayo.png';
+import More from '../Assets/More.png';
 
 function SoftDrinkCard({ name, calories, sugar, imgUrl }) {
   const [isFavorite, setIsFavorite] = useState(false);
