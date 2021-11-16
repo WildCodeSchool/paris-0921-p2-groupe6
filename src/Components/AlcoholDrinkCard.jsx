@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import './Card.css';
 
-import More from '../Assets/more-mayo.png';
+import More from '../Assets/More.png';
 
 function AlcoholDrinkCard({ name, calories, sugar, imgUrl }) {
   const [isFavorite, setIsFavorite] = useState(false);

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // import axios from 'axios';
 
-import More from '../Assets/more-mayo.png';
+import More from '../Assets/More.png';
 
 import './Card.css';
 
