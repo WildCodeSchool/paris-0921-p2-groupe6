@@ -25,10 +25,8 @@
   display: flex;
   font-size: 1.5em;
   justify-content: center;
-  padding: 0.5em;
-  text-align: center;
+  margin: 0.8em;
 }
-
 .Offer-Button {
   background-color: var(--lazy-barbecue);
   color: var(--lazy-white);

@@ -47,11 +47,16 @@ function FetchAlcoholDrinks() {
           className="mySwiper"
         >
           {fetchedDrink &&
-            fetchedDrink.slice(0, 10).map((info, index) => (
-              <SwiperSlide key={index}>
-                <AlcoholDrinkCard key={index} {...info} />
-              </SwiperSlide>
-            ))}
+            fetchedDrink
+              .map((value) => ({ value, sort: Math.random() }))
+              .sort((a, b) => a.sort - b.sort)
+              .map(({ value }) => value)
+              .slice(0, 10)
+              .map((info, index) => (
+                <SwiperSlide key={index}>
+                  <AlcoholDrinkCard key={index} {...info} />
+                </SwiperSlide>
+              ))}
         </Swiper>
         <button onClick={Refresh}>Refresh</button>
       </div>
