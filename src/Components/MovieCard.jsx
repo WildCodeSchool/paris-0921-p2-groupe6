@@ -43,7 +43,7 @@ function MovieCard({ id, title, desc, img }) {
     if (isAdded) {
       setUserChoice(userChoice.filter((element) => element.itemName != title));
     } else {
-      setUserChoice([...userChoice, { itemCategory: 'movie', itemName: title, description: desc, imgUrl: img, itemId: id }]);
+      setUserChoice([...userChoice, { username: userName, itemCategory: 'movie', itemName: title, description: desc, imgUrl: img, itemId: id }]);
     }
   }
 

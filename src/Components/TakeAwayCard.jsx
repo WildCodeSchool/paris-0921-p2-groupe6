@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import axios from 'axios';
 import CurrentUserNameContext from '../Contexts/userContext';
 import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
-
+import CurrentFinalChoicesContext from '../Contexts/finalChoices';
 import './Card.css';
 
 import More from '../Assets/More.png';
@@ -13,6 +13,7 @@ function TakeAwayCard({ name, store, portion, calories, fat, carbs, protein, img
   const [isAdded, setIsAdded] = useState(false);
   const { userName } = useContext(CurrentUserNameContext);
   const { allFavorites } = useContext(CurrentAllFavoritesContext);
+  const { userChoice, setUserChoice } = useContext(CurrentFinalChoicesContext);
 
   function AddToFavorite() {
     setIsFavorite(true);
@@ -41,6 +42,25 @@ function TakeAwayCard({ name, store, portion, calories, fat, carbs, protein, img
 
   function handleClickAdded() {
     setIsAdded(!isAdded);
+    if (isAdded) {
+      setUserChoice(userChoice.filter((element) => element.itemName != name));
+    } else {
+      setUserChoice([
+        ...userChoice,
+        {
+          username: userName,
+          itemCategory: 'takeaway',
+          itemName: name,
+          store: store,
+          portion: portion,
+          calories: calories,
+          fat: fat,
+          carbs: carbs,
+          protein: protein,
+          imgUrl: imgUrl,
+        },
+      ]);
+    }
   }
 
   function handleClickFlip() {

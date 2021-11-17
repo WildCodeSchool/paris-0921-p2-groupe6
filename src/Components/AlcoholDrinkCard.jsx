@@ -41,7 +41,7 @@ function AlcoholDrinkCard({ name, calories, sugar, imgUrl }) {
     if (isAdded) {
       setUserChoice(userChoice.filter((element) => element.name != name));
     } else {
-      setUserChoice([...userChoice, { itemCategory: 'drinks', name: name, calories: calories, sugar: sugar, imgUrl: imgUrl }]);
+      setUserChoice([...userChoice, { username: userName, itemCategory: 'drinks', name: name, calories: calories, sugar: sugar, imgUrl: imgUrl }]);
     }
   }
 

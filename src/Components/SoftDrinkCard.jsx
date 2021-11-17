@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import axios from 'axios';
 import CurrentUserNameContext from '../Contexts/userContext';
 import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
-
+import CurrentFinalChoicesContext from '../Contexts/finalChoices';
 import './Card.css';
 
 import More from '../Assets/More.png';
@@ -13,6 +13,7 @@ function SoftDrinkCard({ name, calories, sugar, imgUrl }) {
   const [isAdded, setIsAdded] = useState(false);
   const { userName } = useContext(CurrentUserNameContext);
   const { allFavorites } = useContext(CurrentAllFavoritesContext);
+  const { userChoice, setUserChoice } = useContext(CurrentFinalChoicesContext);
 
   function AddToFavorite() {
     setIsFavorite(true);
@@ -37,6 +38,14 @@ function SoftDrinkCard({ name, calories, sugar, imgUrl }) {
 
   function handleClickAdded() {
     setIsAdded(!isAdded);
+    if (isAdded) {
+      setUserChoice(userChoice.filter((element) => element.itemName != name));
+    } else {
+      setUserChoice([
+        ...userChoice,
+        { username: userName, itemCategory: 'drinks', itemName: name, calories: calories, sugar: sugar, imgUrl: imgUrl },
+      ]);
+    }
   }
 
   function handleClickFlip() {
