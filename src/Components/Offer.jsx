@@ -2,6 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import FetchSoftDrink from './fetchSoftDrink';
 import FetchRecipe from './fetchrecipe';
+import { useParams } from 'react-router-dom';
 
 import FetchAlcoholDrinks from './fetchAlcoholDrink';
 import FetchTakeAway from './fetchTakeAway';
@@ -13,8 +14,9 @@ import SmallLogo from '../SmallLogo.png';
 
 import './Offer.css';
 
-function Offer({ mood, drink, fat }) {
+function Offer() {
   const history = useHistory();
+  const { mood, fat, drink } = useParams();
 
   return (
     <main>
