@@ -90,7 +90,7 @@
   height: 5vh;
 }
 
-#logo-fond-desc {
+.film-logo-fond-desc {
   width: 85%;
   height: 45%;
   object-fit: cover;

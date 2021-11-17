@@ -89,18 +89,10 @@ function ProductCard({ product }) {
                 <div className="product-desc-details">
                   <p>Per 100g:</p>
                   <div className="product-desc-details-li">Calories: {productCalories} KCal</div>
-                  <div className="product-desc-details-li">
-                    Carbs: {productCarbs} {product.nutriments.carbohydrates_unit}
-                  </div>
-                  <div className="product-desc-details-li">
-                    Fat: {productFat} {product.nutriments.fat_unit}
-                  </div>
-                  <div className="product-desc-details-li">
-                    Protein: {productProtein} {product.nutriments.proteins_unit}
-                  </div>
-                  <div className="product-desc-details-li">
-                    Sugar: {productSugar} {product.nutriments.sugars_unit}
-                  </div>
+                  <div className="product-desc-details-li">Carbs: {productCarbs} g</div>
+                  <div className="product-desc-details-li">Fat: {productFat} g</div>
+                  <div className="product-desc-details-li">Protein: {productProtein} g</div>
+                  <div className="product-desc-details-li">Sugar: {productSugar} g</div>
                 </div>
               </div>
               <button className="material-icons-outlined" id="close" onClick={handleClickFlip}>
