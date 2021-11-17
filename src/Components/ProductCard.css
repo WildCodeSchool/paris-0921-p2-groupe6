@@ -1,5 +1,13 @@
 @import '../fonts.css';
 
+.product-Card {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  background-color: white;
+  width: 500vw;
+}
+
 .product-desc {
   display: flex;
   flex-direction: column;
@@ -23,14 +31,6 @@
   bottom: 0%;
   border: none;
   background: none;
-}
-
-.product-Card {
-  margin: 0 1vw;
-  margin-top: 10vh;
-  display: flex;
-  height: 20vh;
-  width: 90vw;
 }
 
 .product-front {
@@ -128,9 +128,9 @@
   margin: 1px;
 }
 
-.product-desc-title {
-  font-size: 20px;
-  margin: 3vw;
+#product-desc-title {
+  font-size: 3em;
+  line-height: 2;
 }
 
 .product-desc-details {

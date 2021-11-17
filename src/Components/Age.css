@@ -53,6 +53,7 @@
   flex-direction: column;
   margin-bottom: 20%;
   width: 60%;
+  margin-bottom: 15vh;
 }
 
 .BirthDateCheckBox {
@@ -79,6 +80,7 @@
   font-size: 1.3em;
   font-weight: bold;
 }
+
 
 .banner {
   max-width: 100%;
