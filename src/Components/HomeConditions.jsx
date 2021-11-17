@@ -1,23 +1,25 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useHistory } from 'react-router-dom';
 import CurrentUserNameContext from '../Contexts/userContext';
+import Offer from './Offer';
 
 import SmallLogo from '../SmallLogo.png';
 
 import './HomeConditions.css';
 
 function HomeConditions() {
-  const history = useHistory();
   const { userName, setUserName } = useContext(CurrentUserNameContext);
   const [mood, setMood] = useState('');
   const [number, setNumber] = useState('');
   const [drink, setDrink] = useState('');
   const [fat, setFat] = useState('');
   const nameForm = useRef(null);
+  const [conditionsSubmitted, setConditionsSubmitted] = useState(false);
+  const choiceView = useRef();
 
   function ResetUserName() {
     setUserName('');
+    setConditionsSubmitted(false);
   }
 
   useEffect(() => {}, [userName]);
@@ -78,6 +80,12 @@ function HomeConditions() {
     const form = nameForm.current;
     setUserName(`${form['name'].value}`);
   }
+
+  function scrollAuto() {
+    choiceView.current.scrollIntoView(true, { behavior: 'auto', block: 'center', inline: 'center' });
+  }
+
+  useEffect(() => {}, [conditionsSubmitted]);
 
   return (
     <main>
@@ -159,13 +167,16 @@ function HomeConditions() {
         <button
           className="HomeConditionsSubmit"
           onClick={() => {
-            history.push(`/Offer/${mood}/${fat}/${drink}`);
+            setConditionsSubmitted(true);
+            scrollAuto();
           }}
         >
           Give me my lazy night !
         </button>
-        {number}
       </div>
+      {(mood.length, drink.length, fat.length, number.length, conditionsSubmitted && <Offer mood={mood} drink={drink} fat={fat} />)}
+
+      <div ref={choiceView}></div>
     </main>
   );
 }
