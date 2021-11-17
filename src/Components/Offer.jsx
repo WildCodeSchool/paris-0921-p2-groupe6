@@ -1,23 +1,19 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
-import FetchSoftDrink from './fetchSoftDrink';
-import FetchRecipe from './fetchrecipe';
-import { useParams } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 
+import FetchSoftDrink from './fetchSoftDrink';
 import FetchAlcoholDrinks from './fetchAlcoholDrink';
+import FetchRecipe from './fetchrecipe';
 import FetchTakeAway from './fetchTakeAway';
 import FetchMovies from './fetchMovies';
-
-import { NavLink } from 'react-router-dom';
 
 import SmallLogo from '../SmallLogo.png';
 
 import './Offer.css';
 
-function Offer() {
-  const history = useHistory();
-  const { mood, fat, drink } = useParams();
-
+function Offer({ mood, fat, drink }) {
   return (
     <main>
       <NavLink className="link" activeClassName="active" exact to="/">
@@ -28,13 +24,10 @@ function Offer() {
         <p className="OfferPresentationText">
           Choose your meal, drink <br /> and movie to validate your choice !
         </p>
-        <p className="OfferPresentationText"> Once your choice is made, you will discover the amount of your fat night !</p>
+        <p className="OfferPresentationText"> You will discover the amount of your fat night !</p>
         {fat === 'TakewayAndDeliver' ? <FetchTakeAway /> : <FetchRecipe />}
         {drink === 'sober' ? <FetchSoftDrink /> : <FetchAlcoholDrinks />}
         {<FetchMovies category={mood} />}
-        <button className="Offer-Button" onClick={() => history.push('/FinalResults')}>
-          Choices made !
-        </button>
       </div>
     </main>
   );
