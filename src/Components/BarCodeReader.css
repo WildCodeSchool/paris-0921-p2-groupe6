@@ -6,6 +6,7 @@
   height: auto;
   margin: auto;
   padding: auto;
+  overflow: hidden;
   width: 90vw;
 }
 
@@ -14,11 +15,6 @@
   margin: auto;
   width: 400px;
   height: 300px;
-}
-
-.BarCodeProductCard {
-  display: flex;
-  margin: 1px;
 }
 
 .BarCodeReaderContainer,
@@ -37,6 +33,11 @@
   text-align: center;
 }
 
+.BarCodeProductCard{
+  display: flex;
+  background-color: white;
+}
+
 #interactive.viewport canvas,
 video {
   width: 400px;
@@ -52,9 +53,10 @@ video {
   font-family: var(--main-font-family);
   font-size: 1.3em;
   font-weight: bold;
-  margin: auto;
-  margin-bottom: 10px;
+margin: auto;
   width: 15vw;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 #interactive.viewport canvas.drawingBuffer,

@@ -1,5 +1,13 @@
 @import '../fonts.css';
 
+.product-Card {
+  display: flex;
+  flex-direction: column;
+  margin:auto;
+  background-color: white;
+  width: 500vw;
+}
+
 .product-desc {
   display: flex;
   flex-direction: column;
@@ -25,13 +33,7 @@
   background: none;
 }
 
-.product-Card {
-  margin: 0 1vw;
-  margin-top: 10vh;
-  display: flex;
-  height: 20vh;
-  width: 90vw;
-}
+
 
 .product-front {
   backface-visibility: inherit;

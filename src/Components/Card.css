@@ -2,7 +2,6 @@
 
 .back,
 .AlcoholDrink-back,
-.product-back,
 .recipe-back,
 .SoftDrink-back,
 .TakeAway-back {
@@ -17,7 +16,6 @@
 
 .btn-more,
 .AlcoholDrink-btn-more,
-.product-btn-more,
 .recipe-btn-more,
 .SoftDrink-btn-more,
 .TakeAway-btn-more {
@@ -32,7 +30,6 @@
 
 .Card,
 .AlcoholDrink-Card,
-.product-Card,
 .recipe-Card,
 .SoftDrink-Card,
 .TakeAway-Card {
@@ -44,7 +41,6 @@
 
 .card-image,
 .AlcoholDrink-card-image,
-.product-card-image,
 .recipe-card-image,
 .SoftDrink-card-image,
 .TakeAway-card-image {
@@ -57,7 +53,6 @@
 
 .desc-back,
 .AlcoholDrink-desc-back,
-.product-desc-back,
 .recipe-desc-back,
 .SoftDrink-desc-back,
 .TakeAway-desc-back {
@@ -68,7 +63,6 @@
 
 .desc-title,
 .AlcoholDrink-desc-title,
-.product-desc-title,
 .recipe-desc-title,
 .SoftDrink-desc-title,
 .TakeAway-desc-title {
@@ -79,9 +73,9 @@
   top: -20%;
 }
 
+
 .front,
 .AlcoholDrink-front,
-.product-front,
 .SoftDrink-front,
 .TakeAway-front {
   backface-visibility: inherit;
@@ -98,7 +92,6 @@
 
 .img-container,
 .AlcoholDrink-img-container,
-.product-img-container,
 .SoftDrink-img-container,
 .TakeAway-img-container {
   height: 100%;
@@ -107,6 +100,7 @@
   transition: 2s;
   width: 100%;
 }
+
 
 .recipe-img-container {
   display: flex;
@@ -126,7 +120,6 @@
 
 .material-icons-outlined,
 .AlcoholDrink-material-icons-outlined,
-.product-material-icons-outlined,
 .recipe-material-icons-outlined,
 .SoftDrink-material-icons-outlined,
 .TakeAway-material-icons-outlined {
@@ -154,7 +147,6 @@
   -webkit-font-smoothing: antialiased;
 }
 
-.product-desc-details,
 .recipe-desc-details,
 .SoftDrink-desc-details,
 .TakeAway-desc-details {
@@ -163,7 +155,6 @@
   font-size: 15px;
 }
 
-.product-desc-details-li,
 .recipe-desc-details-li,
 .SoftDrink-desc-details-li,
 .TakeAway-desc-details-li {
