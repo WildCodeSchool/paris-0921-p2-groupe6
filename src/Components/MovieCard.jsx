@@ -70,8 +70,8 @@ function MovieCard({ id, title, desc, img }) {
         ) : (
           <div className="movie-back">
             <p className="movie-desc-back" id="movie-p-back">
-              <h3 id="movie-card-title">{title}</h3>
-              <img src={logo} id="logo-fond-desc" alt="fond-desc-logo" />
+              <div id="movie-card-title">{title}</div>
+              <img src={logo} className="film-logo-fond-desc" id="logo-fond-desc" alt="fond-desc-logo" />
               {desc}
             </p>
             <button className="movie-material-icons-outlined" id="movie-btn-close" onClick={handleClickFlip}>

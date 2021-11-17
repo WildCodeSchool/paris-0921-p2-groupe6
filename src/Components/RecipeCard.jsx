@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import axios from 'axios';
 import CurrentUserNameContext from '../Contexts/userContext';
 import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
+import logo from '../logo.png';
 
 import More from '../Assets/More.png';
 
@@ -75,6 +76,7 @@ function RecipeCard({ image, title, calories, carbs, fat, protein, sugar }) {
           <div className="recipe-back">
             <div className="recipe-desc-back">
               <div className="recipe-desc-title">{title}</div>
+              <img src={logo} className="recipe-logo-fond-desc" id="logo-fond-desc" alt="fond-desc-logo" />
               <div className="recipe-desc-details">
                 <div className="recipe-desc-details-li">Calories: {calories}Kcal</div>
                 <div className="recipe-desc-details-li">Carbs: {carbs}</div>
