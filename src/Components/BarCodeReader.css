@@ -33,9 +33,10 @@
   text-align: center;
 }
 
-.BarCodeProductCard{
+.BarCodeProductCard {
   display: flex;
   background-color: white;
+  justify-content: center;
 }
 
 #interactive.viewport canvas,
@@ -53,7 +54,7 @@ video {
   font-family: var(--main-font-family);
   font-size: 1.3em;
   font-weight: bold;
-margin: auto;
+  margin: auto;
   width: 15vw;
   margin-bottom: 20px;
   margin-top: 20px;

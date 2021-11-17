@@ -16,6 +16,8 @@ body {
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: large;
+  line-height: 1.4;
 }
 
 @keyframes gradient-animation {

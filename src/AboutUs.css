@@ -1,7 +1,13 @@
-h1 {
+.AboutUsLogo {
+  display: none;
+}
+
+.AboutUsTopFirstTitle {
   color: var(--lazy-white);
   font-size: 2.5em;
   text-align: center;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 .AboutUsTop,
@@ -16,6 +22,7 @@ h1 {
   margin: auto;
   margin-bottom: 20px;
   width: 70%;
+  align-items: center;
 }
 
 .AboutUsTitle,
@@ -35,6 +42,8 @@ h1 {
 .AboutUsTeamPresentation {
   text-align: center;
   font-size: 1.5em;
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
 
 .AboutUsMembers {
@@ -43,30 +52,43 @@ h1 {
 }
 
 .AboutUsTeam {
-  margin: 15px 5px 15px 5px;
   text-align: center;
 }
 
 .portraitTeam {
   display: flex;
-  height: 4em;
+  height: 12em;
+  flex-direction: row;
   border-radius: 50%;
   margin: auto;
+  margin: 1vw;
 }
 
 .ContactUsText {
-  text-align: center;
-  font-size: 1.5em;
-  margin: 20px;
-}
-
-.ContactForm {
-  display: flex;
-  flex-direction: column;
   margin: auto;
-  justify-content: start;
+  margin: 0 10vw 2vw 10vw;
 }
 
-.FormBtn {
-  width: 40%;
+@media screen and (max-width: 800px) {
+  .AboutUsLogo {
+    display: flex;
+    height: 8vh;
+    justify-content: space-between;
+    margin: auto;
+    padding-top: 1vh;
+  }
+
+  .AboutUsMembers {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .portraitTeam {
+    display: flex;
+    height: 15vh;
+    border-radius: 50%;
+    margin: auto;
+    justify-content: space-evenly;
+  }
 }

@@ -3,7 +3,7 @@
 .product-Card {
   display: flex;
   flex-direction: column;
-  margin:auto;
+  margin: auto;
   background-color: white;
   width: 500vw;
 }
@@ -32,8 +32,6 @@
   border: none;
   background: none;
 }
-
-
 
 .product-front {
   backface-visibility: inherit;
@@ -130,9 +128,9 @@
   margin: 1px;
 }
 
-.product-desc-title {
-  font-size: 20px;
-  margin: 3vw;
+#product-desc-title {
+  font-size: 3em;
+  line-height: 2;
 }
 
 .product-desc-details {
