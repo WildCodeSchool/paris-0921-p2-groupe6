@@ -1,10 +1,5 @@
 @import './fonts.css';
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
 body {
   animation: gradient-animation 30s ease infinite;
   background: linear-gradient(142deg, #d90b08, #e6af2e, #a3320b);
@@ -16,8 +11,6 @@ body {
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: large;
-  line-height: 1.4;
 }
 
 @keyframes gradient-animation {

@@ -69,7 +69,7 @@ function ProductCard({ product }) {
         <div className="product-img-container">
           {more ? (
             <div className="product-front">
-              <h3 id="product-desc-title">{productName}</h3>
+              <h3 className="product-desc-title">{productName}</h3>
               <img className="product-card-image" src={productImg} alt={productName} />
               <button className="product-material-icons-outlined" id={isFavorite ? 'isFavorite' : 'notFavorite'} onClick={handleClickFavorite}>
                 star
