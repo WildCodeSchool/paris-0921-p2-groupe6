@@ -6,6 +6,7 @@ import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 import CurrentUserNameContext from '../Contexts/userContext';
 import MovieCard from './MovieCard';
 import RecipeCard from './RecipeCard';
+import ProductCard from './ProductCard';
 SwiperCore.use([Pagination, Navigation]);
 
 import 'swiper/css';
@@ -144,6 +145,31 @@ function FavoritesSliders() {
                   .map((info, index) => (
                     <SwiperSlide key={index}>
                       <MovieCard key={index} id={info.itemId} title={info.itemName} desc={info.moviedescription} img={info.imgUrl} />
+                    </SwiperSlide>
+                  ))}
+              </Swiper>
+            ) : (
+              <div>Nothing yet in here</div>
+            )}
+          </section>
+          <section>
+            <h3>Scanned Products:</h3>
+            {allFavorites.some((elt) => elt.username === userName && elt.itemCategory === 'barcode') ? (
+              <Swiper
+                slidesPerView={1}
+                spaceBetween={30}
+                loop={true}
+                pagination={{
+                  clickable: true,
+                }}
+                navigation={true}
+                className="mySwiper"
+              >
+                {allFavorites
+                  .filter((elt) => (elt.itemCategory === 'barcode') & (elt.username === userName))
+                  .map((info, index) => (
+                    <SwiperSlide key={index}>
+                      <ProductCard key={index} product={info} />
                     </SwiperSlide>
                   ))}
               </Swiper>
