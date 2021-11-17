@@ -2,6 +2,8 @@ import React, { useState, useContext, useEffect } from 'react';
 import axios from 'axios';
 import CurrentUserNameContext from '../Contexts/userContext';
 import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
+import CurrentFinalChoicesContext from '../Contexts/finalChoices';
+import logo from '../logo.png';
 
 import More from '../Assets/More.png';
 
@@ -13,6 +15,7 @@ function RecipeCard({ image, title, calories, carbs, fat, protein, sugar }) {
   const [isAdded, setIsAdded] = useState(false);
   const { userName } = useContext(CurrentUserNameContext);
   const { allFavorites } = useContext(CurrentAllFavoritesContext);
+  const { userChoice, setUserChoice } = useContext(CurrentFinalChoicesContext);
 
   function AddToFavorite() {
     setIsFavorite(true);
@@ -40,6 +43,24 @@ function RecipeCard({ image, title, calories, carbs, fat, protein, sugar }) {
 
   function handleClickAdded() {
     setIsAdded(!isAdded);
+    if (isAdded) {
+      setUserChoice(userChoice.filter((element) => element.name != name));
+    } else {
+      setUserChoice([
+        ...userChoice,
+        {
+          username: userName,
+          itemCategory: 'recipe',
+          itemName: title,
+          calories: calories,
+          fat: fat,
+          carbs: carbs,
+          protein: protein,
+          sugar: sugar,
+          imgUrl: image,
+        },
+      ]);
+    }
   }
 
   function handleClickFlip() {
@@ -75,6 +96,7 @@ function RecipeCard({ image, title, calories, carbs, fat, protein, sugar }) {
           <div className="recipe-back">
             <div className="recipe-desc-back">
               <div className="recipe-desc-title">{title}</div>
+              <img src={logo} className="recipe-logo-fond-desc" id="logo-fond-desc" alt="fond-desc-logo" />
               <div className="recipe-desc-details">
                 <div className="recipe-desc-details-li">Calories: {calories}Kcal</div>
                 <div className="recipe-desc-details-li">Carbs: {carbs}</div>

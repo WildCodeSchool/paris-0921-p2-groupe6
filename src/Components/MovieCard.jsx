@@ -5,6 +5,7 @@ import CurrentUserNameContext from '../Contexts/userContext';
 import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 import logo from '../logo.png';
 import More from '../Assets/More.png';
+import CurrentFinalChoicesContext from '../Contexts/finalChoices';
 
 import './MovieCard.css';
 
@@ -14,6 +15,7 @@ function MovieCard({ id, title, desc, img }) {
   const [more, setMore] = useState(true);
   const [isAdded, setIsAdded] = useState(false);
   const { userName } = useContext(CurrentUserNameContext);
+  const { userChoice, setUserChoice } = useContext(CurrentFinalChoicesContext);
 
   function AddToFavorite() {
     setIsFavorite(true);
@@ -38,6 +40,11 @@ function MovieCard({ id, title, desc, img }) {
 
   function handleClickAdded() {
     setIsAdded(!isAdded);
+    if (isAdded) {
+      setUserChoice(userChoice.filter((element) => element.itemName != title));
+    } else {
+      setUserChoice([...userChoice, { username: userName, itemCategory: 'movie', itemName: title, description: desc, imgUrl: img, itemId: id }]);
+    }
   }
 
   function handleClickFlip() {
@@ -70,8 +77,8 @@ function MovieCard({ id, title, desc, img }) {
         ) : (
           <div className="movie-back">
             <p className="movie-desc-back" id="movie-p-back">
-              <h3 id="movie-card-title">{title}</h3>
-              <img src={logo} id="logo-fond-desc" alt="fond-desc-logo" />
+              <div id="movie-card-title">{title}</div>
+              <img src={logo} className="film-logo-fond-desc" id="logo-fond-desc" alt="fond-desc-logo" />
               {desc}
             </p>
             <button className="movie-material-icons-outlined" id="movie-btn-close" onClick={handleClickFlip}>

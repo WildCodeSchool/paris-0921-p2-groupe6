@@ -2,9 +2,9 @@ import React, { useState, useContext, useEffect } from 'react';
 import axios from 'axios';
 import CurrentUserNameContext from '../Contexts/userContext';
 import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
-
+import logo from '../logo.png';
 import './Card.css';
-
+import CurrentFinalChoicesContext from '../Contexts/finalChoices';
 import More from '../Assets/More.png';
 
 function AlcoholDrinkCard({ name, calories, sugar, imgUrl }) {
@@ -13,6 +13,7 @@ function AlcoholDrinkCard({ name, calories, sugar, imgUrl }) {
   const [isAdded, setIsAdded] = useState(false);
   const { userName } = useContext(CurrentUserNameContext);
   const { allFavorites } = useContext(CurrentAllFavoritesContext);
+  const { userChoice, setUserChoice } = useContext(CurrentFinalChoicesContext);
 
   function AddToFavorite() {
     setIsFavorite(true);
@@ -37,6 +38,11 @@ function AlcoholDrinkCard({ name, calories, sugar, imgUrl }) {
 
   function handleClickAdded() {
     setIsAdded(!isAdded);
+    if (isAdded) {
+      setUserChoice(userChoice.filter((element) => element.name != name));
+    } else {
+      setUserChoice([...userChoice, { username: userName, itemCategory: 'drinks', name: name, calories: calories, sugar: sugar, imgUrl: imgUrl }]);
+    }
   }
 
   function handleClickFlip() {
@@ -69,7 +75,8 @@ function AlcoholDrinkCard({ name, calories, sugar, imgUrl }) {
         ) : (
           <div className="AlcoholDrink-back">
             <div className="AlcoholDrink-desc-back">
-              <h2 className="AlcoholDrink-desc-title">{name}</h2>
+              <div className="AlcoholDrink-desc-title">{name}</div>
+              <img src={logo} className="Alcohol-logo-fond-desc" id="logo-fond-desc" alt="fond-desc-logo" />
               <div className="AlcoholDrink-desc-details">
                 <div className="AlcoholDrink-desc-details-li">Calories: {calories}Kcal</div>
                 <div className="AlcoholDrink-desc-details-li">Sugar: {sugar}</div>
