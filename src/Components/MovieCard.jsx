@@ -5,6 +5,7 @@ import CurrentUserNameContext from '../Contexts/userContext';
 import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 import logo from '../logo.png';
 import More from '../Assets/More.png';
+import CurrentFinalChoicesContext from '../Contexts/finalChoices';
 
 import './MovieCard.css';
 
@@ -14,6 +15,7 @@ function MovieCard({ id, title, desc, img }) {
   const [more, setMore] = useState(true);
   const [isAdded, setIsAdded] = useState(false);
   const { userName } = useContext(CurrentUserNameContext);
+  const { userChoice, setUserChoice } = useContext(CurrentFinalChoicesContext);
 
   function AddToFavorite() {
     setIsFavorite(true);
@@ -38,6 +40,11 @@ function MovieCard({ id, title, desc, img }) {
 
   function handleClickAdded() {
     setIsAdded(!isAdded);
+    if (isAdded) {
+      setUserChoice(userChoice.filter((element) => element.itemName != title));
+    } else {
+      setUserChoice([...userChoice, { itemCategory: 'movie', itemName: title, description: desc, imgUrl: img, itemId: id }]);
+    }
   }
 
   function handleClickFlip() {

@@ -4,7 +4,7 @@ import CurrentUserNameContext from '../Contexts/userContext';
 import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 import logo from '../logo.png';
 import './Card.css';
-
+import CurrentFinalChoicesContext from '../Contexts/finalChoices';
 import More from '../Assets/More.png';
 
 function AlcoholDrinkCard({ name, calories, sugar, imgUrl }) {
@@ -13,6 +13,7 @@ function AlcoholDrinkCard({ name, calories, sugar, imgUrl }) {
   const [isAdded, setIsAdded] = useState(false);
   const { userName } = useContext(CurrentUserNameContext);
   const { allFavorites } = useContext(CurrentAllFavoritesContext);
+  const { userChoice, setUserChoice } = useContext(CurrentFinalChoicesContext);
 
   function AddToFavorite() {
     setIsFavorite(true);
@@ -37,6 +38,11 @@ function AlcoholDrinkCard({ name, calories, sugar, imgUrl }) {
 
   function handleClickAdded() {
     setIsAdded(!isAdded);
+    if (isAdded) {
+      setUserChoice(userChoice.filter((element) => element.name != name));
+    } else {
+      setUserChoice([...userChoice, { itemCategory: 'drinks', name: name, calories: calories, sugar: sugar, imgUrl: imgUrl }]);
+    }
   }
 
   function handleClickFlip() {
