@@ -43,13 +43,13 @@ h1 {
 }
 
 .AboutUsTeam {
-  margin: 15px 8px 15px 8px;
+  margin: 15px 5px 15px 5px;
   text-align: center;
 }
 
 .portraitTeam {
   display: flex;
-  height: 7em;
+  height: 4em;
   border-radius: 50%;
   margin: auto;
 }

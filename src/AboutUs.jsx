@@ -1,11 +1,17 @@
 import React from 'react';
 import Sophie from './Assets/sophieFood.png';
+import SmallLogo from './SmallLogo.png';
+
+import { NavLink } from 'react-router-dom';
 
 import './AboutUs.css';
 
 function AboutUs() {
   return (
     <main>
+      <NavLink className="link" activeClassName="active" exact to="/">
+        <img src={SmallLogo} alt="Lazy Night Small Logo" className="FinalResultsLogo" />
+      </NavLink>
       <h1>About Us</h1>
       <div className="AboutUsTop">
         <h2 className="AboutUsTitle">We are your Fat Generator ! </h2>
