@@ -1,11 +1,14 @@
 import React, { useState, useContext, useEffect } from 'react';
 import axios from 'axios';
+
 import CurrentUserNameContext from '../Contexts/userContext';
 import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
-import logo from '../logo.png';
-import './Card.css';
 import CurrentFinalChoicesContext from '../Contexts/finalChoices';
+
 import More from '../Assets/More.png';
+import logo from '../logo.png';
+
+import './Card.css';
 
 function AlcoholDrinkCard({ name, calories, sugar, imgUrl }) {
   const [isFavorite, setIsFavorite] = useState(false);

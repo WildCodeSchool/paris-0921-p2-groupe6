@@ -1,11 +1,13 @@
 import React, { useState, useContext, useEffect } from 'react';
 import axios from 'axios';
+
 import CurrentUserNameContext from '../Contexts/userContext';
 import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 import CurrentFinalChoicesContext from '../Contexts/finalChoices';
-import './Card.css';
 
 import More from '../Assets/More.png';
+
+import './Card.css';
 
 function TakeAwayCard({ name, store, portion, calories, fat, carbs, protein, imgUrl }) {
   const [isFavorite, setIsFavorite] = useState(false);

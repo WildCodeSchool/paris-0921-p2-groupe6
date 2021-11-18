@@ -1,12 +1,11 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { ContactUs } from './Components/ContactUs';
 
 import Etienne from './Assets/etienne.png';
 import Sophie from './Assets/sophieFood.png';
 import Vincenzo from './Assets/vincenzo.png';
 import SmallLogo from './SmallLogo.png';
-
-import { NavLink } from 'react-router-dom';
-import { ContactUs } from './Components/ContactUs';
 
 import './AboutUs.css';
 

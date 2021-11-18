@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Pagination, Navigation } from 'swiper';
+
 import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 
 import FetchRecipe from './fetchrecipe';

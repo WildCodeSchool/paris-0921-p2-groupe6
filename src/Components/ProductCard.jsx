@@ -1,11 +1,12 @@
 import React, { useState, useContext, useEffect } from 'react';
 import axios from 'axios';
+
 import CurrentUserNameContext from '../Contexts/userContext';
 import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 
-import './Card.css';
-
 import More from '../Assets/More.png';
+
+import './Card.css';
 
 function ProductCard({ product }) {
   const [isFavorite, setIsFavorite] = useState(false);

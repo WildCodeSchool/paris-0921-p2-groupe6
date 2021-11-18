@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import CurrentUserNameContext from '../Contexts/userContext';
-import Offer from './Offer';
 
+import CurrentUserNameContext from '../Contexts/userContext';
+
+import Offer from './Offer';
 import SmallLogo from '../SmallLogo.png';
 
 import './HomeConditions.css';

@@ -1,11 +1,12 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import BarCodeReader from './Components/BarCodeReader';
 import CatalogSliders from './Components/CatalogSliders';
 
-import './Catalog.css';
 import SmallLogo from './SmallLogo.png';
-import { NavLink } from 'react-router-dom';
+
+import './Catalog.css';
 
 function Catalog() {
   return (
