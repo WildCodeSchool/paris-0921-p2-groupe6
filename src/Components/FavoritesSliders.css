@@ -15,4 +15,20 @@
   color: var(--lazy-white);
   text-align: center;
   margin: 5vh;
+  font-size: 1.2em;
+}
+
+.FavouriteLogo {
+  display: flex;
+  height: 10vh;
+  justify-content: space-between;
+  margin: auto;
+  padding-top: 1vh;
+}
+
+.FavoriteSectionTitle {
+  color: var(--lazy-white);
+  text-align: center;
+  margin-bottom: -40px;
+  font-size: 1.8em;
 }

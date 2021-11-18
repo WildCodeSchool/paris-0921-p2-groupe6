@@ -34,7 +34,7 @@ function FavoritesSliders() {
       {userName.length ? (
         <div className="FavoritePage">
           <NavLink className="link" activeClassName="active" exact to="/">
-            <img src={SmallLogo} alt="Lazy Night Small Logo" className="AboutUsLogo" />
+            <img src={SmallLogo} alt="Lazy Night Small Logo" className="FavouriteLogo" />
           </NavLink>
           <h1 className="FavoritesFirstTitle">Your favorites</h1>
           <h2 className="FavoritePresentation">
@@ -42,7 +42,7 @@ function FavoritesSliders() {
             You can also add what you want to your Lazy Night from here.
           </h2>
           <section>
-            <h3>Recipe:</h3>
+            <h3 className="FavoriteSectionTitle">Your Recipes:</h3>
             {allFavorites.some((elt) => elt.username === userName && elt.itemCategory === 'recipe') ? (
               <Swiper
                 slidesPerView={1}
@@ -76,7 +76,7 @@ function FavoritesSliders() {
             )}
           </section>
           <section>
-            <h3>Takeaway:</h3>
+            <h3 className="FavoriteSectionTitle">Your Takeaways:</h3>
             {allFavorites.some((elt) => elt.username === userName && elt.itemCategory === 'takeaway') ? (
               <Swiper
                 slidesPerView={1}
@@ -111,7 +111,7 @@ function FavoritesSliders() {
             )}
           </section>
           <section>
-            <h3>Drinks:</h3>
+            <h3 className="FavoriteSectionTitle">Your Drinks:</h3>
             {allFavorites.some((elt) => elt.username === userName && elt.itemCategory === 'drinks') ? (
               <Swiper
                 slidesPerView={1}
@@ -136,7 +136,7 @@ function FavoritesSliders() {
             )}
           </section>
           <section>
-            <h3>Movies:</h3>
+            <h3 className="FavoriteSectionTitle">Your Movies:</h3>
             {allFavorites.some((elt) => elt.username === userName && elt.itemCategory === 'movie') ? (
               <Swiper
                 slidesPerView={1}
@@ -161,7 +161,7 @@ function FavoritesSliders() {
             )}
           </section>
           <section>
-            <h3>Scanned Products:</h3>
+            <h3 className="FavoriteSectionTitle">Your Scanned Products:</h3>
             {allFavorites.some((elt) => elt.username === userName && elt.itemCategory === 'barcode') ? (
               <Swiper
                 slidesPerView={1}
