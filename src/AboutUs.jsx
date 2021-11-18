@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Etienne from './Assets/Etienne.png';
+import Etienne from './Assets/etienne.png';
 import Sophie from './Assets/sophieFood.png';
-import Vincenzo from './Assets/Vincenzo.png';
+import Vincenzo from './Assets/vincenzo.png';
 import SmallLogo from './SmallLogo.png';
 
 import { NavLink } from 'react-router-dom';

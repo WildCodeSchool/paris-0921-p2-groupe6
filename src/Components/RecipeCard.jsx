@@ -18,18 +18,22 @@ function RecipeCard({ image, title, calories, carbs, fat, protein, sugar }) {
   const { userChoice, setUserChoice } = useContext(CurrentFinalChoicesContext);
 
   function AddToFavorite() {
-    setIsFavorite(true);
-    axios.post('http://localhost:8000/api/favorites/food/recipe', {
-      username: userName,
-      itemCategory: 'recipe',
-      itemName: title,
-      calories: calories,
-      fat: fat,
-      carbs: carbs,
-      protein: protein,
-      sugar: sugar,
-      imgUrl: image,
-    });
+    if (userName) {
+      setIsFavorite(true);
+      axios.post('http://localhost:8000/api/favorites/food/recipe', {
+        username: userName,
+        itemCategory: 'recipe',
+        itemName: title,
+        calories: calories,
+        fat: fat,
+        carbs: carbs,
+        protein: protein,
+        sugar: sugar,
+        imgUrl: image,
+      });
+    } else {
+      window.alert('You must be logged in to use the favorite feature');
+    }
   }
 
   function DeleteFromFavorite() {
@@ -44,7 +48,7 @@ function RecipeCard({ image, title, calories, carbs, fat, protein, sugar }) {
   function handleClickAdded() {
     setIsAdded(!isAdded);
     if (isAdded) {
-      setUserChoice(userChoice.filter((element) => element.name != name));
+      setUserChoice(userChoice.filter((element) => element.name != title));
     } else {
       setUserChoice([
         ...userChoice,
@@ -68,7 +72,7 @@ function RecipeCard({ image, title, calories, carbs, fat, protein, sugar }) {
   }
 
   useEffect(() => {
-    if (allFavorites.some((object) => object.username === userName && object.itemName === name && object.itemCategory === 'drinks')) {
+    if (allFavorites.some((object) => object.username === userName && object.itemName === title && object.itemCategory === 'recipe')) {
       setIsFavorite(true);
     }
   }, []);

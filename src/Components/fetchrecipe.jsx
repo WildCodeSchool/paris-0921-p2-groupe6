@@ -13,12 +13,13 @@ import 'swiper/css/pagination';
 
 SwiperCore.use([Pagination, Navigation]);
 
-function FetchRecipe() {
+function FetchRecipe({ category }) {
   const recipeByNutrient =
     'https://api.spoonacular.com/recipes/findByNutrients?minCholesterol=30&minCarbs=30&minFat=30&minCalories=400&maxSugar=10&number=10&random=true&apiKey=7706683273f24fdcaf86cbbb8929f962';
   const [fetchedRecipe, setFetchedRecipe] = useState();
   const [refresh, setRefresh] = useState(false);
   const { allFavorites, fetchAllFavorites } = useContext(CurrentAllFavoritesContext);
+  const numbSlice = category === 'catalog' ? 40 : 15;
 
   function Refresh() {
     setRefresh(!refresh);
@@ -48,7 +49,7 @@ function FetchRecipe() {
           className="mySwiper"
         >
           {fetchedRecipe &&
-            fetchedRecipe.slice(0, 10).map((info, index) => (
+            fetchedRecipe.slice(0, `${numbSlice}`).map((info, index) => (
               <SwiperSlide key={index}>
                 <RecipeCard key={index} {...info} />
               </SwiperSlide>
