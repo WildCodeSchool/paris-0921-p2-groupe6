@@ -28,7 +28,7 @@ footer {
   }
 }
 
-.material-icons {
+.Footer-material-icons {
   color: var(--lazy-white);
   display: inline-block;
   direction: ltr;
