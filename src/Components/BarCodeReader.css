@@ -55,6 +55,7 @@ video {
   margin: auto;
   margin-bottom: 10px;
   width: 15vw;
+  border-radius: 5px;
 }
 
 #interactive.viewport canvas.drawingBuffer,
