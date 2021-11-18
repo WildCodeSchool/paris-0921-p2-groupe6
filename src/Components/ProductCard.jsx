@@ -1,11 +1,12 @@
 import React, { useState, useContext, useEffect } from 'react';
 import axios from 'axios';
+
 import CurrentUserNameContext from '../Contexts/userContext';
 import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 
-import './Card.css';
-
 import More from '../Assets/More.png';
+
+import './Card.css';
 
 function ProductCard({ product }) {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -24,17 +25,21 @@ function ProductCard({ product }) {
   const productSugar = product.itemCategory ? product.sugar : product.nutriments.sugars;
 
   function AddToFavorite() {
-    axios.post('http://localhost:8000/api/favorites/barcode', {
-      username: userName,
-      itemCategory: 'barcode',
-      itemName: product.product_name,
-      calories: product.nutriments.energy_value,
-      fat: product.nutriments.fat,
-      carbs: product.nutriments.carbohydrates,
-      protein: product.nutriments.proteins,
-      sugar: product.nutriments.sugars,
-      imgUrl: product.selected_images.front.display.fr,
-    });
+    if (userName) {
+      axios.post('http://localhost:8000/api/favorites/barcode', {
+        username: userName,
+        itemCategory: 'barcode',
+        itemName: product.product_name,
+        calories: product.nutriments.energy_value,
+        fat: product.nutriments.fat,
+        carbs: product.nutriments.carbohydrates,
+        protein: product.nutriments.proteins,
+        sugar: product.nutriments.sugars,
+        imgUrl: product.selected_images.front.display.fr,
+      });
+    } else {
+      window.alert('You must be logged in to use the favorite feature');
+    }
   }
 
   function DeleteFromFavorite() {

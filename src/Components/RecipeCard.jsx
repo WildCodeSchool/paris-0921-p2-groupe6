@@ -1,10 +1,11 @@
 import React, { useState, useContext, useEffect } from 'react';
 import axios from 'axios';
+
 import CurrentUserNameContext from '../Contexts/userContext';
 import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 import CurrentFinalChoicesContext from '../Contexts/finalChoices';
-import logo from '../logo.png';
 
+import logo from '../logo.png';
 import More from '../Assets/More.png';
 
 import './Card.css';
@@ -18,18 +19,22 @@ function RecipeCard({ image, title, calories, carbs, fat, protein, sugar }) {
   const { userChoice, setUserChoice } = useContext(CurrentFinalChoicesContext);
 
   function AddToFavorite() {
-    setIsFavorite(true);
-    axios.post('http://localhost:8000/api/favorites/food/recipe', {
-      username: userName,
-      itemCategory: 'recipe',
-      itemName: title,
-      calories: calories,
-      fat: fat,
-      carbs: carbs,
-      protein: protein,
-      sugar: sugar,
-      imgUrl: image,
-    });
+    if (userName) {
+      setIsFavorite(true);
+      axios.post('http://localhost:8000/api/favorites/food/recipe', {
+        username: userName,
+        itemCategory: 'recipe',
+        itemName: title,
+        calories: calories,
+        fat: fat,
+        carbs: carbs,
+        protein: protein,
+        sugar: sugar,
+        imgUrl: image,
+      });
+    } else {
+      window.alert('You must be logged in to use the favorite feature');
+    }
   }
 
   function DeleteFromFavorite() {
@@ -68,7 +73,7 @@ function RecipeCard({ image, title, calories, carbs, fat, protein, sugar }) {
   }
 
   useEffect(() => {
-    if (allFavorites.some((object) => object.username === userName && object.itemName === title && object.itemCategory === 'drinks')) {
+    if (allFavorites.some((object) => object.username === userName && object.itemName === title && object.itemCategory === 'recipe')) {
       setIsFavorite(true);
     }
   }, []);

@@ -1,11 +1,14 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import axios from 'axios';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Pagination, Navigation } from 'swiper';
-import axios from 'axios';
 
 import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 
-import TakeAwayCard from './TakeAwayCard.jsx';
+import FetchRecipe from './fetchrecipe';
+import FetchMovies from './fetchMovies';
+import FetchTakeAway from './fetchTakeAway';
+import SoftDrinkCard from './SoftDrinkCard';
 
 import 'swiper/css';
 import './Slider.css';
@@ -14,29 +17,32 @@ import 'swiper/css/pagination';
 
 SwiperCore.use([Pagination, Navigation]);
 
-function FetchTakeAway({ category }) {
-  const BurgersByCalories = 'http://localhost:8000/api/takeaway/';
-  const [fetchedTakeAway, setFetchedTakeAway] = useState();
+function CatalogSliders() {
+  const [softsDrinks, setSoftsDrinks] = useState([]);
+  const [allDrinks, setAllDrinks] = useState([]);
   const { allFavorites, fetchAllFavorites } = useContext(CurrentAllFavoritesContext);
-  const [refresh, setRefresh] = useState(false);
-  const numbSlice = category === 'catalog' ? 50 : 10;
-
-  function Refresh() {
-    setRefresh(!refresh);
-  }
 
   useEffect(() => {
     fetchAllFavorites();
     axios
-      .get(BurgersByCalories)
+      .get('http://localhost:8000/api/softs_drinks/')
       .then((response) => response.data)
-      .then((data) => setFetchedTakeAway(data));
+      .then((data) => setSoftsDrinks(data));
   }, []);
 
-  useEffect(() => {}, [allFavorites]);
+  useEffect(() => {
+    axios
+      .get('http://localhost:8000/api/alcohol_drinks/')
+      .then((response) => response.data)
+      .then((data) => setAllDrinks(softsDrinks.concat(data)));
+  }, [softsDrinks]);
+
+  useEffect(() => {}, [allFavorites, allDrinks]);
 
   return (
     <div>
+      <FetchRecipe category={'catalog'} />
+      <FetchTakeAway category={'catalog'} />
       <div>
         <Swiper
           slidesPerView={1}
@@ -48,22 +54,21 @@ function FetchTakeAway({ category }) {
           navigation={true}
           className="mySwiper"
         >
-          {fetchedTakeAway &&
-            fetchedTakeAway
+          {allDrinks &&
+            allDrinks
               .map((value) => ({ value, sort: Math.random() }))
               .sort((a, b) => a.sort - b.sort)
               .map(({ value }) => value)
-              .slice(0, `${numbSlice}`)
               .map((info, index) => (
                 <SwiperSlide key={index}>
-                  <TakeAwayCard key={index} {...info} />
+                  <SoftDrinkCard key={index} {...info} />
                 </SwiperSlide>
               ))}
         </Swiper>
-        <button onClick={Refresh}>Refresh</button>
       </div>
+      <FetchMovies category={'catalog'} />
     </div>
   );
 }
 
-export default FetchTakeAway;
+export default CatalogSliders;

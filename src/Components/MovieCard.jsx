@@ -3,9 +3,10 @@ import axios from 'axios';
 
 import CurrentUserNameContext from '../Contexts/userContext';
 import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
+import CurrentFinalChoicesContext from '../Contexts/finalChoices';
+
 import logo from '../logo.png';
 import More from '../Assets/More.png';
-import CurrentFinalChoicesContext from '../Contexts/finalChoices';
 
 import './MovieCard.css';
 
@@ -18,15 +19,19 @@ function MovieCard({ id, title, desc, img }) {
   const { userChoice, setUserChoice } = useContext(CurrentFinalChoicesContext);
 
   function AddToFavorite() {
-    setIsFavorite(true);
-    axios.post('http://localhost:8000/api/favorites/movies', {
-      username: userName,
-      itemCategory: 'movie',
-      itemName: title,
-      description: desc,
-      imgUrl: img,
-      itemId: id,
-    });
+    if (userName) {
+      setIsFavorite(true);
+      axios.post('http://localhost:8000/api/favorites/movies', {
+        username: userName,
+        itemCategory: 'movie',
+        itemName: title,
+        description: desc,
+        imgUrl: img,
+        itemId: id,
+      });
+    } else {
+      window.alert('You must be logged in to use the favorite feature');
+    }
   }
 
   function DeleteFromFavorite() {

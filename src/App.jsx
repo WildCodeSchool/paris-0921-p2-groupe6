@@ -1,6 +1,10 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
 
+import { CurrentAllFavoritesContextProvider } from './Contexts/favoritesContext';
+import { CurrentUserNameContextProvider } from './Contexts/userContext';
+import { CurrentFinalChoicesContextProvider } from './Contexts/finalChoices';
+
 import FooterNavbar from './FooterNavbar';
 import HeaderNavbar from './HeaderNavbar';
 import AboutUs from './AboutUs';
@@ -9,13 +13,8 @@ import Favorites from './Favorites';
 import FinalResults from './FinalResults';
 import HomeConditions from './Components/HomeConditions';
 import HomePage from './Homepage';
-// import Offer from './Components/Offer';
 import Under18 from './Under18';
 import Basket from './Basket';
-
-import { CurrentUserNameContextProvider } from './Contexts/userContext';
-import { CurrentAllFavoritesContextProvider } from './Contexts/favoritesContext';
-import { CurrentFinalChoicesContextProvider } from './Contexts/finalChoices';
 
 import './App.css';
 

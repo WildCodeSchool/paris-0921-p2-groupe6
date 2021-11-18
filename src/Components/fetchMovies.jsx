@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Pagination, Navigation } from 'swiper';
-import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 import axios from 'axios';
+
+import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 
 import MovieCard from './MovieCard';
 
@@ -28,11 +29,13 @@ function FetchMovies({ category }) {
 
   function getParameters(category) {
     if (category === 'lazy') {
-      return `&with_genres=35&with_genres=28&with_genres=12&with_genres=10749&sort_by=vote_count.desc&page=${randomPageLazy}`;
+      return `&with_genres=35&with_genres=28&with_genres=12&with_genres=10749&with_genres=878&sort_by=vote_count.desc&page=${randomPageLazy}`;
     } else if (category === 'happy') {
-      return `&with_genres=35&with_genres=28&with_genres=12&without_genres=10749&sort_by=vote_count.desc&page=${randomPageHappy}`;
+      return `&with_genres=35&with_genres=28&with_genres=12&with_genres=878&without_genres=10749&sort_by=vote_count.desc&page=${randomPageHappy}`;
     } else if (category === 'blue') {
-      return `&with_genres=10749&without_genres=35,28,80,99,27,10751,10770&sort_by=popularity.desc&page=${randomPageBlue}`;
+      return `&with_genres=10749&without_genres=28&without_genres=80&without_genres=99&without_genres=27&without_genres=10751&without_genres=10770&sort_by=popularity.desc&page=${randomPageBlue}`;
+    } else if (category === 'catalog') {
+      return `&with_genres=35&with_genres=28&with_genres=12&with_genres=10749&with_genres=80&with_genres=10751&with_genres=14&with_genres=27&with_genres=878&with_genres=53&without_genres=99&sort_by=vote_count.desc&page=${randomPageLazy}`;
     }
   }
 
@@ -68,7 +71,7 @@ function FetchMovies({ category }) {
           {fetchedMovies.length &&
             fetchedMovies
               .filter((movie) => movie.poster_path)
-              .slice(0, 10)
+              .slice(0, 15)
               .map((movie, index) => (
                 <SwiperSlide key={index}>
                   <MovieCard key={index} title={movie.title} desc={movie.overview} img={movie.poster_path} id={movie.id} />

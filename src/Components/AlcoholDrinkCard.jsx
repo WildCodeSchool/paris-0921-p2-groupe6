@@ -1,11 +1,14 @@
 import React, { useState, useContext, useEffect } from 'react';
 import axios from 'axios';
+
 import CurrentUserNameContext from '../Contexts/userContext';
 import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
-import logo from '../logo.png';
-import './Card.css';
 import CurrentFinalChoicesContext from '../Contexts/finalChoices';
+
 import More from '../Assets/More.png';
+import logo from '../logo.png';
+
+import './Card.css';
 
 function AlcoholDrinkCard({ name, calories, sugar, imgUrl }) {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -16,15 +19,19 @@ function AlcoholDrinkCard({ name, calories, sugar, imgUrl }) {
   const { userChoice, setUserChoice } = useContext(CurrentFinalChoicesContext);
 
   function AddToFavorite() {
-    setIsFavorite(true);
-    axios.post('http://localhost:8000/api/favorites/drinks', {
-      username: userName,
-      itemCategory: 'drinks',
-      itemName: name,
-      calories: calories,
-      sugar: sugar,
-      imgUrl: imgUrl,
-    });
+    if (userName) {
+      setIsFavorite(true);
+      axios.post('http://localhost:8000/api/favorites/drinks', {
+        username: userName,
+        itemCategory: 'drinks',
+        itemName: name,
+        calories: calories,
+        sugar: sugar,
+        imgUrl: imgUrl,
+      });
+    } else {
+      window.alert('You must be logged in to use the favorite feature');
+    }
   }
 
   function DeleteFromFavorite() {
