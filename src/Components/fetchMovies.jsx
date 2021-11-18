@@ -28,13 +28,13 @@ function FetchMovies({ category }) {
 
   function getParameters(category) {
     if (category === 'lazy') {
-      return `&with_genres=35&with_genres=28&with_genres=12&with_genres=10749&sort_by=vote_count.desc&page=${randomPageLazy}`;
+      return `&with_genres=35&with_genres=28&with_genres=12&with_genres=10749&with_genres=878&sort_by=vote_count.desc&page=${randomPageLazy}`;
     } else if (category === 'happy') {
-      return `&with_genres=35&with_genres=28&with_genres=12&without_genres=10749&sort_by=vote_count.desc&page=${randomPageHappy}`;
+      return `&with_genres=35&with_genres=28&with_genres=12&with_genres=878&without_genres=10749&sort_by=vote_count.desc&page=${randomPageHappy}`;
     } else if (category === 'blue') {
-      return `&with_genres=10749&without_genres=35&without_genres=28&without_genres=80&without_genres=99&without_genres=27&without_genres=10751&without_genres=10770&sort_by=popularity.desc&page=${randomPageBlue}`;
+      return `&with_genres=10749&without_genres=28&without_genres=80&without_genres=99&without_genres=27&without_genres=10751&without_genres=10770&sort_by=popularity.desc&page=${randomPageBlue}`;
     } else if (category === 'catalog') {
-      return `&with_genres=35&with_genres=28&with_genres=12&with_genres=10749&with_genres=80&with_genres=10751&with_genres=14&with_genres=27&with_genres=878&with_genres=53&sort_by=vote_count.desc&page=${randomPageLazy}`;
+      return `&with_genres=35&with_genres=28&with_genres=12&with_genres=10749&with_genres=80&with_genres=10751&with_genres=14&with_genres=27&with_genres=878&with_genres=53&without_genres=99&sort_by=vote_count.desc&page=${randomPageLazy}`;
     }
   }
 

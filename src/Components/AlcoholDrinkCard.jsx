@@ -16,15 +16,19 @@ function AlcoholDrinkCard({ name, calories, sugar, imgUrl }) {
   const { userChoice, setUserChoice } = useContext(CurrentFinalChoicesContext);
 
   function AddToFavorite() {
-    setIsFavorite(true);
-    axios.post('http://localhost:8000/api/favorites/drinks', {
-      username: userName,
-      itemCategory: 'drinks',
-      itemName: name,
-      calories: calories,
-      sugar: sugar,
-      imgUrl: imgUrl,
-    });
+    if (userName) {
+      setIsFavorite(true);
+      axios.post('http://localhost:8000/api/favorites/drinks', {
+        username: userName,
+        itemCategory: 'drinks',
+        itemName: name,
+        calories: calories,
+        sugar: sugar,
+        imgUrl: imgUrl,
+      });
+    } else {
+      window.alert('You must be logged in to use the favorite feature');
+    }
   }
 
   function DeleteFromFavorite() {

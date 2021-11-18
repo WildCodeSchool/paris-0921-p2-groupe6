@@ -10,12 +10,15 @@ import './HomeConditions.css';
 function HomeConditions() {
   const { userName, setUserName } = useContext(CurrentUserNameContext);
   const [mood, setMood] = useState('');
-  const [number, setNumber] = useState('');
   const [drink, setDrink] = useState('');
   const [fat, setFat] = useState('');
   const nameForm = useRef(null);
   const [conditionsSubmitted, setConditionsSubmitted] = useState(false);
-  const choiceView = useRef();
+  const choiceView = useRef(null);
+
+  function ScrollTo() {
+    choiceView.current.scrollIntoView(true, { behavior: 'auto', block: 'center', inline: 'center' });
+  }
 
   function ResetUserName() {
     setUserName('');
@@ -36,21 +39,6 @@ function HomeConditions() {
     {
       label: 'blue',
       value: 'blue',
-    },
-  ];
-
-  const numberOptions = [
-    {
-      label: 'alone',
-      value: 'alone',
-    },
-    {
-      label: 'with a friend',
-      value: 'friend',
-    },
-    {
-      label: 'with my tribe',
-      value: 'tribe',
     },
   ];
 
@@ -79,10 +67,6 @@ function HomeConditions() {
   function handleClickName() {
     const form = nameForm.current;
     setUserName(`${form['name'].value}`);
-  }
-
-  function scrollAuto() {
-    choiceView.current.scrollIntoView(true, { behavior: 'auto', block: 'center', inline: 'center' });
   }
 
   useEffect(() => {}, [conditionsSubmitted]);
@@ -122,20 +106,6 @@ function HomeConditions() {
           </select>
         </form>
 
-        <form className="HomeConditionsNumber">
-          <label htmlFor="number">I will be </label>
-          <select name="number" id="number-select" onBlur={(e) => setNumber(e.target.value)} className="HomeConditionsSelect">
-            <option value="">...</option>
-            {numberOptions.map((number) => {
-              return (
-                <option key={number.value} value={number.value}>
-                  {number.label}
-                </option>
-              );
-            })}
-          </select>
-        </form>
-
         <form className="HomeConditionsDrink">
           <label htmlFor="drink">I want to </label>
           <select name="drink" id="drink-select" onBlur={(e) => setDrink(e.target.value)} className="HomeConditionsSelect">
@@ -167,9 +137,11 @@ function HomeConditions() {
           <button
             className="HomeConditionsSubmit"
             onClick={() => {
-              if (mood.length && number.length && fat.length && drink.length) {
+              if (mood.length && fat.length && drink.length) {
                 setConditionsSubmitted(true);
-                scrollAuto;
+                ScrollTo();
+              } else {
+                window.alert('You must define all your choices before!');
               }
             }}
           >
@@ -184,7 +156,6 @@ function HomeConditions() {
               setConditionsSubmitted(false);
               setDrink('');
               setMood('');
-              setNumber('');
               setFat('');
             }}
           >
@@ -192,9 +163,8 @@ function HomeConditions() {
           </button>
         )}
       </div>
-      {conditionsSubmitted && <Offer mood={mood} drink={drink} fat={fat} />}
-
       <div ref={choiceView}></div>
+      {conditionsSubmitted && <Offer mood={mood} drink={drink} fat={fat} />}
     </main>
   );
 }
