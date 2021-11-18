@@ -1,0 +1,18 @@
+.FavoritePage {
+  display: flex;
+  flex-direction: column;
+}
+
+.FavoritesFirstTitle {
+  color: var(--lazy-white);
+  font-size: 2.5em;
+  text-align: center;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.FavoritePresentation {
+  color: var(--lazy-white);
+  text-align: center;
+  margin: 5vh;
+}

@@ -2,6 +2,8 @@ import React, { useContext, useEffect } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Pagination, Navigation } from 'swiper';
+import { NavLink } from 'react-router-dom';
+
 import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 import CurrentUserNameContext from '../Contexts/userContext';
 import MovieCard from './MovieCard';
@@ -11,9 +13,11 @@ SwiperCore.use([Pagination, Navigation]);
 
 import 'swiper/css';
 import './Slider.css';
+import './FavoritesSliders.css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import TakeAwayCard from './TakeAwayCard';
+import SmallLogo from '../SmallLogo.png';
 
 function FavoritesSliders() {
   const { userName } = useContext(CurrentUserNameContext);
@@ -28,8 +32,12 @@ function FavoritesSliders() {
   return (
     <div>
       {userName.length ? (
-        <div>
-          <h2>
+        <div className="FavoritePage">
+          <NavLink className="link" activeClassName="active" exact to="/">
+            <img src={SmallLogo} alt="Lazy Night Small Logo" className="AboutUsLogo" />
+          </NavLink>
+          <h1 className="FavoritesFirstTitle">Your favorites</h1>
+          <h2 className="FavoritePresentation">
             Here you will find all your favorites recipe, products and movies. <br />
             You can also add what you want to your Lazy Night from here.
           </h2>
