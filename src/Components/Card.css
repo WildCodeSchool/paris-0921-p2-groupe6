@@ -200,8 +200,6 @@
 #isFavorite {
   bottom: 2.5%;
   color: var(--lazy-mayo);
-  display: row;
-  height: 5vh;
 }
 
 /*#more {

@@ -78,7 +78,13 @@ function RecipeCard({ image, title, calories, carbs, fat, protein, sugar }) {
     }
   }, []);
 
-  useEffect(() => {}, [isFavorite]);
+  useEffect(() => {}, [isFavorite, isAdded]);
+
+  useEffect(() => {
+    if (userChoice.some((object) => object.username === userName && object.itemName === title)) {
+      setIsAdded(true);
+    }
+  }, []);
 
   return (
     <div className="recipe-Card">

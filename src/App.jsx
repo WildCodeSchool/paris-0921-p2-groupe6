@@ -14,6 +14,7 @@ import FinalResults from './FinalResults';
 import HomeConditions from './Components/HomeConditions';
 import HomePage from './Homepage';
 import Under18 from './Under18';
+import Basket from './Basket';
 
 import './App.css';
 
@@ -45,6 +46,9 @@ function App() {
               </Route>
               <Route exact path="/FinalResults">
                 <FinalResults />
+              </Route>
+              <Route exact path="/Basket">
+                <Basket />
               </Route>
             </Switch>
             <FooterNavbar />

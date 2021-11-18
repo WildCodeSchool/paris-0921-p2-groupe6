@@ -24,12 +24,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: auto;
   text-align: center;
-}
-
-.HomeConditionssendButton {
-  margin-bottom: 5vh;
-  margin-top: 1vh;
+  width: 60%;
 }
 
 .HomeConditionsTitle {
@@ -41,7 +38,13 @@
 .HomeConditionsQuestion {
   color: var(--lazy-barbecue);
   font-size: 1.3em;
-  margin: 2vh;
+  margin: auto;
+  text-align: center;
+}
+
+.HomeConditionsHelloNameH3 {
+  margin: auto;
+  text-align: center;
 }
 
 .HomeConditionsSubmit {
@@ -59,6 +62,11 @@
   border-radius: 5px;
 }
 
+.HomeConditionsSub {
+  margin: auto;
+  text-align: center;
+}
+
 .HomeConditionssendButton {
   background-color: var(--lazy-barbecue);
   color: var(--lazy-white);
@@ -69,7 +77,7 @@
   margin-bottom: 20px;
   padding-top: 5px;
   padding-bottom: 5px;
-  width: 60%;
+  width: 70%;
   border-radius: 5px;
 }
 
@@ -95,15 +103,17 @@
 }
 
 .HomeConditionsReset {
-  background-color: var(--lazy-ketchup);
-  color: var(--lazy-white);
+  background-color: var(--lazy-white);
+  color: var(--lazy-ketchup);
   font-family: var(--main-font-family);
-  font-size: 1em;
+  font-size: 1.3em;
   margin: auto;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
-  width: 45%;
+  width: 90%;
+  border: none;
   border-radius: 5px;
 }
 
