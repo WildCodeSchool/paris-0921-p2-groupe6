@@ -36,4 +36,5 @@
 .FavoriteUnloggedText {
   color: var(--lazy-white);
   text-align: center;
+  margin-top: 70%;
 }
