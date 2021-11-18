@@ -29,10 +29,7 @@
   width: 60%;
 }
 
-.HomeConditionssendButton {
-  margin-bottom: 5vh;
-  margin-top: 1vh;
-}
+
 
 .HomeConditionsTitle {
   color: var(--lazy-ketchup);
@@ -82,7 +79,7 @@
   margin-bottom: 20px;
   padding-top: 5px;
   padding-bottom: 5px;
-  width: 60%;
+  width: 70%;
   border-radius: 5px;
 }
 
