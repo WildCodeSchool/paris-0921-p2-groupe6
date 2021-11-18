@@ -18,7 +18,7 @@ function Offer({ mood, fat, drink }) {
         <p className="OfferPresentationText">
           Choose your meal, drink <br /> and movie to validate your choice !
         </p>
-        <p className="OfferPresentationText"> You will discover the amount of your fat night !</p>
+        <p className="OfferPresentationText2"> You will discover the amount of your fat night !</p>
         {fat === 'TakewayAndDeliver' ? <FetchTakeAway /> : <FetchRecipe />}
         {drink === 'sober' ? <FetchSoftDrink /> : <FetchAlcoholDrinks />}
         {<FetchMovies category={mood} />}
