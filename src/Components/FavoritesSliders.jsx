@@ -1,19 +1,21 @@
 import React, { useContext, useEffect } from 'react';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Pagination, Navigation } from 'swiper';
+
 import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 import CurrentUserNameContext from '../Contexts/userContext';
 import MovieCard from './MovieCard';
 import RecipeCard from './RecipeCard';
 import ProductCard from './ProductCard';
-SwiperCore.use([Pagination, Navigation]);
+import TakeAwayCard from './TakeAwayCard';
+import SoftDrinkCard from './SoftDrinkCard';
 
 import 'swiper/css';
 import './Slider.css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import TakeAwayCard from './TakeAwayCard';
+
+SwiperCore.use([Pagination, Navigation]);
 
 function FavoritesSliders() {
   const { userName } = useContext(CurrentUserNameContext);
@@ -21,9 +23,7 @@ function FavoritesSliders() {
 
   useEffect(() => {
     fetchAllFavorites();
-  }, []);
-
-  useEffect(() => {}, [userName]);
+  }, [userName]);
 
   return (
     <div>
@@ -119,7 +119,7 @@ function FavoritesSliders() {
                   .filter((elt) => (elt.itemCategory === 'drinks') & (elt.username === userName))
                   .map((info, index) => (
                     <SwiperSlide key={index}>
-                      <TakeAwayCard key={index} name={info.itemName} calories={info.calories} sugar={info.sugar} imgUrl={info.imgUrl} />
+                      <SoftDrinkCard key={index} name={info.itemName} calories={info.calories} sugar={info.sugar} imgUrl={info.imgUrl} />
                     </SwiperSlide>
                   ))}
               </Swiper>

@@ -13,11 +13,12 @@ import 'swiper/css/pagination';
 
 SwiperCore.use([Pagination, Navigation]);
 
-function FetchTakeAway() {
+function FetchTakeAway({ category }) {
   const BurgersByCalories = 'http://localhost:8000/api/takeaway/';
   const [fetchedTakeAway, setFetchedTakeAway] = useState();
   const { allFavorites, fetchAllFavorites } = useContext(CurrentAllFavoritesContext);
   const [refresh, setRefresh] = useState(false);
+  const numbSlice = category === 'catalog' ? 50 : 10;
 
   function Refresh() {
     setRefresh(!refresh);
@@ -51,7 +52,7 @@ function FetchTakeAway() {
               .map((value) => ({ value, sort: Math.random() }))
               .sort((a, b) => a.sort - b.sort)
               .map(({ value }) => value)
-              .slice(0, 10)
+              .slice(0, `${numbSlice}`)
               .map((info, index) => (
                 <SwiperSlide key={index}>
                   <TakeAwayCard key={index} {...info} />
