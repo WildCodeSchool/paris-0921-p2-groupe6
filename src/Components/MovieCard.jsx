@@ -3,9 +3,10 @@ import axios from 'axios';
 
 import CurrentUserNameContext from '../Contexts/userContext';
 import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
+import CurrentFinalChoicesContext from '../Contexts/finalChoices';
+
 import logo from '../logo.png';
 import More from '../Assets/More.png';
-import CurrentFinalChoicesContext from '../Contexts/finalChoices';
 
 import './MovieCard.css';
 

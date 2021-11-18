@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Pagination, Navigation } from 'swiper';
-import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 import axios from 'axios';
 
+import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 import AlcoholDrinkCard from './AlcoholDrinkCard.jsx';
 
 import 'swiper/css';

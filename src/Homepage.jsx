@@ -1,7 +1,10 @@
 import React, { useContext } from 'react';
+
 import CurrentUserNameContext from './Contexts/userContext';
-import Age from './Components/Age';
+
 import HomeConditions from './Components/HomeConditions';
+
+import Age from './Components/Age';
 
 function HomePage() {
   const { userName } = useContext(CurrentUserNameContext);
