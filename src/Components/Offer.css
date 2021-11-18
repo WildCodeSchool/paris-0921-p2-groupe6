@@ -5,14 +5,6 @@
   flex-direction: column;
 }
 
-.OfferLogo {
-  display: flex;
-  height: 10vh;
-  justify-content: space-between;
-  margin: auto;
-  padding-top: 1vh;
-}
-
 .OfferTitleh2 {
   color: var(--lazy-white);
   font-size: 2.5em;

@@ -1,6 +1,5 @@
 import React from 'react';
 // import { useHistory } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
 // import { useParams } from 'react-router-dom';
 
 import FetchSoftDrink from './fetchSoftDrink';
@@ -9,16 +8,11 @@ import FetchRecipe from './fetchrecipe';
 import FetchTakeAway from './fetchTakeAway';
 import FetchMovies from './fetchMovies';
 
-import SmallLogo from '../SmallLogo.png';
-
 import './Offer.css';
 
 function Offer({ mood, fat, drink }) {
   return (
     <main>
-      <NavLink className="link" activeClassName="active" exact to="/">
-        <img src={SmallLogo} alt="Lazy Night Small Logo" className="OfferLogo" />
-      </NavLink>
       <div className="Offer">
         <h2 className="OfferTitleh2">Welcome to your lazy night !</h2>
         <p className="OfferPresentationText">
