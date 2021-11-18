@@ -163,18 +163,36 @@ function HomeConditions() {
             })}
           </select>
         </form>
+        {!conditionsSubmitted && (
+          <button
+            className="HomeConditionsSubmit"
+            onClick={() => {
+              if (mood.length && number.length && fat.length && drink.length) {
+                setConditionsSubmitted(true);
+                scrollAuto;
+              }
+            }}
+          >
+            Give me my lazy night !
+          </button>
+        )}
 
-        <button
-          className="HomeConditionsSubmit"
-          onClick={() => {
-            setConditionsSubmitted(true);
-            scrollAuto();
-          }}
-        >
-          Give me my lazy night !
-        </button>
+        {conditionsSubmitted && (
+          <button
+            className="HomeConditionsReset"
+            onClick={() => {
+              setConditionsSubmitted(false);
+              setDrink('');
+              setMood('');
+              setNumber('');
+              setFat('');
+            }}
+          >
+            ResetMychoices
+          </button>
+        )}
       </div>
-      {(mood.length, drink.length, fat.length, number.length, conditionsSubmitted && <Offer mood={mood} drink={drink} fat={fat} />)}
+      {conditionsSubmitted && <Offer mood={mood} drink={drink} fat={fat} />}
 
       <div ref={choiceView}></div>
     </main>
