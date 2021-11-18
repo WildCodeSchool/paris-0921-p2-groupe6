@@ -3,8 +3,6 @@ import React, { createContext, useState } from 'react';
 const CurrentFinalChoicesContext = createContext({
   userChoice: [],
   setUserChoice: () => {},
-  numberChoice: Number(),
-  setNumberChoice: () => {},
 });
 
 export function CurrentFinalChoicesContextProvider({ children }) {

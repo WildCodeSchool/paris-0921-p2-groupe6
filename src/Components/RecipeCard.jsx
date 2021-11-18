@@ -44,7 +44,7 @@ function RecipeCard({ image, title, calories, carbs, fat, protein, sugar }) {
   function handleClickAdded() {
     setIsAdded(!isAdded);
     if (isAdded) {
-      setUserChoice(userChoice.filter((element) => element.name != name));
+      setUserChoice(userChoice.filter((element) => element.name != title));
     } else {
       setUserChoice([
         ...userChoice,
@@ -68,12 +68,18 @@ function RecipeCard({ image, title, calories, carbs, fat, protein, sugar }) {
   }
 
   useEffect(() => {
-    if (allFavorites.some((object) => object.username === userName && object.itemName === name && object.itemCategory === 'drinks')) {
+    if (allFavorites.some((object) => object.username === userName && object.itemName === title && object.itemCategory === 'drinks')) {
       setIsFavorite(true);
     }
   }, []);
 
-  useEffect(() => {}, [isFavorite]);
+  useEffect(() => {}, [isFavorite, isAdded]);
+
+  useEffect(() => {
+    if (userChoice.some((object) => object.username === userName && object.itemName === title)) {
+      setIsAdded(true);
+    }
+  }, []);
 
   return (
     <div className="recipe-Card">

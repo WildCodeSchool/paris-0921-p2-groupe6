@@ -11,11 +11,13 @@ import HomeConditions from './Components/HomeConditions';
 import HomePage from './Homepage';
 // import Offer from './Components/Offer';
 import Under18 from './Under18';
+import Basket from './Basket';
+
 import { CurrentUserNameContextProvider } from './Contexts/userContext';
 import { CurrentAllFavoritesContextProvider } from './Contexts/favoritesContext';
+import { CurrentFinalChoicesContextProvider } from './Contexts/finalChoices';
 
 import './App.css';
-import { CurrentFinalChoicesContextProvider } from './Contexts/finalChoices';
 
 function App() {
   return (
@@ -45,6 +47,9 @@ function App() {
               </Route>
               <Route exact path="/FinalResults">
                 <FinalResults />
+              </Route>
+              <Route exact path="/Basket">
+                <Basket />
               </Route>
             </Switch>
             <FooterNavbar />
