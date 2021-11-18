@@ -35,6 +35,7 @@ function FavoritesSliders() {
           <NavLink className="link" activeClassName="active" exact to="/">
             <img src={SmallLogo} alt="Lazy Night Small Logo" className="FavouriteLogo" />
           </NavLink>
+
           <h1 className="FavoritesFirstTitle">Your favorites</h1>
           <h2 className="FavoritePresentation">
             Here you will find all your favorites recipe, products and movies. <br />
@@ -71,7 +72,7 @@ function FavoritesSliders() {
                   ))}
               </Swiper>
             ) : (
-              <div>Nothing yet in here</div>
+              <h2 className="FavoriteNoProduct">Nothing yet in here</h2>
             )}
           </section>
           <section>
@@ -106,7 +107,7 @@ function FavoritesSliders() {
                   ))}
               </Swiper>
             ) : (
-              <div>Nothing yet in here</div>
+              <h2 className="FavoriteNoProduct">Nothing yet in here</h2>
             )}
           </section>
           <section>
@@ -131,7 +132,7 @@ function FavoritesSliders() {
                   ))}
               </Swiper>
             ) : (
-              <div>Nothing yet in here</div>
+              <h2 className="FavoriteNoProduct">Nothing yet in here</h2>
             )}
           </section>
           <section>
@@ -156,7 +157,7 @@ function FavoritesSliders() {
                   ))}
               </Swiper>
             ) : (
-              <div>Nothing yet in here</div>
+              <h2 className="FavoriteNoProduct">Nothing yet in here</h2>
             )}
           </section>
           <section>
@@ -181,7 +182,7 @@ function FavoritesSliders() {
                   ))}
               </Swiper>
             ) : (
-              <div>Nothing yet in here</div>
+              <h2 className="FavoriteNoProduct">Nothing yet in here</h2>
             )}
           </section>
         </div>
