@@ -86,18 +86,19 @@ function NutritionLabel() {
               {/* <td className="blank-cell"></td> */}
               <th>Sugars</th>
               <td></td>
+              <td>TOTAL SUGAR</td>
             </tr>
             <tr className="thick-end">
               <th colSpan="2">
                 <b>Protein</b>
-                3g
+                <td></td>
               </th>
-              <td></td>
+              <td>TOTAL PROTEIN</td>
             </tr>
           </tbody>
         </table>
 
-        <table className="performance-facts__table--grid">
+        {/* <table className="performance-facts__table--grid">
           <tbody>
             <tr>
               <td colSpan="2">Vitamin A 10%</td>
@@ -108,7 +109,7 @@ function NutritionLabel() {
               <td>Iron 6%</td>
             </tr>
           </tbody>
-        </table>
+        </table> */}
 
         <p className="small-info">
           * Percent Daily Values are based on a 2,000 calorie diet. Your daily values may be higher or lower depending on your calorie needs:
