@@ -79,12 +79,16 @@ function HomeConditions() {
 
       <div className="HomeConditions">
         {!conditionsSubmitted && (
-          <div>
+          <div className="HomeConditionsSub">
             <h2 className="HomeConditionsTitle">
               To access your Lazy Night, <br />
               we need few more informations :{' '}
             </h2>
-            {!userName.length ? <h3 className="HomeConditionsQuestion"> What is your name ?</h3> : <h3>Hello {userName}</h3>}
+            {!userName.length ? (
+              <h3 className="HomeConditionsQuestion"> What is your name ?</h3>
+            ) : (
+              <h3 className="HomeConditionsHelloNameH3">Hello {userName}</h3>
+            )}
             {!userName.length ? (
               <form className="HomeConditionsInput" ref={nameForm}>
                 <input label={'name'} type="text" name={'name'} id="name" />

@@ -24,7 +24,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: auto;
   text-align: center;
+  width: 60%;
 }
 
 .HomeConditionssendButton {
@@ -41,7 +43,13 @@
 .HomeConditionsQuestion {
   color: var(--lazy-barbecue);
   font-size: 1.3em;
-  margin: 2vh;
+  margin: auto;
+  text-align: center;
+}
+
+.HomeConditionsHelloNameH3 {
+  margin: auto;
+  text-align: center;
 }
 
 .HomeConditionsSubmit {
@@ -57,6 +65,11 @@
   padding-bottom: 10px;
   width: 65%;
   border-radius: 5px;
+}
+
+.HomeConditionsSub {
+  margin: auto;
+  text-align: center;
 }
 
 .HomeConditionssendButton {
