@@ -18,15 +18,19 @@ function MovieCard({ id, title, desc, img }) {
   const { userChoice, setUserChoice } = useContext(CurrentFinalChoicesContext);
 
   function AddToFavorite() {
-    setIsFavorite(true);
-    axios.post('http://localhost:8000/api/favorites/movies', {
-      username: userName,
-      itemCategory: 'movie',
-      itemName: title,
-      description: desc,
-      imgUrl: img,
-      itemId: id,
-    });
+    if (userName) {
+      setIsFavorite(true);
+      axios.post('http://localhost:8000/api/favorites/movies', {
+        username: userName,
+        itemCategory: 'movie',
+        itemName: title,
+        description: desc,
+        imgUrl: img,
+        itemId: id,
+      });
+    } else {
+      window.alert('You must be logged in to use the favorite feature');
+    }
   }
 
   function DeleteFromFavorite() {

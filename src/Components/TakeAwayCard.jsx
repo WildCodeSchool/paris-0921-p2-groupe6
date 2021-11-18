@@ -16,19 +16,23 @@ function TakeAwayCard({ name, store, portion, calories, fat, carbs, protein, img
   const { userChoice, setUserChoice } = useContext(CurrentFinalChoicesContext);
 
   function AddToFavorite() {
-    setIsFavorite(true);
-    axios.post('http://localhost:8000/api/favorites/food/takeaway', {
-      username: userName,
-      itemCategory: 'takeaway',
-      itemName: name,
-      store: store,
-      portion: portion,
-      calories: calories,
-      fat: fat,
-      carbs: carbs,
-      protein: protein,
-      imgUrl: imgUrl,
-    });
+    if (userName) {
+      setIsFavorite(true);
+      axios.post('http://localhost:8000/api/favorites/food/takeaway', {
+        username: userName,
+        itemCategory: 'takeaway',
+        itemName: name,
+        store: store,
+        portion: portion,
+        calories: calories,
+        fat: fat,
+        carbs: carbs,
+        protein: protein,
+        imgUrl: imgUrl,
+      });
+    } else {
+      window.alert('You must be logged in to use the favorite feature');
+    }
   }
 
   function DeleteFromFavorite() {
@@ -68,7 +72,7 @@ function TakeAwayCard({ name, store, portion, calories, fat, carbs, protein, img
   }
 
   useEffect(() => {
-    if (allFavorites.some((object) => object.username === userName && object.itemName === name && object.itemCategory === 'drinks')) {
+    if (allFavorites.some((object) => object.username === userName && object.itemName === name && object.itemCategory === 'takeaway')) {
       setIsFavorite(true);
     }
   }, []);

@@ -24,17 +24,21 @@ function ProductCard({ product }) {
   const productSugar = product.itemCategory ? product.sugar : product.nutriments.sugars;
 
   function AddToFavorite() {
-    axios.post('http://localhost:8000/api/favorites/barcode', {
-      username: userName,
-      itemCategory: 'barcode',
-      itemName: product.product_name,
-      calories: product.nutriments.energy_value,
-      fat: product.nutriments.fat,
-      carbs: product.nutriments.carbohydrates,
-      protein: product.nutriments.proteins,
-      sugar: product.nutriments.sugars,
-      imgUrl: product.selected_images.front.display.fr,
-    });
+    if (userName) {
+      axios.post('http://localhost:8000/api/favorites/barcode', {
+        username: userName,
+        itemCategory: 'barcode',
+        itemName: product.product_name,
+        calories: product.nutriments.energy_value,
+        fat: product.nutriments.fat,
+        carbs: product.nutriments.carbohydrates,
+        protein: product.nutriments.proteins,
+        sugar: product.nutriments.sugars,
+        imgUrl: product.selected_images.front.display.fr,
+      });
+    } else {
+      window.alert('You must be logged in to use the favorite feature');
+    }
   }
 
   function DeleteFromFavorite() {
