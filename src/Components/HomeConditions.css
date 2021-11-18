@@ -56,29 +56,25 @@
   padding-top: 10px;
   padding-bottom: 10px;
   width: 65%;
+  border-radius: 5px;
 }
 
-.HomeConditionsMood {
-  color: var(--lazy-barbecue);
-  font-size: 1.3em;
-  margin: 2vh;
-  margin-bottom: 3vh;
+.HomeConditionssendButton {
+  background-color: var(--lazy-barbecue);
+  color: var(--lazy-white);
+  font-family: var(--main-font-family);
+  font-size: 1em;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 60%;
+  border-radius: 5px;
 }
 
-.HomeConditionsNumber {
-  color: var(--lazy-barbecue);
-  font-size: 1.3em;
-  margin: 2vh;
-  margin-bottom: 3vh;
-}
-
-.HomeConditionsFat {
-  color: var(--lazy-barbecue);
-  font-size: 1.3em;
-  margin: 2vh;
-  margin-bottom: 3vh;
-}
-
+.HomeConditionsMood,
+.HomeConditionsFat,
 .HomeConditionsDrink {
   color: var(--lazy-barbecue);
   font-size: 1.3em;
@@ -96,6 +92,33 @@
   font-size: 0.8em;
   line-height: inherit;
   margin: 0;
+}
+
+.HomeConditionsReset {
+  background-color: var(--lazy-ketchup);
+  color: var(--lazy-white);
+  font-family: var(--main-font-family);
+  font-size: 1em;
+  margin: auto;
+  margin-bottom: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 45%;
+  border-radius: 5px;
+}
+
+.HomeConditionUserChangeButton {
+  background-color: var(--lazy-ketchup);
+  color: var(--lazy-white);
+  font-family: var(--main-font-family);
+  font-size: 1em;
+  margin: auto;
+  margin-bottom: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 30%;
+  border-radius: 5px;
+  text-align: center;
 }
 
 @media screen and (min-width: 600px) {
