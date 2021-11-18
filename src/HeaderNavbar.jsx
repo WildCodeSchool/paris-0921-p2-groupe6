@@ -15,6 +15,12 @@ function HeaderNavbar() {
         </li>
 
         <li>
+          <NavLink className="link" activeClassName="active" to="/Basket">
+            My Lazy Night
+          </NavLink>
+        </li>
+
+        <li>
           <NavLink className="link" activeClassName="active" to="/Favorites">
             Favorites
           </NavLink>
