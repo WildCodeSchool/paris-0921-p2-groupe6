@@ -10,9 +10,9 @@ p {
 
 .performance-facts {
   border: 1px solid black;
-  margin: 20px;
-  float: left;
-  width: 350px;
+  margin: auto;
+  /* float: left; */
+  width: 90vw;
   padding: 0.5rem;
   margin-bottom: 10vh;
   background-color: var(--lazy-white);

@@ -8,14 +8,12 @@ function NutritionLabel() {
       <section className="performance-facts">
         <header className="performance-facts__header">
           <h1 className="performance-facts__title">Nutrition Facts</h1>
-          <p>Serving Size 1/2 cup (about 82g)</p>
-          <p>Serving Per Container 8</p>
         </header>
         <table className="performance-facts__table">
           <thead>
             <tr>
               <th colSpan="3" className="small-info">
-                Amount Per Serving
+                Total Amount
               </th>
             </tr>
           </thead>
@@ -23,73 +21,70 @@ function NutritionLabel() {
             <tr>
               <th colSpan="2">
                 <b>Calories</b>
-                200
               </th>
-              <td>Calories from Fat 130</td>
+              <td>TOTAL CALORIE</td>
             </tr>
             <tr className="thick-row">
-              <td colSpan="3" className="small-info">
+              {/* <td colSpan="3" className="small-info">
                 <b>% Daily Value*</b>
-              </td>
+              </td> */}
             </tr>
             <tr>
               <th colSpan="2">
                 <b>Total Fat</b>
-                14g
               </th>
               <td>
-                <b>22%</b>
+                <b>TOTAL FAT</b>
               </td>
             </tr>
             <tr>
               <td className="blank-cell"></td>
-              <th>Saturated Fat 9g</th>
+              <th>Saturated Fat </th>
               <td>
-                <b>22%</b>
+                <b>TOTAL CARBS</b>
               </td>
             </tr>
-            <tr>
+            {/* <tr>
               <td className="blank-cell"></td>
               <th>Trans Fat 0g</th>
               <td></td>
-            </tr>
-            <tr>
+            </tr> */}
+            {/* <tr>
               <th colSpan="2">
                 <b>Cholesterol</b>
-                55mg
+               
               </th>
               <td>
-                <b>18%</b>
+                <b>TOTA</b>
               </td>
-            </tr>
+            </tr> */}
             <tr>
-              <th colSpan="2">
+              {/* <th colSpan="2">
                 <b>Sodium</b>
                 40mg
               </th>
               <td>
                 <b>2%</b>
-              </td>
+              </td> */}
             </tr>
             <tr>
               <th colSpan="2">
                 <b>Total Carbohydrate</b>
-                17g
               </th>
               <td>
-                <b>6%</b>
+                <b>TOTAL CARBS</b>
               </td>
             </tr>
             <tr>
               <td className="blank-cell"></td>
-              <th>Dietary Fiber 1g</th>
+              {/* <th>Dietary Fiber 1g</th>
               <td>
                 <b>4%</b>
-              </td>
+              </td> */}
             </tr>
             <tr>
-              <td className="blank-cell"></td>
-              <th>Sugars 14g</th>
+              {/* <td className="blank-cell"></td> */}
+              <th>Sugars</th>
               <td></td>
             </tr>
             <tr className="thick-end">
