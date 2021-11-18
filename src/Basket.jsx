@@ -14,6 +14,7 @@ import 'swiper/css';
 import './Components/Slider';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import './Basket.css';
 
 function Basket() {
   const { userName } = useContext(CurrentUserNameContext);
@@ -23,7 +24,11 @@ function Basket() {
 
   return (
     <div>
-      <h2>Congratulations! Food, Drinks and Movie...Are you ready for your Lazy Night?!?</h2>
+      <h2 className="BasketPresentation">
+        Congratulations! <br />
+        Food, Drinks and Movie... <br />
+        Are you ready for your Lazy Night?!?
+      </h2>
       <section>
         {userChoice.some((ele) => ele.itemCategory === 'recipe' && ele.username === userName) && (
           <div>

@@ -1,0 +1,31 @@
+.BasketPresentation {
+  color: var(--lazy-white);
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.BasketSection {
+  display: flex;
+}
+
+.BasketSectionTitle {
+  color: var(--lazy-white);
+  text-align: center;
+  font-size: 1.8em;
+}
+
+.btn-ticket {
+  display: flex;
+  background-color: var(--lazy-barbecue);
+  color: var(--lazy-white);
+  font-family: var(--main-font-family);
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 65%;
+  border-radius: 5px;
+}
