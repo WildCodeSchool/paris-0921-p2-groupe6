@@ -23,6 +23,11 @@ function Offer({ mood, fat, drink }) {
         {fat === 'TakewayAndDeliver' ? <FetchTakeAway /> : <FetchRecipe />}
         {drink === 'sober' ? <FetchSoftDrink /> : <FetchAlcoholDrinks />}
         {<FetchMovies category={mood} />}
+        <p className="OfferPresentationText">
+          You can also include items in your basket <br />
+          from your favorite page and the catalog! <br />
+          When you are ready, go to your basket to see your Lazy Night!
+        </p>
       </div>
     </main>
   );
