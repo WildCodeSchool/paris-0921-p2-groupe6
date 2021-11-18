@@ -187,7 +187,12 @@ function FavoritesSliders() {
           </section>
         </div>
       ) : (
-        <div>You must be logged in to view this page</div>
+        <div className="FavoriteUnlogged">
+          <h2 className="FavoriteUnloggedText">
+            Oh no ! <br />
+            You must be logged in to view this page !
+          </h2>
+        </div>
       )}
     </div>
   );
