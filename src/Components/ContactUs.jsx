@@ -18,6 +18,7 @@ export function ContactUs() {
         console.log(error.text);
       },
     );
+    window.alert('thank you for your message');
   };
 
   return (

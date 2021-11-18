@@ -52,7 +52,7 @@ li:nth-child(1) {
   text-decoration: none;
 }
 
-@media screen and (min-width: 700) {
+@media screen and (min-width: 600px) {
   nav {
     display: flex;
   }
