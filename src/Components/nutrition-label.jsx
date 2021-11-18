@@ -1,10 +1,52 @@
 import React from 'react';
 
+// import CurrentUserNameContext from '../Contexts/userContext';
+// import CurrentFinalChoicesContext from '../Contexts/finalChoices';
+
 import './nutrition-label.css';
 
-function NutritionLabel() {
+import LazyGif from '../Assets/lazygif.gif';
+
+function NutritionLabel({ total }) {
+  // const { userName } = useContext(CurrentUserNameContext);
+  // const { userChoice, setUserChoice } = useContext(CurrentFinalChoicesContext);
+
+  // useEffect(() => {
+  //   setUserChoice(userChoice.filter((elt) => elt.username !== userName));
+  // }, []);
+
+  const totalCalories = total.reduce((prev, cur) => {
+    return prev + cur.calories;
+  }, 0);
+
+  const totalFat = total.reduce((prev, cur) => {
+    return parseInt(prev) + parseInt(cur.fat);
+  }, 0);
+
+  const totalCarbs = total.reduce((prev, cur) => {
+    return parseInt(prev) + parseInt(cur.carbs);
+  }, 0);
+
+  const totalSugar = total.reduce((prev, cur) => {
+    return parseInt(prev) + parseInt(cur.sugar);
+  }, 0);
+
+  const totalProtein = total.reduce((prev, cur) => {
+    return parseInt(prev) + parseInt(cur.protein);
+  }, 0);
+
+  // useEffect(() => {
+  //   console.log(userChoice);
+  //   console.log(total);
+  //   console.log(parseInt(total[0].fat));
+  //   console.log(totalFat);
+  // });
+
   return (
     <div>
+      <div className="gifcontainer">
+        <img className="lazygif" src={LazyGif} alt="LazyGif" />
+      </div>
       <section className="performance-facts">
         <header className="performance-facts__header">
           <h1 className="performance-facts__title">Nutrition Facts</h1>
@@ -13,6 +55,7 @@ function NutritionLabel() {
           <thead>
             <tr>
               <th colSpan="3" className="small-info">
+                <tr></tr>
                 Total Amount
               </th>
             </tr>
@@ -22,7 +65,9 @@ function NutritionLabel() {
               <th colSpan="2">
                 <b>Calories</b>
               </th>
-              <td>TOTAL CALORIE</td>
+              <td>
+                <b>{totalCalories}Kcal</b>
+              </td>
             </tr>
             <tr className="thick-row"></tr>
             <tr>
@@ -30,42 +75,38 @@ function NutritionLabel() {
                 <b>Total Fat</b>
               </th>
               <td>
-                <b>TOTAL FAT</b>
+                <b>{totalFat} Gr</b>
               </td>
             </tr>
-            <tr>
-              <td className="blank-cell"></td>
-              <th>Saturated Fat </th>
-              <td>
-                <b>TOTAL CARBS</b>
-              </td>
-            </tr>
+            <tr></tr>
 
             <tr>
               <th colSpan="2">
                 <b>Total Carbohydrate</b>
               </th>
               <td>
-                <b>TOTAL CARBS</b>
+                <b>{totalCarbs} Gr</b>
               </td>
             </tr>
             <tr>
-              <td className="blank-cell"></td>
-
-              <th>Sugars</th>
-              {/* <td></td> */}
-              <td>TOTAL SUGAR</td>
+              <th colSpan="2">
+                <b>Total Sugars</b>
+              </th>
+              <td>
+                <b>{totalSugar} Gr</b>
+              </td>
             </tr>
             <tr className="thick-end">
               <th colSpan="2">
                 <b>Protein</b>
                 <td></td>
               </th>
-              <td>TOTAL PROTEIN</td>
+              <td>{totalProtein} Gr</td>
             </tr>
           </tbody>
         </table>
       </section>
+      )
     </div>
   );
 }

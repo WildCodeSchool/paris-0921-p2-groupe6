@@ -8,9 +8,20 @@ p {
   margin: 0;
 }
 
+.gifcontainer {
+  display: flex;
+}
+
+.lazygif {
+  margin: auto;
+  padding-top: 10 vh;
+  justify-self: center;
+  width: 80vw;
+}
+
 .performance-facts {
   border: 1px solid black;
-  margin: auto;
+  margin: 1em;
   /* float: left; */
   width: 90vw;
   padding: 0.5rem;
