@@ -18,6 +18,11 @@ function FooterNavbar() {
           </NavLink>
         </span>
         <span className="material-icons">
+          <NavLink className="link" activeClassName="active" to="Basket">
+            chair
+          </NavLink>
+        </span>
+        <span className="material-icons">
           <NavLink className="link" activeClassName="active" to="Catalog">
             menu_book
           </NavLink>
