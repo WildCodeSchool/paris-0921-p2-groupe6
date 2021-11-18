@@ -1,9 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Pagination, Navigation } from 'swiper';
 
 import CurrentUserNameContext from './Contexts/userContext';
 import CurrentFinalChoicesContext from './Contexts/finalChoices';
+import CurrentAllFavoritesContext from './Contexts/favoritesContext';
 
 import MovieCard from './Components/MovieCard';
 import RecipeCard from './Components/RecipeCard';
@@ -22,6 +23,9 @@ function Basket() {
   const { userName } = useContext(CurrentUserNameContext);
   const { userChoice } = useContext(CurrentFinalChoicesContext);
   const [totalChoice, setTotalChoice] = useState();
+  const { allFavorites } = useContext(CurrentAllFavoritesContext);
+
+  useEffect(() => {}, [userChoice, allFavorites]);
 
   return (
     <main>

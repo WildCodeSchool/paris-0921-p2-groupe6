@@ -43,13 +43,18 @@ function AlcoholDrinkCard({ name, calories, sugar, imgUrl }) {
     isFavorite ? DeleteFromFavorite() : AddToFavorite();
   }
 
+  function AddToBasket() {
+    setIsAdded(true);
+    setUserChoice([...userChoice, { username: userName, itemCategory: 'drinks', name: name, calories: calories, sugar: sugar, imgUrl: imgUrl }]);
+  }
+
+  function RemoveFromBasket() {
+    setIsAdded(false);
+    setUserChoice(userChoice.filter((element) => element.name !== name && element.username !== userName));
+  }
+
   function handleClickAdded() {
-    setIsAdded(!isAdded);
-    if (isAdded) {
-      setUserChoice(userChoice.filter((element) => element.name != name));
-    } else {
-      setUserChoice([...userChoice, { username: userName, itemCategory: 'drinks', name: name, calories: calories, sugar: sugar, imgUrl: imgUrl }]);
-    }
+    isAdded ? RemoveFromBasket() : AddToBasket;
   }
 
   function handleClickFlip() {
@@ -60,8 +65,11 @@ function AlcoholDrinkCard({ name, calories, sugar, imgUrl }) {
     if (allFavorites.some((object) => object.username === userName && object.itemName === name && object.itemCategory === 'drinks')) {
       setIsFavorite(true);
     }
+    if (userChoice.some((object) => object.username === userName && object.name === name && object.itemCategory === 'drinks')) {
+      setIsAdded(true);
+    }
   }, []);
-  useEffect(() => {}, [isFavorite]);
+  useEffect(() => {}, [isFavorite, isAdded]);
 
   return (
     <div className="AlcoholDrink-Card">
