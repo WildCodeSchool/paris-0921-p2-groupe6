@@ -16,7 +16,7 @@ SwiperCore.use([Pagination, Navigation]);
 
 function FetchRecipe({ category }) {
   const recipeByNutrient =
-    'https://api.spoonacular.com/recipes/findByNutrients?minCholesterol=30&minCarbs=30&minFat=30&minCalories=400&maxSugar=10&number=10&random=true&apiKey=7706683273f24fdcaf86cbbb8929f962';
+    'https://api.spoonacular.com/recipes/findByNutrients?minCholesterol=30&minCarbs=30&minFat=30&minCalories=400&maxSugar=10&number=10&random=true&apiKey=0105626b586c459aa4ccecfafb0be117';
   const [fetchedRecipe, setFetchedRecipe] = useState();
   const [refresh, setRefresh] = useState(false);
   const { allFavorites, fetchAllFavorites } = useContext(CurrentAllFavoritesContext);
