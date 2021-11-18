@@ -28,7 +28,7 @@ function HeaderNavbar() {
 
         <li>
           <NavLink className="link" activeClassName="active" to="/Catalog">
-            Catalog
+            A la carte
           </NavLink>
         </li>
 
