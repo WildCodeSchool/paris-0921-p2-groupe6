@@ -1,0 +1,40 @@
+.FavoritePage {
+  display: flex;
+  flex-direction: column;
+}
+
+.FavoritesFirstTitle {
+  color: var(--lazy-white);
+  font-size: 2.5em;
+  text-align: center;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.FavoritePresentation {
+  color: var(--lazy-white);
+  text-align: center;
+  margin: 5vh;
+  font-size: 1.2em;
+}
+
+.FavouriteLogo {
+  display: flex;
+  height: 10vh;
+  justify-content: space-between;
+  margin: auto;
+  padding-top: 1vh;
+}
+
+.FavoriteSectionTitle {
+  color: var(--lazy-white);
+  text-align: center;
+  margin-bottom: -40px;
+  font-size: 1.8em;
+}
+
+.FavoriteUnloggedText {
+  color: var(--lazy-white);
+  text-align: center;
+  margin-top: 70%;
+}

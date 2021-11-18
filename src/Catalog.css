@@ -12,3 +12,11 @@
   text-align: center;
   margin: 2px;
 }
+
+.CatalogLogo {
+  display: flex;
+  height: 10vh;
+  justify-content: space-between;
+  margin: auto;
+  padding-top: 1vh;
+}

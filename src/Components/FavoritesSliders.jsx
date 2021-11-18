@@ -2,6 +2,8 @@ import React, { useContext, useEffect } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Pagination, Navigation } from 'swiper';
+import { NavLink } from 'react-router-dom';
+
 import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 import CurrentUserNameContext from '../Contexts/userContext';
 import MovieCard from './MovieCard';
@@ -11,9 +13,11 @@ SwiperCore.use([Pagination, Navigation]);
 
 import 'swiper/css';
 import './Slider.css';
+import './FavoritesSliders.css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import TakeAwayCard from './TakeAwayCard';
+import SmallLogo from '../SmallLogo.png';
 
 function FavoritesSliders() {
   const { userName } = useContext(CurrentUserNameContext);
@@ -28,13 +32,17 @@ function FavoritesSliders() {
   return (
     <div>
       {userName.length ? (
-        <div>
-          <h2>
+        <div className="FavoritePage">
+          <NavLink className="link" activeClassName="active" exact to="/">
+            <img src={SmallLogo} alt="Lazy Night Small Logo" className="FavouriteLogo" />
+          </NavLink>
+          <h1 className="FavoritesFirstTitle">Your favorites</h1>
+          <h2 className="FavoritePresentation">
             Here you will find all your favorites recipe, products and movies. <br />
             You can also add what you want to your Lazy Night from here.
           </h2>
           <section>
-            <h3>Recipe:</h3>
+            <h3 className="FavoriteSectionTitle">Your Recipes:</h3>
             {allFavorites.some((elt) => elt.username === userName && elt.itemCategory === 'recipe') ? (
               <Swiper
                 slidesPerView={1}
@@ -68,7 +76,7 @@ function FavoritesSliders() {
             )}
           </section>
           <section>
-            <h3>Takeaway:</h3>
+            <h3 className="FavoriteSectionTitle">Your Takeaways:</h3>
             {allFavorites.some((elt) => elt.username === userName && elt.itemCategory === 'takeaway') ? (
               <Swiper
                 slidesPerView={1}
@@ -103,7 +111,7 @@ function FavoritesSliders() {
             )}
           </section>
           <section>
-            <h3>Drinks:</h3>
+            <h3 className="FavoriteSectionTitle">Your Drinks:</h3>
             {allFavorites.some((elt) => elt.username === userName && elt.itemCategory === 'drinks') ? (
               <Swiper
                 slidesPerView={1}
@@ -128,7 +136,7 @@ function FavoritesSliders() {
             )}
           </section>
           <section>
-            <h3>Movies:</h3>
+            <h3 className="FavoriteSectionTitle">Your Movies:</h3>
             {allFavorites.some((elt) => elt.username === userName && elt.itemCategory === 'movie') ? (
               <Swiper
                 slidesPerView={1}
@@ -153,7 +161,7 @@ function FavoritesSliders() {
             )}
           </section>
           <section>
-            <h3>Scanned Products:</h3>
+            <h3 className="FavoriteSectionTitle">Your Scanned Products:</h3>
             {allFavorites.some((elt) => elt.username === userName && elt.itemCategory === 'barcode') ? (
               <Swiper
                 slidesPerView={1}
@@ -179,7 +187,12 @@ function FavoritesSliders() {
           </section>
         </div>
       ) : (
-        <div>You must be logged in to view this page</div>
+        <div className="FavoriteUnlogged">
+          <h2 className="FavoriteUnloggedText">
+            Oh no ! <br />
+            You must be logged in to view this page !
+          </h2>
+        </div>
       )}
     </div>
   );

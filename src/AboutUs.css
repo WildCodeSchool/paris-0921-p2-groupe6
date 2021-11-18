@@ -1,5 +1,9 @@
 .AboutUsLogo {
-  display: none;
+  display: flex;
+  height: 10vh;
+  justify-content: space-between;
+  margin: auto;
+  padding-top: 1vh;
 }
 
 .AboutUsTopFirstTitle {
@@ -70,14 +74,6 @@
 }
 
 @media screen and (max-width: 800px) {
-  .AboutUsLogo {
-    display: flex;
-    height: 8vh;
-    justify-content: space-between;
-    margin: auto;
-    padding-top: 1vh;
-  }
-
   .AboutUsMembers {
     display: flex;
     flex-direction: column;

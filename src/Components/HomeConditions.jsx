@@ -106,7 +106,9 @@ function HomeConditions() {
             </label>
           </form>
         ) : (
-          <button onClick={ResetUserName}>Change User</button>
+          <button className="HomeConditionUserChangeButton" onClick={ResetUserName}>
+            Change User
+          </button>
         )}
         <form className="HomeConditionsMood">
           <label htmlFor="Mood">Today, I feel </label>
@@ -188,7 +190,7 @@ function HomeConditions() {
               setFat('');
             }}
           >
-            ResetMychoices
+            Reset my choices
           </button>
         )}
       </div>
