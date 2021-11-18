@@ -19,6 +19,7 @@
 .BarCodeProductCard {
   display: flex;
   margin: 1px;
+  margin: auto;
 }
 
 .BarCodeReaderContainer,
