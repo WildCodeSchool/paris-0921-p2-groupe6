@@ -56,6 +56,10 @@
   flex-direction: row;
 }
 
+.AboutUsBox {
+  overflow: scroll;
+}
+
 .AboutUsTeam {
   text-align: center;
 }
