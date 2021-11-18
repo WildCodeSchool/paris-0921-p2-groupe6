@@ -17,6 +17,7 @@ import 'swiper/css';
 import './Components/Slider';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import './Basket.css';
 
 function Basket() {
   const { userName } = useContext(CurrentUserNameContext);
@@ -27,11 +28,15 @@ function Basket() {
     <main>
       {userName ? (
         <div>
-          <h2>Congratulations! Food, Drinks and Movie...Are you ready for your Lazy Night?!?</h2>
+          <h2 className="BasketPresentation">
+            Congratulations! <br />
+            Food, Drinks and Movie... <br />
+            Are you ready for your Lazy Night?!?
+          </h2>
           <section>
             {userChoice.some((ele) => ele.itemCategory === 'recipe' && ele.username === userName) && (
-              <div>
-                <h3>Recipe:</h3>
+              <div className="BasketSection">
+                <h3 className="BasketSectionTitle ">Recipe:</h3>
                 <Swiper
                   slidesPerView={1}
                   spaceBetween={30}
@@ -65,7 +70,7 @@ function Basket() {
           <section>
             {userChoice.some((ele) => ele.itemCategory === 'takeaway' && ele.username === userName) && (
               <div>
-                <h3>TakeAway:</h3>
+                <h3 className="BasketSectionTitle ">TakeAway:</h3>
                 <Swiper
                   slidesPerView={1}
                   spaceBetween={30}
@@ -100,7 +105,7 @@ function Basket() {
           <section>
             {userChoice.some((ele) => ele.itemCategory === 'drinks' && ele.username === userName) && (
               <div>
-                <h3>Drinks:</h3>
+                <h3 className="BasketSectionTitle ">Drinks:</h3>
                 <Swiper
                   slidesPerView={1}
                   spaceBetween={30}
@@ -125,7 +130,7 @@ function Basket() {
           <section>
             {userChoice.some((ele) => ele.itemCategory === 'movie' && ele.username === userName) && (
               <div>
-                <h3>Movies:</h3>
+                <h3 className="BasketSectionTitle ">Movies:</h3>
                 <Swiper
                   slidesPerView={1}
                   spaceBetween={30}
@@ -158,7 +163,10 @@ function Basket() {
           <div>{totalChoice && <NutritionLabel total={totalChoice} />}</div>
         </div>
       ) : (
-        <div> It appears you are not logged in, go to the Homepage first! </div>
+        <h2 className="BasketNoLogged">
+          It appears you are not logged in, <br />
+          go to the Homepage first!{' '}
+        </h2>
       )}
     </main>
   );

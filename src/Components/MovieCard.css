@@ -80,16 +80,17 @@
   color: var(--lazy-ketchup);
   display: flex;
   flex-direction: row;
-  left: 46%;
+  left: 46%;;
 }
 
 #isFavorite {
   bottom: 2.5%;
   color: var(--lazy-mayo);
   display: row;
+  height: 5vh;
 }
 
-.film-logo-fond-desc {
+#logo-fond-desc {
   width: 85%;
   height: 45%;
   object-fit: cover;
@@ -130,7 +131,7 @@
 
 #notFavorite {
   bottom: 2.5%;
-  color: var(--lazy-white);
+  color: var(--lazy-white );
   display: flex;
   flex-direction: row;
 }
