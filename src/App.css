@@ -5,7 +5,7 @@ body {
   background: linear-gradient(142deg, #d90b08, #e6af2e, #a3320b);
   background-size: 180% 180%;
   font-family: var(--main-font-family);
-  height: 120vhvh;
+  height: 120vh;
   padding-bottom: 5vh;
   margin: 0;
   background-attachment: fixed;
