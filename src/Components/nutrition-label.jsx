@@ -1,8 +1,5 @@
 import React, { useEffect } from 'react';
 
-// import CurrentUserNameContext from '../Contexts/userContext';
-// import CurrentFinalChoicesContext from '../Contexts/finalChoices';
-
 import './nutrition-label.css';
 
 import LazyGif from '../Assets/lazygif.gif';

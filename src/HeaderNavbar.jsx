@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+
 import SmallLogo from './SmallLogo.png';
 
 import './HeaderNavbar.css';
