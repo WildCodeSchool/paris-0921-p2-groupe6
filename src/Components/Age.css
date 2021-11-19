@@ -17,51 +17,69 @@
   color: var(--lazy-white);
   display: flex;
   font-family: 'Helvetica Neue', sans-serif;
-  font-size: 1.3em;
+  font-size: 1.9em;
   justify-content: space-evenly;
+  margin: 10px;
   text-align: center;
   margin-bottom: 1vh;
 }
 
-h3 {
-  color: var(--lazy-ketchup);
-  font-family: 'Gluten', cursive;
+.BirthDateTextPresentation {
+  color: var(--lazy-black);
+  font-size: 1.5em;
   text-align: center;
 }
-h2 {
+
+.textBirthDateCheckBox {
   color: var(--lazy-ketchup);
-  font-size: 1.8em;
+  font-family: 'Gluten', cursive;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.h2AgeBox {
+  color: var(--lazy-ketchup);
+  font-size: 2.3em;
+  margin: 3px;
   text-align: center;
 }
 
 .AgeBox {
   background-color: var(--lazy-white);
   border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  width: 60%;
   box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
     22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20%;
+  width: 60%;
 }
 
 .BirthDateCheckBox {
   color: var(--lazy-black);
   display: flex;
   font-family: 'Helvetica Neue', sans-serif;
-  font-size: 0.8em;
+  font-size: 1.3em;
   justify-content: space-evenly;
   text-align: center;
   padding: 2vw;
+}
+
+.textBirthDateCheckBox {
+  color: var(--lazy-ketchup);
+  font-family: 'Gluten', cursive;
+  font-size: 1.5em;
+  text-align: center;
 }
 
 .AgeButton {
   background-color: var(--lazy-barbecue);
   color: var(--lazy-white);
   font-family: var(--main-font-family);
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: bold;
 }
 
-img {
+.banner {
   max-width: 100%;
 }

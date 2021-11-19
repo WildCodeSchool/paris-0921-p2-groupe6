@@ -1,0 +1,156 @@
+@import '../fonts.css';
+
+.movie-back {
+  background-color: burlywood;
+  backface-visibility: inherit;
+  border: solid;
+  border-style: ridge;
+  display: flex;
+  height: 68vh;
+  position: relative;
+  width: 96vw;
+}
+
+.movie-btn-more {
+  background: none;
+  border: none;
+  bottom: 0%;
+  display: flex;
+  width: 10%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+.movie-Card {
+  margin: 0 1vw;
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-card-image {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+.movie-front {
+  backface-visibility: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-img-container {
+  /* display: flex;
+  flex-direction: column; */
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: 2s;
+  width: 100%;
+  position: relative;
+}
+
+.movie-material-icons-outlined {
+  background: none;
+  border: none;
+  color: var(--lazy-white);
+  display: inline-block;
+  direction: ltr;
+  font-family: 'Material Icons';
+  font-feature-settings: 'liga';
+  font-style: normal;
+  font-size: 32px;
+  font-weight: normal;
+  height: 4vh;
+  letter-spacing: normal;
+  line-height: 1;
+  padding: 0.5vh 1vw;
+  position: absolute;
+  right: 0%;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+#MovieisAdd {
+  bottom: 1.5%;
+  color: var(--lazy-ketchup);
+  display: flex;
+  flex-direction: row;
+  left: 46%;
+  filter: drop-shadow(2px 2px 0.2rem var(--lazy-white));
+}
+
+#MovienotAdd {
+  color: var(--lazy-white);
+  display: flex;
+  flex-direction: row;
+  bottom: 1.5%;
+  left: 46%;
+}
+
+#MovieisFavorite {
+  bottom: 1.5%;
+  color: var(--lazy-mayo);
+  display: row;
+  filter: drop-shadow(2px 2px 0.2rem var(--lazy-white));
+}
+
+#logo-fond-desc {
+  width: 85%;
+  height: 45%;
+  object-fit: cover;
+  opacity: 20%;
+  position: absolute;
+}
+
+#more {
+  transform: rotateY(180deg);
+}
+
+#movie-btn-close {
+  bottom: 0%;
+  left: 0%;
+}
+
+#movie-card-h3 {
+  font-size: 21px;
+  margin-left: 5%;
+  margin-right: 5%;
+  position: absolute;
+  top: 0%;
+}
+
+#movie-p-back {
+  display: flex;
+  margin: 25% 8%;
+  overflow: scroll;
+}
+
+#MovienotFavorite {
+  bottom: 1.5%;
+  color: var(--lazy-white);
+  display: flex;
+  flex-direction: row;
+}
+
+.movie-desc-back {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+#movie-card-title {
+  font-size: xx-large;
+  margin: 2vh;
+}
+
+.movie-back-desc {
+  font-size: large;
+  margin: 3vh;
+}

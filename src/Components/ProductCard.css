@@ -1,0 +1,158 @@
+@import '../fonts.css';
+
+.product-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  font-size: 21px;
+  left: 25%;
+  top: -17%;
+}
+
+.btn-more {
+  position: absolute;
+  bottom: 0%;
+  border: none;
+  background: none;
+}
+
+.product-Card {
+  margin: 0 1vw;
+  margin-top: 10vh;
+  display: flex;
+}
+
+.product-front {
+  backface-visibility: inherit;
+  display: flex;
+  position: relative;
+  min-height: 50vh;
+  min-width: 90vw;
+  max-height: 50vh;
+  max-width: 90vw;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  display: flex;
+}
+
+.product-img-container {
+  display: flex;
+  height: auto;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: 2s;
+  margin: auto;
+}
+
+.material-icons-outlined {
+  background: none;
+  border: none;
+  color: var(--lazy-ketchup);
+  display: inline-block;
+  direction: ltr;
+  font-family: 'Material Icons';
+  font-feature-settings: 'liga';
+  font-style: normal;
+  font-size: 32px;
+  font-weight: normal;
+  height: 4vh;
+  letter-spacing: normal;
+  line-height: 1;
+  padding: 0.5vh 1vw;
+  position: absolute;
+  right: 0%;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+#btn-close {
+  bottom: 0%;
+  left: 0%;
+}
+
+#ProductisAdd {
+  bottom: 1.5%;
+  color: var(--lazy-ketchup);
+  display: flex;
+  flex-direction: row;
+  left: 46%;
+}
+
+#ProductisFavorite {
+  bottom: 2.5%;
+  color: var(--lazy-mayo);
+}
+
+#more {
+  transform: rotateY(180deg);
+}
+
+#ProductnotAdd {
+  color: var(--lazy-white);
+  display: flex;
+  flex-direction: row;
+  bottom: 1.5%;
+  left: 46%;
+}
+
+#ProductnotFavorite {
+  bottom: 2.5%;
+  color: var(--lazy-white);
+  display: flex;
+  flex-direction: row;
+}
+
+#product-card-image {
+  margin: auto;
+  background-color: var(--lazy-mayo);
+  object-fit: contain;
+  height: 90%;
+  width: 90%;
+}
+
+.product-back {
+  background-color: burlywood;
+  backface-visibility: inherit;
+  border: solid;
+  border-style: ridge;
+  display: flex;
+  margin: 1px;
+  padding: 2px;
+}
+
+.product-desc-back {
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  object-fit: contain;
+  margin: 1px;
+}
+
+.product-desc-title {
+  text-align: center;
+  font-size: 20px;
+  margin: 3vw;
+  color: var(--lazy-ketchup);
+}
+
+.product-desc-details {
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  object-fit: contain;
+  word-wrap: break-word;
+  padding: 10px;
+}
+
+.product-desc-details-li {
+  /* margin: 1vh; */
+}

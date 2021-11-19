@@ -24,12 +24,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: auto;
   text-align: center;
-}
-
-.HomeConditionssendButton {
-  margin-bottom: 5vh;
-  margin-top: 1vh;
+  width: 60%;
 }
 
 .HomeConditionsTitle {
@@ -41,39 +38,51 @@
 .HomeConditionsQuestion {
   color: var(--lazy-barbecue);
   font-size: 1.3em;
-  margin: 2vh;
+  margin: auto;
+  text-align: center;
+}
+
+.HomeConditionsHelloNameH3 {
+  margin: auto;
+  text-align: center;
 }
 
 .HomeConditionsSubmit {
-  background-color: var(--lazy-ketchup);
+  background-color: var(--lazy-barbecue);
   color: var(--lazy-white);
   font-family: var(--main-font-family);
   font-size: 1.5em;
-  margin-bottom: 5vh;
-  margin-top: 5vh;
+  font-weight: bold;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 65%;
+  border-radius: 5px;
 }
 
-.HomeConditionsMood {
-  color: var(--lazy-barbecue);
-  font-size: 1.3em;
-  margin: 2vh;
-  margin-bottom: 3vh;
+.HomeConditionsSub {
+  margin: auto;
+  text-align: center;
 }
 
-.HomeConditionsNumber {
-  color: var(--lazy-barbecue);
-  font-size: 1.3em;
-  margin: 2vh;
-  margin-bottom: 3vh;
+.HomeConditionssendButton {
+  background-color: var(--lazy-barbecue);
+  color: var(--lazy-white);
+  font-family: var(--main-font-family);
+  font-size: 1em;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 70%;
+  border-radius: 5px;
 }
 
-.HomeConditionsFat {
-  color: var(--lazy-barbecue);
-  font-size: 1.3em;
-  margin: 2vh;
-  margin-bottom: 3vh;
-}
-
+.HomeConditionsMood,
+.HomeConditionsFat,
 .HomeConditionsDrink {
   color: var(--lazy-barbecue);
   font-size: 1.3em;
@@ -91,6 +100,35 @@
   font-size: 0.8em;
   line-height: inherit;
   margin: 0;
+}
+
+.HomeConditionsReset {
+  background-color: var(--lazy-white);
+  color: var(--lazy-ketchup);
+  font-family: var(--main-font-family);
+  font-size: 1.3em;
+  margin: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 90%;
+  border: none;
+  border-radius: 5px;
+}
+
+.HomeConditionUserChangeButton {
+  background-color: var(--lazy-ketchup);
+  color: var(--lazy-white);
+  font-family: var(--main-font-family);
+  font-size: 1em;
+  margin: auto;
+  margin-bottom: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 30%;
+  border-radius: 5px;
+  text-align: center;
 }
 
 @media screen and (min-width: 600px) {

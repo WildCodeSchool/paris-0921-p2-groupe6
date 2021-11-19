@@ -26,25 +26,27 @@ function Card() {
       <div className="img-container">
         {more ? (
           <div className="front">
-            <h3 className="desc" id="card-h3">
+            <h2 className="desc" id="card-h2">
               Burger with fries
-            </h3>
+            </h2>
             <img src="https://cdn.pixabay.com/photo/2017/08/12/18/59/snack-2635035_960_720.jpg" alt="Burger with fries" className="card-image" />
             <button className="material-icons-outlined" id={isFavorite ? 'isFavorite' : 'notFavorite'} onClick={handleClickFavorite}>
               star
             </button>
             <button className="material-icons-outlined" id={isAdded ? 'isAdd' : 'notAdd'} onClick={handleClickAdded}>
-              bookmark_add
+              add_shopping_cart
             </button>
             <button className="btn-more" onClick={handleClickFlip}>
-              <img src={More} alt="more" />
+              <img src={More} alt="more" id="more" />
             </button>
           </div>
         ) : (
           <div className="back">
-            <p className="desc-back" id="p-back">
-              here there is the description
-            </p>
+            <div className="desc-back" id="p-back">
+              <h2 className="desc-title" id="card-h2">
+                .
+              </h2>
+            </div>
             <button className="material-icons-outlined" id="btn-close" onClick={handleClickFlip}>
               cancel
             </button>

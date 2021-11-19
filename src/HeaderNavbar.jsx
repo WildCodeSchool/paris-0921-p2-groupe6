@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+
 import SmallLogo from './SmallLogo.png';
 
 import './HeaderNavbar.css';
@@ -15,6 +16,12 @@ function HeaderNavbar() {
         </li>
 
         <li>
+          <NavLink className="link" activeClassName="active" to="/Basket">
+            My Lazy Night
+          </NavLink>
+        </li>
+
+        <li>
           <NavLink className="link" activeClassName="active" to="/Favorites">
             Favorites
           </NavLink>
@@ -22,7 +29,7 @@ function HeaderNavbar() {
 
         <li>
           <NavLink className="link" activeClassName="active" to="/Catalog">
-            Catalog
+            A la carte
           </NavLink>
         </li>
 

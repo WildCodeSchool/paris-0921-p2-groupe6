@@ -1,44 +1,153 @@
 @import '../fonts.css';
 
-.back {
+.back,
+.AlcoholDrink-back,
+.product-back,
+.recipe-back,
+.SoftDrink-back,
+.TakeAway-back {
   background-color: burlywood;
   backface-visibility: inherit;
   border: solid;
   border-style: ridge;
   display: flex;
-  height: 31vh;
-  position: relative;
+  height: 40vh;
   width: 96vw;
 }
 
-.btn-more {
-  position: absolute;
+.btn-more,
+.AlcoholDrink-btn-more,
+.product-btn-more,
+.recipe-btn-more,
+.SoftDrink-btn-more,
+.TakeAway-btn-more {
+  background: none;
   bottom: 0%;
   border: none;
-  background: none;
+  display: flex;
+  margin-bottom: 1%;
+  margin-top: 1%;
+  width: 10%;
 }
 
-.Card {
+.Card,
+.AlcoholDrink-Card,
+.product-Card,
+.recipe-Card,
+.SoftDrink-Card,
+.TakeAway-Card {
+  display: flex;
+  flex-direction: column;
   margin: 0 1vw;
   margin-top: 10vh;
-  display: flex;
 }
 
-.front {
+.card-image,
+.AlcoholDrink-card-image,
+.product-card-image,
+.recipe-card-image,
+.SoftDrink-card-image,
+.TakeAway-card-image {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.desc-back,
+.AlcoholDrink-desc-back,
+.product-desc-back,
+.recipe-desc-back,
+.SoftDrink-desc-back,
+.TakeAway-desc-back {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.desc-title,
+.AlcoholDrink-desc-title,
+.recipe-desc-title,
+.SoftDrink-desc-title,
+.TakeAway-desc-title {
+  color: var(--lazy-ketchup);
+  display: flex;
+  font-size: 18px;
+  margin: 0 !important;
+  top: -20%;
+}
+
+.front,
+.AlcoholDrink-front,
+.product-front,
+.SoftDrink-front,
+.TakeAway-front {
   backface-visibility: inherit;
   display: flex;
-  position: relative;
+  flex-direction: column;
 }
 
-.img-container {
+.recipe-front {
+  backface-visibility: inherit;
+  display: flex;
+  flex-direction: column;
+  width: 95vw;
+}
+
+.img-container,
+.AlcoholDrink-img-container,
+.product-img-container,
+.SoftDrink-img-container,
+.TakeAway-img-container {
   height: 100%;
   position: relative;
+  transform-style: preserve-3d;
+  transition: 2s;
   width: 100%;
+}
+
+.recipe-logo-fond-desc {
+  height: 75%;
+  object-fit: cover;
+  opacity: 20%;
+  position: absolute;
+  width: 85%;
+}
+
+.Alcohol-logo-fond-desc {
+  height: 75%;
+  left: 10%;
+  object-fit: cover;
+  opacity: 20%;
+  position: absolute;
+  top: 20%;
+  width: 85%;
+}
+
+.recipe-img-container {
+  display: flex;
+  flex-direction: column;
+  height: auto;
   transform-style: preserve-3d;
   transition: 2s;
 }
 
-.material-icons-outlined {
+.recipe-title,
+.TakeAway-title {
+  color: var(--lazy-ketchup);
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  margin: 0 !important;
+}
+
+.material-icons-outlined,
+.AlcoholDrink-material-icons-outlined,
+.product-material-icons-outlined,
+.recipe-material-icons-outlined,
+.SoftDrink-material-icons-outlined,
+.TakeAway-material-icons-outlined {
   background: none;
   border: none;
   color: var(--lazy-white);
@@ -63,51 +172,51 @@
   -webkit-font-smoothing: antialiased;
 }
 
-#btn-close {
-  bottom: 0%;
-  left: 0%;
+.product-desc-details,
+.recipe-desc-details,
+.SoftDrink-desc-details,
+.TakeAway-desc-details {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+}
+
+.recipe-desc-details-li,
+.SoftDrink-desc-details-li,
+.TakeAway-desc-details-li {
+  margin: 1vh;
 }
 
 #isAdd {
+  bottom: 1.5%;
   color: var(--lazy-ketchup);
-  top: -5vh;
+  display: flex;
+  flex-direction: row;
+  left: 46%;
+  filter: drop-shadow(2px 2px 0.2rem var(--lazy-white));
 }
 
 #isFavorite {
-  bottom: 0%;
+  bottom: 2.5%;
   color: var(--lazy-mayo);
-  height: 5vh;
+  filter: drop-shadow(2px 2px 0.2rem var(--lazy-white));
 }
 
-#more {
+/*#more {
   transform: rotateY(180deg);
-}
+}*/
 
 #notAdd {
   color: var(--lazy-white);
-  top: -5vh;
+  display: flex;
+  flex-direction: row;
+  bottom: 1.5%;
+  left: 46%;
 }
 
 #notFavorite {
-  bottom: 0%;
+  bottom: 2.5%;
   color: var(--lazy-white);
-  height: 5vh;
-}
-
-#p-back {
   display: flex;
-  margin: auto;
-}
-
-.card-image {
-  height: 100%;
-  object-fit: contain;
-  width: 100%;
-}
-
-#card-h3 {
-  font-size: 21px;
-  left: 25%;
-  position: absolute;
-  top: -17%;
+  flex-direction: row;
 }

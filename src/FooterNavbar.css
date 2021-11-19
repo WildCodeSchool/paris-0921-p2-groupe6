@@ -5,14 +5,15 @@ footer {
   bottom: 0;
   display: flex;
   height: 6%;
-  justify-content: space-evenly;
+  justify-content: space-around;
   left: 0;
   position: fixed;
-  width: 100%;
+  width: 100vw;
   box-shadow: 0px -8px 10px -5px var(--lazy-barbecue, 0.9);
   animation: gradient-animation 30s linear infinite;
   background: linear-gradient(142deg, #e6af2e, #a3320b);
   background-size: 100%;
+  z-index: 10;
 }
 
 @keyframes gradient-animation {
@@ -34,12 +35,11 @@ footer {
   font-family: 'Material Icons';
   font-feature-settings: 'liga';
   font-style: normal;
-  font-size: 35px;
+  font-size: 30px;
   font-weight: normal;
   height: 4vh;
   letter-spacing: normal;
   line-height: 1;
-  margin: 1vw 5vw;
   padding: 0.5vh 4vw;
   text-rendering: optimizeLegibility;
   text-transform: none;
