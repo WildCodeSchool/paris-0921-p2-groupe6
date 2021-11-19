@@ -60,7 +60,7 @@ function FavoritesSliders() {
                     <SwiperSlide key={index}>
                       <RecipeCard
                         key={index}
-                        title={info.itemName}
+                        name={info.itemName}
                         calories={info.calories}
                         carbs={info.carbs}
                         fat={info.fat}

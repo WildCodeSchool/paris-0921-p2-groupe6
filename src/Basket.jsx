@@ -57,7 +57,7 @@ function Basket() {
                       <SwiperSlide key={index}>
                         <RecipeCard
                           key={index}
-                          title={info.itemName}
+                          name={info.itemName}
                           calories={info.calories}
                           carbs={info.carbs}
                           fat={info.fat}
@@ -91,7 +91,7 @@ function Basket() {
                       <SwiperSlide key={index}>
                         <TakeAwayCard
                           key={index}
-                          title={info.itemName}
+                          name={info.itemName}
                           calories={info.calories}
                           carbs={info.carbs}
                           fat={info.fat}

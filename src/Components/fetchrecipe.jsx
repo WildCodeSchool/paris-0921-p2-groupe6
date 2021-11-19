@@ -56,7 +56,11 @@ function FetchRecipe({ category }) {
               </SwiperSlide>
             ))}
         </Swiper>
-        <button onClick={Refresh}>Refresh</button>
+        {category !== 'catalog' && (
+          <button className={'refreshButton'} onClick={Refresh}>
+            Refresh
+          </button>
+        )}
       </div>
     </div>
   );

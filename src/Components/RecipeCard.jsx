@@ -91,7 +91,7 @@ function RecipeCard({ image, title, calories, carbs, fat, protein, sugar }) {
       <div className="recipe-img-container">
         {more ? (
           <div className="recipe-front">
-            <div className="recipe-title">{title.length > 15 ? title.slice(0, 15) + '...' : title}</div>
+            <div className="recipe-title">{title.length > 15 ? title.slice(0, 20) + '...' : title}</div>
             <img className="recipe-card-image" src={image} alt={title} />
             <button className="recipe-material-icons-outlined" id={isFavorite ? 'isFavorite' : 'notFavorite'} onClick={handleClickFavorite}>
               star

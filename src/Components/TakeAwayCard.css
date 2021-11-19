@@ -78,7 +78,6 @@
 #isFavorite {
   bottom: 0%;
   color: var(--lazy-ketchup);
-  height: 5vh;
 }
 
 #more {

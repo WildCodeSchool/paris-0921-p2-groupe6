@@ -21,6 +21,11 @@ function CatalogSliders() {
   const [softsDrinks, setSoftsDrinks] = useState([]);
   const [allDrinks, setAllDrinks] = useState([]);
   const { allFavorites, fetchAllFavorites } = useContext(CurrentAllFavoritesContext);
+  const [refresh, setRefresh] = useState(false);
+
+  function Refresh() {
+    setRefresh(!refresh);
+  }
 
   useEffect(() => {
     fetchAllFavorites();
@@ -41,7 +46,10 @@ function CatalogSliders() {
 
   return (
     <div>
-      <FetchRecipe category={'catalog'} />
+      <button className={'refreshButton'} onClick={Refresh}>
+        Refresh all foods and drinks
+      </button>
+      <FetchRecipe refresh={refresh} category={'catalog'} />
       <FetchTakeAway category={'catalog'} />
       <div>
         <Swiper
@@ -66,7 +74,7 @@ function CatalogSliders() {
               ))}
         </Swiper>
       </div>
-      <FetchMovies category={'catalog'} />
+      <FetchMovies torefresh={refresh} category={'catalog'} />
     </div>
   );
 }

@@ -20,3 +20,21 @@
   margin: auto;
   padding-top: 1vh;
 }
+
+.refreshButton {
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  background-color: var(--lazy-barbecue);
+  color: var(--lazy-white);
+  font-family: var(--main-font-family);
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: auto;
+
+  margin-top: 5vh;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* width: 65%; */
+  border-radius: 5px;
+}

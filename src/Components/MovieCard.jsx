@@ -60,8 +60,11 @@ function MovieCard({ id, title, desc, img }) {
     if (allFavorites.some((object) => object.username === userName && object.itemId === id && object.itemCategory === 'movie')) {
       setIsFavorite(true);
     }
+    if (userChoice.some((object) => object.username === userName && object.itemId === id && object.itemCategory === 'movie')) {
+      setIsAdded(true);
+    }
   }, []);
-  useEffect(() => {}, [isFavorite]);
+  useEffect(() => {}, [isFavorite, isAdded, userChoice]);
 
   return (
     <div className="movie-Card">
@@ -69,10 +72,10 @@ function MovieCard({ id, title, desc, img }) {
         {more ? (
           <div className="movie-front">
             <img src={`https://image.tmdb.org/t/p/w500/${img}`} alt="" className="movie-card-image" />
-            <button className="movie-material-icons-outlined" id={isFavorite ? 'isFavorite' : 'notFavorite'} onClick={handleClickFavorite}>
+            <button className="movie-material-icons-outlined" id={isFavorite ? 'MovieisFavorite' : 'MovienotFavorite'} onClick={handleClickFavorite}>
               star
             </button>
-            <button className="movie-material-icons-outlined" id={isAdded ? 'isAdd' : 'notAdd'} onClick={handleClickAdded}>
+            <button className="movie-material-icons-outlined" id={isAdded ? 'MovieisAdd' : 'MovienotAdd'} onClick={handleClickAdded}>
               add_shopping_cart
             </button>
             <button className="movie-btn-more" onClick={handleClickFlip}>
@@ -84,7 +87,7 @@ function MovieCard({ id, title, desc, img }) {
             <p className="movie-desc-back" id="movie-p-back">
               <div id="movie-card-title">{title}</div>
               <img src={logo} className="film-logo-fond-desc" id="logo-fond-desc" alt="fond-desc-logo" />
-              {desc}
+              <p className="movie-back-desc">{desc}</p>
             </p>
             <button className="movie-material-icons-outlined" id="movie-btn-close" onClick={handleClickFlip}>
               cancel

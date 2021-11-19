@@ -14,7 +14,7 @@ import 'swiper/css/pagination';
 
 SwiperCore.use([Pagination, Navigation]);
 
-function FetchMovies({ category }) {
+function FetchMovies({ torefresh, category }) {
   const { allFavorites, fetchAllFavorites } = useContext(CurrentAllFavoritesContext);
   const [fetchedMovies, setFetchedMovies] = useState([]);
   const [refresh, setRefresh] = useState(false);
@@ -51,7 +51,7 @@ function FetchMovies({ category }) {
       )
       .then((response) => response.data)
       .then((data) => setFetchedMovies(data.results));
-  }, [refresh]);
+  }, [refresh, torefresh]);
 
   useEffect(() => {}, [allFavorites]);
 
@@ -78,7 +78,11 @@ function FetchMovies({ category }) {
                 </SwiperSlide>
               ))}
         </Swiper>
-        <button onClick={Refresh}>Refresh</button>
+        {category !== 'catalog' && (
+          <button className={'refreshButton'} onClick={Refresh}>
+            Refresh
+          </button>
+        )}
       </div>
     </div>
   );

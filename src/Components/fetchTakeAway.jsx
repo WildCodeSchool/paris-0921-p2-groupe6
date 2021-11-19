@@ -60,7 +60,9 @@ function FetchTakeAway({ category }) {
                 </SwiperSlide>
               ))}
         </Swiper>
-        <button onClick={Refresh}>Refresh</button>
+        <button className={'refreshButton'} onClick={Refresh}>
+          Refresh
+        </button>
       </div>
     </div>
   );

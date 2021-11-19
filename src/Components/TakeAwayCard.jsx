@@ -74,11 +74,14 @@ function TakeAwayCard({ name, store, portion, calories, fat, carbs, protein, img
   }
 
   useEffect(() => {
+    if (userChoice.some((object) => object.username === userName && object.itemName === name && object.itemCategory === 'takeaway')) {
+      setIsAdded(true);
+    }
     if (allFavorites.some((object) => object.username === userName && object.itemName === name && object.itemCategory === 'takeaway')) {
       setIsFavorite(true);
     }
   }, []);
-  useEffect(() => {}, [isFavorite]);
+  useEffect(() => {}, [isFavorite, userChoice, isAdded]);
 
   return (
     <div className="TakeAway-Card">
