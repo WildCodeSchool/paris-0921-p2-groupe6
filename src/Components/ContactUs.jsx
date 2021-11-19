@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React, { useRef } from 'react';
 import emailjs from 'emailjs-com';
 
@@ -12,10 +11,10 @@ export function ContactUs() {
 
     emailjs.sendForm('service_4eut92z', 'template_kkdwg3s', form.current, 'user_Blq82a6SwXzdJxeYb8dc6').then(
       (result) => {
-        console.log(result.text);
+        window.alert(result.text);
       },
       (error) => {
-        console.log(error.text);
+        window.alert(error.text);
       },
     );
     window.alert('thank you for your message');

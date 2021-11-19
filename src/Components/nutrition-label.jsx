@@ -52,7 +52,6 @@ function NutritionLabel({ total }) {
           <thead>
             <tr>
               <th colSpan="3" className="small-info">
-                <tr></tr>
                 Total Amount
               </th>
             </tr>
@@ -75,8 +74,6 @@ function NutritionLabel({ total }) {
                 <b>{totalFat} Gr</b>
               </td>
             </tr>
-            <tr></tr>
-
             <tr>
               <th colSpan="2">
                 <b>Total Carbohydrate</b>
@@ -96,7 +93,6 @@ function NutritionLabel({ total }) {
             <tr className="thick-end">
               <th colSpan="2">
                 <b>Protein</b>
-                <td></td>
               </th>
               <td>{totalProtein} Gr</td>
             </tr>
