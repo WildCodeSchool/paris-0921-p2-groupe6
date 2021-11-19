@@ -44,11 +44,12 @@ function AlcoholDrinkCard({ name, calories, sugar, imgUrl }) {
   }
 
   function handleClickAdded() {
-    setIsAdded(!isAdded);
     if (isAdded) {
-      setUserChoice(userChoice.filter((element) => element.name != name));
+      setUserChoice(userChoice.filter((element) => element.name !== name));
+      setIsAdded(false);
     } else {
       setUserChoice([...userChoice, { username: userName, itemCategory: 'drinks', name: name, calories: calories, sugar: sugar, imgUrl: imgUrl }]);
+      setIsAdded(true);
     }
   }
 
@@ -60,8 +61,11 @@ function AlcoholDrinkCard({ name, calories, sugar, imgUrl }) {
     if (allFavorites.some((object) => object.username === userName && object.itemName === name && object.itemCategory === 'drinks')) {
       setIsFavorite(true);
     }
+    if (userChoice.some((object) => object.username === userName && object.itemName === name && object.itemCategory === 'drinks')) {
+      setIsAdded(true);
+    }
   }, []);
-  useEffect(() => {}, [isFavorite]);
+  useEffect(() => {}, [isFavorite, isAdded, userChoice]);
 
   return (
     <div className="AlcoholDrink-Card">

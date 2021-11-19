@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
-import axios from 'axios';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Pagination, Navigation } from 'swiper';
+import axios from 'axios';
 
 import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 
@@ -21,6 +21,11 @@ function CatalogSliders() {
   const [softsDrinks, setSoftsDrinks] = useState([]);
   const [allDrinks, setAllDrinks] = useState([]);
   const { allFavorites, fetchAllFavorites } = useContext(CurrentAllFavoritesContext);
+  const [refresh, setRefresh] = useState(false);
+
+  function Refresh() {
+    setRefresh(!refresh);
+  }
 
   useEffect(() => {
     fetchAllFavorites();
@@ -39,10 +44,22 @@ function CatalogSliders() {
 
   useEffect(() => {}, [allFavorites, allDrinks]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
-      <FetchRecipe category={'catalog'} />
+      <button className={'refreshButton'} onClick={Refresh}>
+        Refresh all foods and drinks
+      </button>
+      <h3 className="CatalogSectionTitle">Recipes:</h3>
+      <FetchRecipe torefresh={refresh} category={'catalog'} />
+      <hr className={'catalog-hrline'} />
+      <h3 className="CatalogSectionTitle">Take Away:</h3>
       <FetchTakeAway category={'catalog'} />
+      <hr className={'catalog-hrline'} />
+      <h3 className="CatalogSectionTitle">All Drinks:</h3>
       <div>
         <Swiper
           slidesPerView={1}
@@ -66,7 +83,9 @@ function CatalogSliders() {
               ))}
         </Swiper>
       </div>
-      <FetchMovies category={'catalog'} />
+      <hr className={'catalog-hrline'} />
+      <h3 className="CatalogSectionTitle">Movies:</h3>
+      <FetchMovies torefresh={refresh} category={'catalog'} />
     </div>
   );
 }

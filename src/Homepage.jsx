@@ -3,7 +3,6 @@ import React, { useContext } from 'react';
 import CurrentUserNameContext from './Contexts/userContext';
 
 import HomeConditions from './Components/HomeConditions';
-
 import Age from './Components/Age';
 
 function HomePage() {

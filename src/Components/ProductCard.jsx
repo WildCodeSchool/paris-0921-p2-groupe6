@@ -6,7 +6,7 @@ import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 
 import More from '../Assets/More.png';
 
-import './Card.css';
+import './ProductCard.css';
 
 function ProductCard({ product }) {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -69,45 +69,47 @@ function ProductCard({ product }) {
   useEffect(() => {}, [isFavorite]);
 
   return (
-    <main>
-      <div className="product-Card">
-        <div className="product-img-container">
-          {more ? (
-            <div className="product-front">
-              <h3 className="product-desc-title">{productName}</h3>
-              <img className="product-card-image" src={productImg} alt={productName} />
-              <button className="product-material-icons-outlined" id={isFavorite ? 'isFavorite' : 'notFavorite'} onClick={handleClickFavorite}>
-                star
-              </button>
-              <button className="product-material-icons-outlined" id={isAdded ? 'isAdd' : 'notAdd'} onClick={handleClickAdded}>
-                add_shopping_cart
-              </button>
-              <button className="product-btn-more" onClick={handleClickFlip}>
-                <img src={More} alt="more" />
-              </button>
-            </div>
-          ) : (
-            <div className="product-back">
-              <div className="product-desc-back">
-                <h2 className="product-desc-title">{productName}</h2>
-                <h3 className="product-desc-name">{productNameGeneric}</h3>
-                <div className="product-desc-details">
-                  <p>Per 100g:</p>
-                  <div className="product-desc-details-li">Calories: {productCalories} KCal</div>
-                  <div className="product-desc-details-li">Carbs: {productCarbs} g</div>
-                  <div className="product-desc-details-li">Fat: {productFat} g</div>
-                  <div className="product-desc-details-li">Protein: {productProtein} g</div>
-                  <div className="product-desc-details-li">Sugar: {productSugar} g</div>
-                </div>
+    <div className="product-Card">
+      <div className="product-img-container">
+        {more ? (
+          <div className="product-front">
+            <h3 className="product-desc-title">{productName}</h3>
+            <img className="product-card-image" id="product-card-image" src={productImg} alt={productName} />
+            <button
+              className="product-material-icons-outlined"
+              id={isFavorite ? 'ProductisFavorite' : 'ProductnotFavorite'}
+              onClick={handleClickFavorite}
+            >
+              star
+            </button>
+            <button className="product-material-icons-outlined" id={isAdded ? 'ProductisAdd' : 'ProductnotAdd'} onClick={handleClickAdded}>
+              add_shopping_cart
+            </button>
+            <button className="product-btn-more" onClick={handleClickFlip}>
+              <img src={More} alt="more" />
+            </button>
+          </div>
+        ) : (
+          <div className="product-back">
+            <div className="product-desc-back">
+              <h2 className="product-desc-title">{productName}</h2>
+              <h3 className="product-desc-name">{productNameGeneric}</h3>
+              <div className="product-desc-details">
+                <p>Per 100g:</p>
+                <div className="product-desc-details-li">Calories: {productCalories} KCal</div>
+                <div className="product-desc-details-li">Carbs: {productCarbs} g</div>
+                <div className="product-desc-details-li">Fat: {productFat} g</div>
+                <div className="product-desc-details-li">Protein: {productProtein} g</div>
+                <div className="product-desc-details-li">Sugar: {productSugar} g</div>
               </div>
-              <button className="material-icons-outlined" id="close" onClick={handleClickFlip}>
-                cancel
-              </button>
             </div>
-          )}
-        </div>
+            <button className="material-icons-outlined" id="close" onClick={handleClickFlip}>
+              cancel
+            </button>
+          </div>
+        )}
       </div>
-    </main>
+    </div>
   );
 }
 

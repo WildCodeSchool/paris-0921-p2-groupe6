@@ -1,8 +1,5 @@
 import React from 'react';
 
-// import { useHistory } from 'react-router-dom';
-// import { useParams } from 'react-router-dom';
-
 import FetchSoftDrink from './fetchSoftDrink';
 import FetchAlcoholDrinks from './fetchAlcoholDrink';
 import FetchRecipe from './fetchrecipe';

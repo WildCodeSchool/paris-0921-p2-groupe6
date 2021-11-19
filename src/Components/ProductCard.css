@@ -10,14 +10,6 @@
   top: -17%;
 }
 
-.product-front {
-  background-color: var(--lazy-white);
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  text-align: center;
-}
-
 .btn-more {
   position: absolute;
   bottom: 0%;
@@ -29,22 +21,32 @@
   margin: 0 1vw;
   margin-top: 10vh;
   display: flex;
-  height: 20vh;
-  width: 90vw;
 }
 
 .product-front {
   backface-visibility: inherit;
   display: flex;
   position: relative;
+  min-height: 50vh;
+  min-width: 90vw;
+  max-height: 50vh;
+  max-width: 90vw;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  display: flex;
 }
 
 .product-img-container {
+  display: flex;
   height: auto;
   position: relative;
-  width: 95vw;
+  height: 100%;
+  width: 100%;
   transform-style: preserve-3d;
   transition: 2s;
+  margin: auto;
 }
 
 .material-icons-outlined {
@@ -77,37 +79,44 @@
   left: 0%;
 }
 
-#isAdd {
+#ProductisAdd {
+  bottom: 1.5%;
   color: var(--lazy-ketchup);
-  top: -5vh;
+  display: flex;
+  flex-direction: row;
+  left: 46%;
 }
 
-.Scan-material-icons-outlined-favorite {
-  bottom: 0%;
-  color: var(--lazy-ketchup);
-  height: 5vh;
+#ProductisFavorite {
+  bottom: 2.5%;
+  color: var(--lazy-mayo);
 }
 
 #more {
   transform: rotateY(180deg);
 }
 
-#notAdd {
-  color: var(--lazy-mayo);
-  top: -5vh;
+#ProductnotAdd {
+  color: var(--lazy-white);
+  display: flex;
+  flex-direction: row;
+  bottom: 1.5%;
+  left: 46%;
 }
 
-#notFavorite {
-  bottom: 0%;
-  color: var(--lazy-mayo);
-  height: 5vh;
+#ProductnotFavorite {
+  bottom: 2.5%;
+  color: var(--lazy-white);
+  display: flex;
+  flex-direction: row;
 }
 
-.cardImageProduct {
-  background-color: var(--lazy-white);
-  height: 500px;
+#product-card-image {
+  margin: auto;
+  background-color: var(--lazy-mayo);
   object-fit: contain;
-  max-width: 100%;
+  height: 90%;
+  width: 90%;
 }
 
 .product-back {
@@ -129,8 +138,10 @@
 }
 
 .product-desc-title {
+  text-align: center;
   font-size: 20px;
   margin: 3vw;
+  color: var(--lazy-ketchup);
 }
 
 .product-desc-details {
@@ -143,5 +154,5 @@
 }
 
 .product-desc-details-li {
-  margin: 1vh;
+  /* margin: 1vh; */
 }

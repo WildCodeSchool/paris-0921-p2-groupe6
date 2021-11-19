@@ -1,6 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
 import axios from 'axios';
-
 import CurrentUserNameContext from '../Contexts/userContext';
 import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 import CurrentFinalChoicesContext from '../Contexts/finalChoices';
@@ -59,11 +58,14 @@ function SoftDrinkCard({ name, calories, sugar, imgUrl }) {
   }
 
   useEffect(() => {
+    if (userChoice.some((object) => object.username === userName && object.itemName === name && object.itemCategory === 'drinks')) {
+      setIsAdded(true);
+    }
     if (allFavorites.some((object) => object.username === userName && object.itemName === name && object.itemCategory === 'drinks')) {
       setIsFavorite(true);
     }
   }, []);
-  useEffect(() => {}, [isFavorite]);
+  useEffect(() => {}, [isFavorite, userChoice, isAdded]);
 
   return (
     <div className="SoftDrink-Card">

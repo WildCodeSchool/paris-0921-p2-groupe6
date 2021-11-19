@@ -1,9 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Pagination, Navigation } from 'swiper';
 
 import CurrentUserNameContext from './Contexts/userContext';
 import CurrentFinalChoicesContext from './Contexts/finalChoices';
+import CurrentAllFavoritesContext from './Contexts/favoritesContext';
 
 import MovieCard from './Components/MovieCard';
 import RecipeCard from './Components/RecipeCard';
@@ -23,6 +24,12 @@ function Basket() {
   const { userName } = useContext(CurrentUserNameContext);
   const { userChoice } = useContext(CurrentFinalChoicesContext);
   const [totalChoice, setTotalChoice] = useState();
+  const { allFavorites } = useContext(CurrentAllFavoritesContext);
+
+  useEffect(() => {}, [userChoice, allFavorites]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <main>
@@ -36,7 +43,7 @@ function Basket() {
           <section>
             {userChoice.some((ele) => ele.itemCategory === 'recipe' && ele.username === userName) && (
               <div className="BasketSection">
-                <h3 className="BasketSectionTitle ">Recipe:</h3>
+                <h3 className="BasketSectionTitle">Recipe:</h3>
                 <Swiper
                   slidesPerView={1}
                   spaceBetween={30}
@@ -67,10 +74,11 @@ function Basket() {
               </div>
             )}
           </section>
+          <hr className={'basket-hrline'} />
           <section>
             {userChoice.some((ele) => ele.itemCategory === 'takeaway' && ele.username === userName) && (
               <div>
-                <h3 className="BasketSectionTitle ">TakeAway:</h3>
+                <h3 className="BasketSectionTitle">TakeAway:</h3>
                 <Swiper
                   slidesPerView={1}
                   spaceBetween={30}
@@ -87,7 +95,7 @@ function Basket() {
                       <SwiperSlide key={index}>
                         <TakeAwayCard
                           key={index}
-                          title={info.itemName}
+                          name={info.itemName}
                           calories={info.calories}
                           carbs={info.carbs}
                           fat={info.fat}
@@ -102,10 +110,11 @@ function Basket() {
               </div>
             )}
           </section>
+          <hr className={'basket-hrline'} />
           <section>
             {userChoice.some((ele) => ele.itemCategory === 'drinks' && ele.username === userName) && (
               <div>
-                <h3 className="BasketSectionTitle ">Drinks:</h3>
+                <h3 className="BasketSectionTitle">Drinks:</h3>
                 <Swiper
                   slidesPerView={1}
                   spaceBetween={30}
@@ -127,10 +136,11 @@ function Basket() {
               </div>
             )}
           </section>
+          <hr className={'basket-hrline'} />
           <section>
             {userChoice.some((ele) => ele.itemCategory === 'movie' && ele.username === userName) && (
               <div>
-                <h3 className="BasketSectionTitle ">Movies:</h3>
+                <h3 className="BasketSectionTitle">Movies:</h3>
                 <Swiper
                   slidesPerView={1}
                   spaceBetween={30}

@@ -43,7 +43,7 @@
 .AlcoholDrink-material-icons-outlined {
   background: none;
   border: none;
-  color: var(--lazy-white);
+  /* color: var(--lazy-white); */
   display: inline-block;
   direction: ltr;
   font-family: 'Material Icons';
@@ -78,7 +78,6 @@
 #isFavorite {
   bottom: 0%;
   color: var(--lazy-ketchup);
-  height: 5vh;
 }
 
 #more {
@@ -86,7 +85,7 @@
 }
 
 #notAdd {
-  color: var(--lazy-ketchup);
+  color: var(--lazy-white);
   top: -5vh;
 }
 

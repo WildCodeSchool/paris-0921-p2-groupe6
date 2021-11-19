@@ -75,6 +75,7 @@ function FavoritesSliders() {
               <h2 className="FavoriteNoProduct">Nothing yet in here</h2>
             )}
           </section>
+          <hr className={'favorites-hrline'} />
           <section>
             <h3 className="FavoriteSectionTitle">Your Takeaways:</h3>
             {allFavorites.some((elt) => elt.username === userName && elt.itemCategory === 'takeaway') ? (
@@ -110,6 +111,7 @@ function FavoritesSliders() {
               <h2 className="FavoriteNoProduct">Nothing yet in here</h2>
             )}
           </section>
+          <hr className={'favorites-hrline'} />
           <section>
             <h3 className="FavoriteSectionTitle">Your Drinks:</h3>
             {allFavorites.some((elt) => elt.username === userName && elt.itemCategory === 'drinks') ? (
@@ -135,6 +137,7 @@ function FavoritesSliders() {
               <h2 className="FavoriteNoProduct">Nothing yet in here</h2>
             )}
           </section>
+          <hr className={'favorites-hrline'} />
           <section>
             <h3 className="FavoriteSectionTitle">Your Movies:</h3>
             {allFavorites.some((elt) => elt.username === userName && elt.itemCategory === 'movie') ? (
@@ -160,6 +163,7 @@ function FavoritesSliders() {
               <h2 className="FavoriteNoProduct">Nothing yet in here</h2>
             )}
           </section>
+          <hr className={'favorites-hrline'} />
           <section>
             <h3 className="FavoriteSectionTitle">Your Scanned Products:</h3>
             {allFavorites.some((elt) => elt.username === userName && elt.itemCategory === 'barcode') ? (
