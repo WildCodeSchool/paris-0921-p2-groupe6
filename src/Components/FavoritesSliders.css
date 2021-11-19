@@ -33,10 +33,21 @@
   font-size: 1.8em;
 }
 
+.favorites-hrline {
+  border: none;
+  border-top: 5px double var(--lazy-ketchup);
+  color: var(--lazy-white);
+  margin: 5vh 3vh 7vh 3vh;
+  overflow: visible;
+  text-align: center;
+  height: 5px;
+}
+
 .FavoriteUnloggedText {
   color: var(--lazy-white);
   text-align: center;
   margin-top: 70%;
+  font-size: 1.8em;
 }
 
 .FavoriteNoProduct {

@@ -21,6 +21,25 @@
   padding-top: 1vh;
 }
 
+.CatalogSectionTitle {
+  color: var(--lazy-ketchup);
+  text-align: center;
+  font-size: 1.9em;
+  margin-top: 30px;
+  margin-bottom: -5vh;
+  justify-self: center;
+}
+
+.catalog-hrline {
+  border: none;
+  border-top: 5px double var(--lazy-ketchup);
+  color: var(--lazy-white);
+  margin: 5vh 3vh 7vh 3vh;
+  overflow: visible;
+  text-align: center;
+  height: 5px;
+}
+
 .refreshButton {
   display: flex;
   justify-self: center;
@@ -31,10 +50,8 @@
   font-size: 1.5em;
   font-weight: bold;
   margin: auto;
-
   margin-top: 5vh;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  /* width: 65%; */
+  margin-bottom: 5vh;
+  padding: 10px;
   border-radius: 5px;
 }

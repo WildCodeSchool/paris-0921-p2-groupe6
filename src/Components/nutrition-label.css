@@ -10,6 +10,7 @@ p {
 
 .gifcontainer {
   display: flex;
+  margin-bottom: 5vh;
 }
 
 .lazygif {
@@ -22,7 +23,6 @@ p {
 .performance-facts {
   border: 1px solid black;
   margin: 1em;
-  /* float: left; */
   width: 90vw;
   padding: 0.5rem;
   margin-bottom: 10vh;

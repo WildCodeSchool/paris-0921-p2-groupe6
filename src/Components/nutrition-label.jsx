@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 // import CurrentUserNameContext from '../Contexts/userContext';
 // import CurrentFinalChoicesContext from '../Contexts/finalChoices';
@@ -8,39 +8,39 @@ import './nutrition-label.css';
 import LazyGif from '../Assets/lazygif.gif';
 
 function NutritionLabel({ total }) {
-  // const { userName } = useContext(CurrentUserNameContext);
-  // const { userChoice, setUserChoice } = useContext(CurrentFinalChoicesContext);
+  const totalCalories = total
+    .filter((elt) => elt.calories)
+    .reduce((prev, cur) => {
+      return prev + cur.calories;
+    }, 0);
 
-  // useEffect(() => {
-  //   setUserChoice(userChoice.filter((elt) => elt.username !== userName));
-  // }, []);
+  const totalFat = total
+    .filter((elt) => elt.fat)
+    .reduce((prev, cur) => {
+      return parseInt(prev) + parseInt(cur.fat);
+    }, 0);
 
-  const totalCalories = total.reduce((prev, cur) => {
-    return prev + cur.calories;
-  }, 0);
+  const totalCarbs = total
+    .filter((elt) => elt.carbs)
+    .reduce((prev, cur) => {
+      return parseInt(prev) + parseInt(cur.carbs);
+    }, 0);
 
-  const totalFat = total.reduce((prev, cur) => {
-    return parseInt(prev) + parseInt(cur.fat);
-  }, 0);
+  const totalSugar = total
+    .filter((elt) => elt.sugar)
+    .reduce((prev, cur) => {
+      return parseInt(prev) + parseInt(cur.sugar);
+    }, 0);
 
-  const totalCarbs = total.reduce((prev, cur) => {
-    return parseInt(prev) + parseInt(cur.carbs);
-  }, 0);
+  const totalProtein = total
+    .filter((elt) => elt.protein)
+    .reduce((prev, cur) => {
+      return parseInt(prev) + parseInt(cur.protein);
+    }, 0);
 
-  const totalSugar = total.reduce((prev, cur) => {
-    return parseInt(prev) + parseInt(cur.sugar);
-  }, 0);
-
-  const totalProtein = total.reduce((prev, cur) => {
-    return parseInt(prev) + parseInt(cur.protein);
-  }, 0);
-
-  // useEffect(() => {
-  //   console.log(userChoice);
-  //   console.log(total);
-  //   console.log(parseInt(total[0].fat));
-  //   console.log(totalFat);
-  // });
+  useEffect(() => {
+    window.scrollTo(0, 2500);
+  }, []);
 
   return (
     <div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
-import axios from 'axios';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Pagination, Navigation } from 'swiper';
+import axios from 'axios';
 
 import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 
@@ -44,13 +44,22 @@ function CatalogSliders() {
 
   useEffect(() => {}, [allFavorites, allDrinks]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <button className={'refreshButton'} onClick={Refresh}>
         Refresh all foods and drinks
       </button>
+      <h3 className="CatalogSectionTitle">Recipes:</h3>
       <FetchRecipe refresh={refresh} category={'catalog'} />
+      <hr className={'catalog-hrline'} />
+      <h3 className="CatalogSectionTitle">Take Away:</h3>
       <FetchTakeAway category={'catalog'} />
+      <hr className={'catalog-hrline'} />
+      <h3 className="CatalogSectionTitle">All Drinks:</h3>
       <div>
         <Swiper
           slidesPerView={1}
@@ -74,6 +83,8 @@ function CatalogSliders() {
               ))}
         </Swiper>
       </div>
+      <hr className={'catalog-hrline'} />
+      <h3 className="CatalogSectionTitle">Movies:</h3>
       <FetchMovies torefresh={refresh} category={'catalog'} />
     </div>
   );

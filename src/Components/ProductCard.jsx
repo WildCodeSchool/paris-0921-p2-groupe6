@@ -6,7 +6,7 @@ import CurrentAllFavoritesContext from '../Contexts/favoritesContext';
 
 import More from '../Assets/More.png';
 
-import './Card.css';
+import './ProductCard.css';
 
 function ProductCard({ product }) {
   const [isFavorite, setIsFavorite] = useState(false);

@@ -27,6 +27,9 @@ function Basket() {
   const { allFavorites } = useContext(CurrentAllFavoritesContext);
 
   useEffect(() => {}, [userChoice, allFavorites]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <main>
@@ -40,7 +43,7 @@ function Basket() {
           <section>
             {userChoice.some((ele) => ele.itemCategory === 'recipe' && ele.username === userName) && (
               <div className="BasketSection">
-                <h3 className="BasketSectionTitle ">Recipe:</h3>
+                <h3 className="BasketSectionTitle">Recipe:</h3>
                 <Swiper
                   slidesPerView={1}
                   spaceBetween={30}
@@ -57,7 +60,7 @@ function Basket() {
                       <SwiperSlide key={index}>
                         <RecipeCard
                           key={index}
-                          name={info.itemName}
+                          title={info.itemName}
                           calories={info.calories}
                           carbs={info.carbs}
                           fat={info.fat}
@@ -71,10 +74,11 @@ function Basket() {
               </div>
             )}
           </section>
+          <hr className={'basket-hrline'} />
           <section>
             {userChoice.some((ele) => ele.itemCategory === 'takeaway' && ele.username === userName) && (
               <div>
-                <h3 className="BasketSectionTitle ">TakeAway:</h3>
+                <h3 className="BasketSectionTitle">TakeAway:</h3>
                 <Swiper
                   slidesPerView={1}
                   spaceBetween={30}
@@ -106,10 +110,11 @@ function Basket() {
               </div>
             )}
           </section>
+          <hr className={'basket-hrline'} />
           <section>
             {userChoice.some((ele) => ele.itemCategory === 'drinks' && ele.username === userName) && (
               <div>
-                <h3 className="BasketSectionTitle ">Drinks:</h3>
+                <h3 className="BasketSectionTitle">Drinks:</h3>
                 <Swiper
                   slidesPerView={1}
                   spaceBetween={30}
@@ -131,10 +136,11 @@ function Basket() {
               </div>
             )}
           </section>
+          <hr className={'basket-hrline'} />
           <section>
             {userChoice.some((ele) => ele.itemCategory === 'movie' && ele.username === userName) && (
               <div>
-                <h3 className="BasketSectionTitle ">Movies:</h3>
+                <h3 className="BasketSectionTitle">Movies:</h3>
                 <Swiper
                   slidesPerView={1}
                   spaceBetween={30}

@@ -77,12 +77,11 @@
 }
 
 #MovieisAdd {
-  /* bottom: 1.5%; */
+  bottom: 1.5%;
   color: var(--lazy-ketchup);
   display: flex;
   flex-direction: row;
   left: 46%;
-  top: -5vh;
 }
 
 #MovienotAdd {
