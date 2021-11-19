@@ -54,7 +54,7 @@ function CatalogSliders() {
         Refresh all foods and drinks
       </button>
       <h3 className="CatalogSectionTitle">Recipes:</h3>
-      <FetchRecipe refresh={refresh} category={'catalog'} />
+      <FetchRecipe torefresh={refresh} category={'catalog'} />
       <hr className={'catalog-hrline'} />
       <h3 className="CatalogSectionTitle">Take Away:</h3>
       <FetchTakeAway category={'catalog'} />

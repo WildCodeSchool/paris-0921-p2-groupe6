@@ -15,9 +15,10 @@
   background: none;
   border: none;
   bottom: 0%;
-  color: var(--lazy-mayo);
-  filter: drop-shadow(3 px 1 px 3 px grey);
-  position: absolute;
+  display: flex;
+  width: 10%;
+  margin-bottom: 1%;
+  margin-top: 1%;
 }
 
 .movie-Card {
@@ -42,8 +43,8 @@
 }
 
 .movie-img-container {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   height: 100%;
   transform-style: preserve-3d;
   transition: 2s;
@@ -82,6 +83,7 @@
   display: flex;
   flex-direction: row;
   left: 46%;
+  filter: drop-shadow(2px 2px 0.2rem var(--lazy-white));
 }
 
 #MovienotAdd {
@@ -93,9 +95,10 @@
 }
 
 #MovieisFavorite {
-  bottom: 2.5%;
+  bottom: 1.5%;
   color: var(--lazy-mayo);
   display: row;
+  filter: drop-shadow(2px 2px 0.2rem var(--lazy-white));
 }
 
 #logo-fond-desc {

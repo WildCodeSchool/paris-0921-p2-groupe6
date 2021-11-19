@@ -36,7 +36,7 @@ function NutritionLabel({ total }) {
     }, 0);
 
   useEffect(() => {
-    window.scrollTo(0, 2500);
+    window.scrollTo(0, 2400);
   }, []);
 
   return (

@@ -181,7 +181,6 @@
   font-size: 15px;
 }
 
-.product-desc-details-li,
 .recipe-desc-details-li,
 .SoftDrink-desc-details-li,
 .TakeAway-desc-details-li {
@@ -194,11 +193,13 @@
   display: flex;
   flex-direction: row;
   left: 46%;
+  filter: drop-shadow(2px 2px 0.2rem var(--lazy-white));
 }
 
 #isFavorite {
   bottom: 2.5%;
   color: var(--lazy-mayo);
+  filter: drop-shadow(2px 2px 0.2rem var(--lazy-white));
 }
 
 /*#more {
