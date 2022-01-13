@@ -1,4 +1,4 @@
-# Project 2
+# Project 2 - Lazy Night
 
 bootstrapper CLI for React App with basic conf for Caprover deployment.
 
